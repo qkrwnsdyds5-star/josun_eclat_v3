@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO & Social OpenGraph -->
+  <title>JOSUN ÉCLAT | 조선 에끌라 - 그랜드 조선 호텔 웰컴기프트</title>
+  <meta name="description" content="그랜드 조선 부산·제주의 품격 높은 환대와 신세계푸드의 베이커리 전문성이 결합된 프리미엄 웰컴기프트, 조선 에끌라(JOSUN ÉCLAT).">
+  <meta name="keywords" content="조선 에끌라, JOSUN ECLAT, 그랜드 조선, 그랜드 조선 부산, 그랜드 조선 제주, 신세계푸드, 호텔 웰컴기프트, 쿠키 키트">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JOSUN ÉCLAT | 조선 에끌라 - 그랜드 조선 웰컴기프트">
+  <meta property="og:description" content="여행지의 이야기를 담은 특별한 환대의 선물. 그랜드 조선과 신세계푸드가 전하는 조선 에끌라를 만나보세요.">
+  <meta property="og:image" content="./assets/logo/조선 에끌라 로고.png">
+  <meta name="theme-color" content="#173f35">
+
+  <!-- Google Fonts: Playfair Display, Montserrat, Noto Serif KR, Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- 접근성 바로가기 링크 -->
+  <a href="#main-content" class="skip-link">본문 바로가기</a>
+
+  <!-- ==================== 1. HEADER ==================== -->
+  <header id="site-header" class="site-header" role="banner">
+    <div class="header-inner">
+      <!-- Brand Wordmark Logo -->
+      <a href="#hero" class="brand-logo" aria-label="조선 에끌라 홈으로 이동">
+        <span class="logo-emblem">É</span>
+        <span class="logo-text">
+          <strong class="logo-title">JOSUN ÉCLAT</strong>
+          <span class="logo-sub">GRAND JOSUN</span>
+        </span>
+      </a>
+
+      <!-- Desktop GNB -->
+      <nav id="desktop-nav" class="desktop-nav" role="navigation" aria-label="메인 내비게이션">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#story" class="nav-link">ABOUT ÉCLAT</a></li>
+          <li class="nav-item" id="nav-item-collections"><a href="#collections" class="nav-link">COLLECTIONS</a></li>
+          <li class="nav-item" id="nav-item-kids"><a href="#kids" class="nav-link">KIDS ADVENTURE</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link">EXPERIENCE</a></li>
+          <li class="nav-item"><a href="#motif-journey" class="nav-link">JOURNEY</a></li>
+        </ul>
+      </nav>
+
+      <!-- Utility Actions -->
+      <div class="header-util">
+        <span class="welcome-tag" aria-label="QR 접속 환영">IN-ROOM WELCOME</span>
+        <button type="button" id="btn-share" class="btn-share" aria-label="페이지 링크 공유하기" title="페이지 링크 공유">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          <span class="share-text">SHARE</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button type="button" id="btn-menu-toggle" class="btn-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="모바일 메뉴 열기">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-drawer" class="mobile-drawer" role="dialog" aria-modal="true" aria-label="모바일 내비게이션 메뉴">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <span class="logo-title">JOSUN ÉCLAT</span>
+        <span class="logo-sub">GRAND JOSUN × SHINSEGAE FOOD</span>
+      </div>
+      <button type="button" id="btn-drawer-close" class="btn-drawer-close" aria-label="모바일 메뉴 닫기">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer-body">
+      <!-- Quick Room Gift Action Card (Mobile In-Room Direct Access) -->
+      <div class="drawer-quick-card" id="drawer-quick-card">
+        <div class="drawer-quick-header">
+          <span class="quick-badge">MY ROOM GIFT</span>
+          <span class="quick-status-dot" aria-hidden="true"></span>
+        </div>
+        <button type="button" class="drawer-quick-btn" id="drawer-quick-btn">
+          <span class="quick-hotel" id="drawer-quick-hotel">GRAND JOSUN BUSAN</span>
+          <span class="quick-room" id="drawer-quick-room">객실 웰컴기프트 바로가기 &rarr;</span>
+        </button>
+      </div>
+
+      <ul class="drawer-nav">
+        <li><a href="#story" class="drawer-link"><span class="en">ABOUT ÉCLAT</span><span class="kr">브랜드 스토리</span></a></li>
+        <li id="drawer-item-collections"><a href="#collections" class="drawer-link"><span class="en">COLLECTIONS</span><span class="kr" id="drawer-collections-kr">부산·제주 컬렉션</span></a></li>
+        <li id="drawer-item-kids"><a href="#kids" class="drawer-link"><span class="en">KIDS ADVENTURE</span><span class="kr" id="drawer-kids-kr">키즈 쿠키 체험</span></a></li>
+        <li><a href="#experience" class="drawer-link"><span class="en">EXPERIENCE</span><span class="kr">테이스팅 페어링</span></a></li>
+        <li><a href="#motif-journey" class="drawer-link"><span class="en">JOURNEY</span><span class="kr">지역 모티브 탐방</span></a></li>
+      </ul>
+      <div class="drawer-footer">
+        <p class="drawer-notice">그랜드 조선 객실 웰컴기프트 가이드</p>
+        <span class="drawer-badge">UNIVERSITY PROTOTYPE</span>
+      </div>
+    </div>
+  </div>
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main id="main-content" class="main-content" role="main">
+
+    <!-- ==================== 2. HERO SECTION ==================== -->
+    <section id="hero" class="hero-section" aria-label="조선 에끌라 환영 섹션">
+      <div class="hero-bg-wrapper">
+        <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안 3.png" alt="조선 에끌라 웰컴기프트 시그니처 패키지와 프리미엄 쿠키" class="hero-bg-img" id="hero-bg-img" fetchpriority="high">
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-brand-badge animate-fade-in">
+          <span class="hotel-name" id="hero-hotel-name">GRAND JOSUN</span>
+          <span class="sep">×</span>
+          <span class="bakery-name">SHINSEGAE FOOD</span>
+        </div>
+        <h1 class="hero-title animate-fade-in-up">
+          <span class="title-serif">The Shining Welcome,</span>
+          <span class="title-sub">Crafted for Your Journey</span>
+        </h1>
+        <p class="hero-lead animate-fade-in-up delay-1" id="hero-lead">
+          조선 에끌라, 그 특별한 여정의 시작
+        </p>
+        <p class="hero-desc animate-fade-in-up delay-2" id="hero-desc">
+          그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">
+          부산 해운대와 제주의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.
+        </p>
+        <div class="hero-actions animate-fade-in-up delay-3">
+          <a href="#collections" class="btn-luxury btn-luxury-primary" id="hero-btn-explore">컬렉션 탐색하기</a>
+          <button type="button" class="btn-luxury btn-luxury-ghost open-brochure-modal" data-brochure="current" id="hero-btn-brochure">브로슈어 시안 보기</button>
+        </div>
+      </div>
+
+      <a href="#story" class="scroll-down-indicator" aria-label="브랜드 스토리 섹션으로 스크롤">
+        <span class="indicator-text">SCROLL DOWN</span>
+        <span class="indicator-mouse" aria-hidden="true">
+          <span class="indicator-wheel"></span>
+        </span>
+      </a>
+    </section>
+
+    <!-- ==================== 3. BRAND STORY SECTION ==================== -->
+    <section id="story" class="story-section section-padding" aria-label="브랜드 스토리">
+      <div class="container">
+        <!-- Top Title Block (DESIGN_GUIDE topArea 표준) -->
+        <div class="top-area text-center">
+          <span class="sub-lead-en">HERITAGE &amp; CRAFTSMANSHIP</span>
+          <h2 class="title-depth-1">About Éclat</h2>
+          <p class="page-guide">조선호텔앤리조트와 신세계푸드가 전하는 눈부신 환대의 선물</p>
+        </div>
+
+        <div class="story-split-grid">
+          <!-- Story Narrative Text -->
+          <div class="story-narrative">
+            <div class="category-badge">BRAND PHILOSOPHY</div>
+            <h3 class="story-heading">
+              여행지의 이야기를 담아낸<br>
+              <span class="highlight">오직 투숙객만을 위한 리추얼</span>
+            </h3>
+            <p class="story-body-editorial">
+              '에끌라(ÉCLAT)'는 프랑스어로 <strong>'눈부신 광채, 영롱한 빛남'</strong>을 의미합니다. 
+              체크인 후 객실 문을 열었을 때 맞이하는 달콤한 웰컴기프트는 단순한 디저트를 넘어, 
+              일상의 번잡함을 잊고 온전한 쉼으로 초대하는 호텔의 가장 첫 번째 환대입니다.
+            </p>
+            <div class="story-collapse-wrapper" id="story-collapse">
+              <p class="story-body-editorial">
+                100년이 넘는 한국 환대 문화의 정점인 <strong>조선호텔앤리조트(그랜드 조선)</strong>와 
+                대한민국 프리미엄 미식을 선도해 온 <strong>신세계푸드</strong>의 숙련된 파티시에가 협력하여, 
+                부산 해운대의 시원한 바다 바람과 제주의 싱그러운 자연을 미식 예술로 완성하였습니다.
+              </p>
+
+              <div class="story-callout">
+                <blockquote>
+                  &ldquo;체크아웃 이후에도 오랫동안 여행의 감동으로 기억될 달콤한 추억의 아카이브가 되어 드립니다.&rdquo;
+                </blockquote>
+              </div>
+            </div>
+            <button type="button" class="btn-story-toggle" id="btn-story-toggle" aria-expanded="false" aria-controls="story-collapse">
+              <span class="story-toggle-text">브랜드 스토리 더보기</span>
+              <span class="story-toggle-icon" aria-hidden="true">&darr;</span>
+            </button>
+          </div>
+
+          <!-- Story Visual Card -->
+          <div class="story-visual-card">
+            <div class="visual-frame">
+              <img src="./assets/logo/조선 에끌라 로고.png" alt="조선 에끌라 공식 엠블럼 로고 - 그랜드 조선" class="story-logo-img" loading="lazy">
+              <div class="visual-caption">
+                <span class="caption-tag">OFFICIAL EMBLEM</span>
+                <span class="caption-text">그랜드 조선 웰컴기프트 공식 아이덴티티</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Core Pillars -->
+        <div class="core-pillars">
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="8" width="18" height="13" rx="2"></rect>
+                <path d="M12 8v13"></path>
+                <path d="M19 12H5"></path>
+                <path d="M12 8a3 3 0 1 0-3-3c2 0 3 3 3 3z"></path>
+                <path d="M12 8a3 3 0 1 1 3-3c-2 0-3 3-3 3z"></path>
+              </svg>
+            </div>
+            <h4 class="pillar-title">특별한 환대의 선물</h4>
+            <span class="pillar-en">EXQUISITE HOSPITALITY</span>
+            <p class="pillar-desc">그랜드 조선 5성급 호텔의 품격과 정성스러운 환대 철학을 온전히 담아낸 프라이빗 어메니티입니다.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h4 class="pillar-title">여행지의 지역적 감성</h4>
+            <span class="pillar-en">LOCAL ESSENCE</span>
+            <p class="pillar-desc">부산 해운대의 푸른 바다와 도시 풍경, 제주의 사계절 자연과 상징 모티프를 쿠키 아트로 조각했습니다.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+              </svg>
+            </div>
+            <h4 class="pillar-title">일상의 여운을 더하는 경험</h4>
+            <span class="pillar-en">EVERLASTING MEMORY</span>
+            <p class="pillar-desc">신세계푸드의 프리미엄 쇼트브레드와 딥 초콜릿 글레이징으로 여행의 시작부터 끝까지 깊은 여운을 선물합니다.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3-B. QR ACCESS GUIDANCE SECTION (Exception Handling) ==================== -->
+    <section id="qr-guidance-section" class="qr-guidance-section section-padding bg-warm-greige" aria-label="올바른 웰컴기프트 접속 안내" hidden>
+      <div class="container">
+        <div id="qr-guidance-card" class="qr-guidance-card">
+          <div class="qr-guidance-inner">
+            <div class="qr-guidance-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"></path>
+              </svg>
+            </div>
+            <span class="qr-guidance-badge">QR CODE ACCESS ONLY</span>
+            <h3 class="qr-guidance-title">올바른 웰컴기프트 안내 페이지로 접속해 주세요.</h3>
+            <p class="qr-guidance-desc">
+              조선 에끌라 웰컴기프트는 고객님의 투숙 호텔(부산·제주) 및 객실 유형(일반·스위트·키즈)에 맞추어 개별 제공됩니다.<br>
+              객실 웰컴 테이블에 비치된 브로슈어의 전용 QR 코드를 스캔하시면 해당 객실의 웰컴기프트 컬렉션을 바로 확인하실 수 있습니다.
+            </p>
+            <div class="qr-guidance-steps">
+              <div class="guidance-step">
+                <span class="step-num">1</span>
+                <span class="step-text">객실 웰컴 테이블의 브로슈어 확인</span>
+              </div>
+              <div class="guidance-step">
+                <span class="step-num">2</span>
+                <span class="step-text">스마트폰 카메라로 전용 QR 코드 스캔</span>
+              </div>
+              <div class="guidance-step">
+                <span class="step-num">3</span>
+                <span class="step-text">고객님 전용 웰컴기프트 컬렉션 열람</span>
+              </div>
+            </div>
+            <div class="qr-prototype-links">
+              <span class="prototype-links-label">프로토타입 평가 및 시연 바로가기 (6종):</span>
+              <div class="prototype-links-group">
+                <a href="?hotel=busan&room=standard" class="btn-prototype-link">부산 일반 (3종)</a>
+                <a href="?hotel=busan&room=suite" class="btn-prototype-link">부산 스위트 (6종)</a>
+                <a href="?hotel=busan&room=kids" class="btn-prototype-link">부산 키즈 (DIY)</a>
+                <a href="?hotel=jeju&room=standard" class="btn-prototype-link">제주 일반 (3종)</a>
+                <a href="?hotel=jeju&room=suite" class="btn-prototype-link">제주 스위트 (6종)</a>
+                <a href="?hotel=jeju&room=kids" class="btn-prototype-link">제주 키즈 (DIY)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. CURATED COLLECTIONS SECTION ==================== -->
+    <section id="collections" class="collections-section section-padding bg-warm-greige" aria-label="조선 에끌라 웰컴기프트 컬렉션">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="top-area text-center">
+          <span class="sub-lead-en" id="collections-sub-lead">REGIONAL &amp; ROOM COLLECTIONS</span>
+          <h2 class="title-depth-1" id="collections-title">Gift Collections</h2>
+          <p class="page-guide" id="collections-guide">부산과 제주, 객실 등급에 맞춰 특별하게 준비된 웰컴기프트 라인업</p>
+        </div>
+
+        <!-- Verified Room Information Banner (Read-only, derived from URL Query Parameters) -->
+        <div class="collection-controls" id="collection-controls">
+          <div class="collection-verified-banner" id="collection-verified-banner">
+            <div class="verified-pill">
+              <span class="verified-icon" aria-hidden="true">✦</span>
+              <span class="verified-hotel" id="verified-hotel">GRAND JOSUN BUSAN</span>
+              <span class="verified-sep">&bull;</span>
+              <span class="verified-room" id="verified-room">STANDARD ROOM (3종)</span>
+            </div>
+            <span class="verified-sub" id="verified-sub">브로슈어 QR 인증 객실 맞춤형 안내</span>
+          </div>
+        </div>
+
+        <!-- ==================== BUSAN PANEL ==================== -->
+        <div id="panel-busan" class="collection-panel active" role="tabpanel" aria-labelledby="verified-hotel">
+          <!-- Region Overview Banner -->
+          <div class="region-overview-card busan-theme">
+            <div class="overview-visual">
+              <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안 4.png" alt="그랜드 조선 부산 웰컴기프트 패키지 시안" class="overview-img zoomable-img" id="busan-overview-img" data-caption="그랜드 조선 부산 웰컴기프트 세트">
+            </div>
+            <div class="overview-info">
+              <span class="theme-tag">HAEUNDAE OCEAN &amp; NIGHT SKYLINE</span>
+              <h3 class="overview-title">JOSUN ÉCLAT with BUSAN</h3>
+              <p class="overview-desc">
+                푸른 해운대 앞바다와 반짝이는 광안대교의 스카이라인을 모티프로 빚어냈습니다. 
+                깊고 은은한 네이비 슬리브 박스에 담겨, 창밖으로 펼쳐지는 부산 바다의 정취와 함께 
+                낭만적인 티타임을 선사합니다.
+              </p>
+              <div class="tier-info-box">
+                <span class="tier-indicator" id="busan-tier-indicator">객실 등급: <strong>일반 객실 (Standard)</strong></span>
+                <p class="tier-notice" id="busan-tier-notice">부산의 랜드마크와 바다 감성을 담은 3종의 시그니처 웰컴 쿠키가 제공됩니다.</p>
+              </div>
+              <div class="overview-actions">
+                <button type="button" class="btn-line-link open-brochure-modal" data-brochure="current" id="busan-overview-brochure-btn">
+                  부산 브로슈어 시안 상세 보기 &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Cookie Grid -->
+          <div class="cookie-cards-grid">
+            <!-- 1. 광안대교 (일반 필수) -->
+            <article class="cookie-card standard-item">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안1.png" alt="광안대교 버터 초콜릿 쿠키" class="cookie-img zoomable-img" data-caption="광안대교 쿠키 - 부산의 웅장한 랜드마크를 형상화">
+                <span class="item-badge standard">STANDARD</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">LANDMARK</span>
+                <h4 class="cookie-name">광안대교 쿠키</h4>
+                <p class="cookie-desc">부산을 상징하는 다이아몬드 브릿지의 유려한 케이블 실루엣을 버터 쇼트브레드와 다크 초콜릿으로 섬세하게 재현했습니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>프랑스 고메 버터</span> &bull; <span>벨기에 카카오 64%</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. 배 / 크루즈 (일반 필수) -->
+            <article class="cookie-card standard-item">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안 4.png" alt="크루즈선 형상의 쿠키" class="cookie-img zoomable-img" data-caption="크루즈선 쿠키 - 해운대 바다를 유영하는 낭만의 상징">
+                <span class="item-badge standard">STANDARD</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">VOYAGE</span>
+                <h4 class="cookie-name">크루즈선 쿠키</h4>
+                <p class="cookie-desc">해운대 오션 위를 여유롭게 유영하는 크루즈선을 정교한 입체 몰딩 기법으로 빚어내어 항해의 설렘을 전합니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>바닐라 빈 추출물</span> &bull; <span>마블 글레이징</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. 등대 (일반 필수) -->
+            <article class="cookie-card standard-item">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안2.png" alt="해운대 등대 쿠키" class="cookie-img zoomable-img" data-caption="등대 쿠키 - 안전한 여행과 따뜻한 길잡이의 상징">
+                <span class="item-badge standard">STANDARD</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">GUIDE &amp; WARMTH</span>
+                <h4 class="cookie-name">해운대 등대 쿠키</h4>
+                <p class="cookie-desc">밤바다를 따스하게 밝히는 해운대의 등대를 모티프로 하여, 여행자의 안락한 휴식을 축복하는 메시지를 담았습니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>헤이즐넛 프랄린</span> &bull; <span>솔티드 버터</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4. 갈매기 (스위트 전용) -->
+            <article class="cookie-card suite-item hidden">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안 3.png" alt="해운대 갈매기 쿠키" class="cookie-img zoomable-img" data-caption="해운대 갈매기 쿠키 - 자유로운 비상과 오션의 활력">
+                <span class="item-badge suite">SUITE ONLY</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">FREEDOM</span>
+                <h4 class="cookie-name">해운대 갈매기 쿠키</h4>
+                <p class="cookie-desc">수평선 위를 활기차게 날아오르는 해운대 갈매기를 날렵한 라인과 화이트 초콜릿 페더링으로 완성했습니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>스위트 객실 특화</span> &bull; <span>밀크 초콜릿</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5. 조개껍질 (스위트 전용) -->
+            <article class="cookie-card suite-item hidden">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안1.png" alt="진주를 품은 조개껍질 쿠키" class="cookie-img zoomable-img" data-caption="조개껍질 쿠키 - 화이트 펄 초콜릿이 얹힌 우아한 조개">
+                <span class="item-badge suite">SUITE ONLY</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">OCEAN TREASURE</span>
+                <h4 class="cookie-name">진주 조개 쿠키</h4>
+                <p class="cookie-desc">해변의 보석인 가리비 조개 실루엣 위에 식용 화이트 펄 초콜릿을 세팅하여 럭셔리한 시각적 감동을 극대화했습니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>화이트 펄 크리스피</span> &bull; <span>고메 아몬드</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6. 파도 (스위트 전용) -->
+            <article class="cookie-card suite-item hidden">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안 4.png" alt="해운대 파도 포말 쿠키" class="cookie-img zoomable-img" data-caption="파도 쿠키 - 역동적인 파도 물결과 흰 포말을 형상화">
+                <span class="item-badge suite">SUITE ONLY</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">DYNAMIC WAVE</span>
+                <h4 class="cookie-name">해운대 파도 쿠키</h4>
+                <p class="cookie-desc">백사장으로 밀려드는 부드러운 해운대의 파도 포말을 화이트와 다크 초콜릿의 투톤 마블링으로 역동적으로 연출했습니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>스위트 전용 페어링</span> &bull; <span>바다 소금 카라멜</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- ==================== JEJU PANEL ==================== -->
+        <div id="panel-jeju" class="collection-panel" role="tabpanel" aria-labelledby="verified-hotel" hidden>
+          <!-- Region Overview Banner -->
+          <div class="region-overview-card jeju-theme">
+            <div class="overview-visual">
+              <img src="./assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 2.png" alt="그랜드 조선 제주 웰컴기프트 패키지 시안" class="overview-img zoomable-img" id="jeju-overview-img" data-caption="그랜드 조선 제주 웰컴기프트 세트">
+            </div>
+            <div class="overview-info">
+              <span class="theme-tag">LUSH NATURE &amp; EMERALD FOREST</span>
+              <h3 class="overview-title">JOSUN ÉCLAT with JEJU</h3>
+              <p class="overview-desc">
+                사계절 푸른 제주의 중문 숲과 따사로운 햇살, 화산섬의 신비를 모티프로 빚어냈습니다. 
+                그랜드 조선 헤리티지 딥 그린(`--color-heritage-green`) 슬리브에 한라산과 야자수가 금박으로 수놓여, 
+                제주의 이국적인 휴양 무드를 오롯이 전달합니다.
+              </p>
+              <div class="tier-info-box">
+                <span class="tier-indicator" id="jeju-tier-indicator">객실 등급: <strong>일반 객실 (Standard)</strong></span>
+                <p class="tier-notice" id="jeju-tier-notice">제주 천혜의 자연과 상징을 담은 3종의 시그니처 웰컴 쿠키가 제공됩니다.</p>
+              </div>
+              <div class="overview-actions">
+                <button type="button" class="btn-line-link open-brochure-modal" data-brochure="current" id="jeju-overview-brochure-btn">
+                  제주 브로슈어 시안 상세 보기 &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product Cookie Grid -->
+          <div class="cookie-cards-grid">
+            <!-- 1. 귤 (일반 필수) -->
+            <article class="cookie-card standard-item">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 2.png" alt="제주 감귤 쿠키" class="cookie-img zoomable-img" data-caption="제주 감귤 쿠키 - 남국의 햇살을 머금은 감귤 형상">
+                <span class="item-badge standard">STANDARD</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">CITRUS SWEET</span>
+                <h4 class="cookie-name">제주 감귤 쿠키</h4>
+                <p class="cookie-desc">풍부한 일조량을 받고 자란 제주 감귤의 동그란 실루엣과 앙증맞은 잎사귀를 버터 쿠키 위에 생동감 있게 표현했습니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>제주 유기농 감귤 제스트</span> &bull; <span>발효 버터</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. 말 / 조랑말 (일반 필수) -->
+            <article class="cookie-card standard-item">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 3.png" alt="제주 조랑말 쿠키" class="cookie-img zoomable-img" data-caption="제주 조랑말 쿠키 - 초원을 질주하는 자유로운 말">
+                <span class="item-badge standard">STANDARD</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">SPIRIT OF NATURE</span>
+                <h4 class="cookie-name">제주 조랑말 쿠키</h4>
+                <p class="cookie-desc">푸른 오름과 초원을 자유롭게 달리는 제주 조랑말의 역동적인 근육과 갈기 디테일을 담은 프리미엄 초콜릿 쿠키입니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>카카오닙스 크런치</span> &bull; <span>다크 가나슈</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. 야자수 (일반 필수) -->
+            <article class="cookie-card standard-item">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 3.png" alt="제주 야자수 쿠키" class="cookie-img zoomable-img" data-caption="야자수 쿠키 - 이국적인 남국 리조트의 상징">
+                <span class="item-badge standard">STANDARD</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">TROPICAL VACATION</span>
+                <h4 class="cookie-name">제주 야자수 쿠키</h4>
+                <p class="cookie-desc">그랜드 조선 제주의 정원에서 마주하는 우아한 야자수를 형상화하여 휴양지에 온 듯한 설렘을 객실에 전합니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>코코넛 블렌딩</span> &bull; <span>골든 쇼트브레드</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 4. 한라봉 / 감귤 슬라이스 (스위트 전용) -->
+            <article class="cookie-card suite-item hidden">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안.png" alt="한라봉 시트러스 슬라이스 쿠키" class="cookie-img zoomable-img" data-caption="한라봉 슬라이스 쿠키 - 상큼한 시트러스 과육 단면">
+                <span class="item-badge suite">SUITE ONLY</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">FRESH CITRUS</span>
+                <h4 class="cookie-name">한라봉 슬라이스 쿠키</h4>
+                <p class="cookie-desc">한라봉의 볼록한 꼭지와 과육의 부챗살 단면을 섬세한 화이트 초콜릿 라인으로 조각하여 상큼한 산미를 연출했습니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>스위트 객실 한정</span> &bull; <span>천연 오렌지 오일</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 5. 돌하르방 (스위트 전용) -->
+            <article class="cookie-card suite-item hidden">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 3.png" alt="제주 돌하르방 쿠키" class="cookie-img zoomable-img" data-caption="돌하르방 쿠키 - 인자한 미소로 여행자를 맞이하는 수호석">
+                <span class="item-badge suite">SUITE ONLY</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">GUARDIAN STONE</span>
+                <h4 class="cookie-name">돌하르방 쿠키</h4>
+                <p class="cookie-desc">인자한 미소로 여행객의 평안을 기원하는 돌하르방의 현무암 질감을 마블 카카오 텍스처로 품격 있게 표현했습니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>스위트 헤리티지</span> &bull; <span>로스팅 헤이즐넛</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- 6. 한라산 / 섬 (스위트 전용) -->
+            <article class="cookie-card suite-item hidden">
+              <div class="card-visual">
+                <img src="./assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안.png" alt="제주 한라산 백록담 쿠키" class="cookie-img zoomable-img" data-caption="한라산 마운틴 쿠키 - 백록담의 설경 능선을 표현한 쿠키">
+                <span class="item-badge suite">SUITE ONLY</span>
+              </div>
+              <div class="card-body">
+                <span class="cookie-motif">MAJESTIC PEAK</span>
+                <h4 class="cookie-name">한라산 마운틴 쿠키</h4>
+                <p class="cookie-desc">구름 위로 솟아오른 한라산 백록담의 눈 덮인 능선과 봉우리를 화이트 글레이즈와 다크 초콜릿의 조화로 빚어냈습니다.</p>
+                <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
+                <div class="cookie-meta">
+                  <span>스위트 전용 컬렉션</span> &bull; <span>스위스 다크 카카오</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. KIDS COOKIE ADVENTURE SECTION ==================== -->
+    <section id="kids" class="kids-section section-padding" aria-label="키즈 객실 웰컴기프트 체험">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="top-area text-center">
+          <span class="sub-lead-en" id="kids-sub-lead">FAMILY DIY EXPERIENCE</span>
+          <h2 class="title-depth-1" id="kids-title">Kids Adventure</h2>
+          <p class="page-guide" id="kids-guide">아이와 함께 완성하는 세상에서 단 하나뿐인 가족 여행의 달콤한 추억</p>
+        </div>
+
+        <!-- Verified Room Information Banner for Kids Room -->
+        <div class="collection-controls" id="kids-verified-controls">
+          <div class="collection-verified-banner" id="kids-verified-banner">
+            <div class="verified-pill">
+              <span class="verified-icon" aria-hidden="true">✦</span>
+              <span class="verified-hotel" id="kids-verified-hotel">GRAND JOSUN BUSAN</span>
+              <span class="verified-sep">&bull;</span>
+              <span class="verified-room" id="kids-verified-room">KIDS ROOM (DIY 키트)</span>
+            </div>
+            <span class="verified-sub" id="kids-verified-sub">브로슈어 QR 인증 객실 맞춤형 안내</span>
+          </div>
+        </div>
+
+        <div class="kids-hero-showcase">
+          <div class="kids-showcase-visual">
+            <img src="./assets/cookie-kit/키즈객실 웰컴기프트_시안.png" alt="그랜드 조선 키즈 웰컴기프트 DIY 쿠키 꾸미기 세트 시안" class="kids-kit-img zoomable-img" id="kids-kit-img" data-caption="그랜드 조선 키즈 DIY 웰컴기프트 세트 (동일 기본 형태 쿠키 6개, 7색 아이싱 펜, 토핑 3종)">
+          </div>
+
+          <div class="kids-showcase-content">
+            <div class="category-badge kids-badge">KIDS SPECIAL WELCOME</div>
+            <h3 class="kids-title" id="kids-showcase-title">
+              동일한 기본 형태의 쿠키 6개,<br>
+              <span class="highlight">여섯 가지 상상력으로 피어나는 시간</span>
+            </h3>
+            <p class="kids-desc" id="kids-showcase-desc">
+              그랜드 조선 키즈 객실에 투숙하는 가족을 위해 기획된 참여형 웰컴기프트입니다. 
+              완성된 쿠키를 단순히 맛보는 것에 그치지 않고, 동일한 캔버스 쿠키 6개 위에 
+              아이의 무한한 상상력을 발휘하여 나만의 여행 이야기를 데코레이션할 수 있습니다.
+            </p>
+
+            <!-- Kit Inclusions -->
+            <div class="kids-kit-components">
+              <div class="components-header">
+                <h4 class="components-title">키트 구성품</h4>
+                <button type="button" class="btn-kids-toggle" id="btn-kids-toggle" aria-expanded="true" aria-controls="kids-components-list">
+                  <span class="kids-toggle-text">구성품 접기</span>
+                  <span class="kids-toggle-icon" aria-hidden="true">&uarr;</span>
+                </button>
+              </div>
+              <ul class="components-list" id="kids-components-list">
+                <li>
+                  <span class="bullet">&bull;</span>
+                  <strong>캔버스 플레인 버터 쿠키 6개:</strong> 그림을 그리기 좋은 부드러운 고래·구름 실루엣의 순수 버터 쿠키 (동일 기본 형태)
+                </li>
+                <li>
+                  <span class="bullet">&bull;</span>
+                  <strong>데코 아이싱 펜 7컬러:</strong> 어린이의 작은 손으로도 쉽게 짤 수 있는 튜브형 초코·화이트·파스텔 아이싱
+                </li>
+                <li>
+                  <span class="bullet">&bull;</span>
+                  <strong>스페셜 토핑 3종:</strong> 크리스털 펄, 무지개 슈가 스프링클, 노란 별빛 토핑
+                </li>
+                <li>
+                  <span class="bullet">&bull;</span>
+                  <strong>웰컴 메시지 카드:</strong> <span id="kids-welcome-card-text">&ldquo;Welcome to Grand Josun. May your journey be special.&rdquo;</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="kids-action">
+              <button type="button" class="btn-luxury btn-luxury-primary open-brochure-modal" data-brochure="current" id="kids-brochure-btn">
+                키즈 3단 브로슈어 시안 보기
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kids 3-Step Mission Adventure -->
+        <div class="kids-missions-block">
+          <div class="missions-header text-center">
+            <span class="mission-tag">KIDS MISSION ADVENTURE</span>
+            <h3 class="missions-title" id="kids-missions-title">객실에서 즐기는 3단계 여행 미션</h3>
+            <p class="missions-sub" id="kids-missions-sub">아이와 함께 하나씩 완성하며 여행의 설렘을 더해보세요.</p>
+          </div>
+
+          <div class="mission-steps-grid">
+            <div class="mission-step-card">
+              <div class="step-badge">STEP 1</div>
+              <div class="step-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+                  <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+                  <path d="M2 2l7.586 7.586"></path>
+                  <circle cx="11" cy="11" r="2"></circle>
+                </svg>
+              </div>
+              <h4 class="step-title">상상력 가득 데코레이션!</h4>
+              <p class="step-desc" id="kids-step-1-desc">알록달록 7가지 컬러의 아이싱 펜과 별빛 토핑으로 나만의 특별한 여행 동물과 바다 친구들을 꾸며보세요.</p>
+            </div>
+
+            <div class="mission-step-card">
+              <div class="step-badge">STEP 2</div>
+              <div class="step-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                  <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+              </div>
+              <h4 class="step-title">찰칵! 자랑스러운 기념사진</h4>
+              <p class="step-desc" id="kids-step-2-desc">완성된 귀여운 쿠키 작품을 객실 웰컴 카드와 함께 사진으로 남겨 소중한 가족 앨범과 SNS에 기록해 보세요.</p>
+            </div>
+
+            <div class="mission-step-card">
+              <div class="step-badge">STEP 3</div>
+              <div class="step-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <h4 class="step-title">우리 가족 여행 추억 나누기</h4>
+              <p class="step-desc" id="kids-step-3-desc">직접 만든 달콤한 쿠키를 가족과 함께 나누어 먹으며, 오늘 여행에서 가장 즐거웠던 순간을 이야기 나누어 보세요.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. HOTEL TASTING & PAIRING SECTION ==================== -->
+    <section id="experience" class="experience-section section-padding bg-warm-greige" aria-label="호텔 테이스팅 페어링 가이드">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="top-area text-center">
+          <span class="sub-lead-en">BOUTIQUE TASTING GUIDE</span>
+          <h2 class="title-depth-1">Boutique Pairing Guide</h2>
+          <p class="page-guide">그랜드 조선 객실에 비치된 하우스 브랜드 비벤떼(VIVENTE)와 함께 완성하는 완벽한 티타임 모먼트</p>
+        </div>
+
+        <div class="pairing-grid">
+          <!-- Card 01: Vivente Tea Pairing -->
+          <article class="pairing-showcase-card">
+            <div class="pairing-image-box">
+              <img src="./assets/cookie-kit/vivente-tea.png" alt="조선호텔 시그니처 비벤떼 피라미드 사셰 티백과 버터 쿠키 페어링" class="pairing-card-img zoomable-img" data-caption="조선호텔 시그니처 비벤떼(VIVENTE) 프리미엄 사셰 티백 &amp; 조선 에끌라 페어링 세팅">
+              <span class="pairing-badge">TEA PAIRING</span>
+            </div>
+            <div class="pairing-content-box">
+              <div class="pairing-header">
+                <span class="pairing-num">01</span>
+                <div class="pairing-title-wrap">
+                  <span class="pairing-brand">VIVENTE SIGNATURE TEA</span>
+                  <h3 class="pairing-card-title">비벤떼 시그니처 티백 (Vivente Tea Bag)</h3>
+                </div>
+              </div>
+              <p class="pairing-card-desc">
+                조선호텔 100년의 헤리티지를 담은 친환경 생분해 사셰백(PLA) 프리미엄 티입니다. 
+                은은한 베르가못과 싱그러운 꽃잎 향이 입안 가득 맴돌며, 버터 쇼트브레드의 깊고 고소한 풍미와 
+                시트러스 글레이징 사블레의 산뜻한 터치를 부드럽게 감싸 안아줍니다.
+              </p>
+              <div class="pairing-meta">
+                <div class="pairing-meta-item">
+                  <span class="meta-label">추천 페어링</span>
+                  <span class="meta-value">버터 쇼트브레드 &bull; 동백꽃 라즈베리 사블레 &bull; 감귤 사블레</span>
+                </div>
+                <div class="pairing-meta-item">
+                  <span class="meta-label">브루잉 노트</span>
+                  <span class="meta-value">95&deg;C 온수 250ml에 3분간 우려낼 때 꽃잎 아로마의 최상의 밸런스가 완성됩니다.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 02: Vivente Coffee Pairing -->
+          <article class="pairing-showcase-card">
+            <div class="pairing-image-box">
+              <img src="./assets/cookie-kit/vivente-coffee.png" alt="조선호텔 비벤떼 캡슐커피 에스프레소와 다크 초콜릿 쿠키 페어링" class="pairing-card-img zoomable-img" data-caption="조선호텔 시그니처 비벤떼(VIVENTE) 네스프레소 호환 캡슐커피 &amp; 다크 초콜릿 쿠키 페어링">
+              <span class="pairing-badge">COFFEE PAIRING</span>
+            </div>
+            <div class="pairing-content-box">
+              <div class="pairing-header">
+                <span class="pairing-num">02</span>
+                <div class="pairing-title-wrap">
+                  <span class="pairing-brand">VIVENTE SPECIALTY CAPSULE</span>
+                  <h3 class="pairing-card-title">비벤떼 캡슐커피 (Vivente Capsule Coffee)</h3>
+                </div>
+              </div>
+              <p class="pairing-card-desc">
+                그랜드 조선 전 객실에 비치된 조선호텔 시그니처 하우스 블렌드 캡슐입니다. 
+                황금빛 실크 크레마와 다크 카카오의 묵직한 쌉싸름함, 은은한 바닐라 향미가 
+                진한 다크 초콜릿 글레이징 쿠키의 깊은 단맛과 어우러져 궁극의 미식 밸런스를 이룹니다.
+              </p>
+              <div class="pairing-meta">
+                <div class="pairing-meta-item">
+                  <span class="meta-label">추천 페어링</span>
+                  <span class="meta-value">파도 다크 초콜릿 쿠키 &bull; 진주 조개 샌드 &bull; 한라산 백록담 쿠키</span>
+                </div>
+                <div class="pairing-meta-item">
+                  <span class="meta-label">추출 가이드</span>
+                  <span class="meta-value">에스프레소(40ml)의 진한 바디감 또는 룽고(110ml)의 깔끔한 애프터테이스트를 추천합니다.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. REGIONAL MOTIF JOURNEY SECTION ==================== -->
+    <section id="motif-journey" class="motif-journey-section section-padding" aria-label="지역 제품 모티브 탐방 안내">
+      <div class="container">
+        <!-- Top Area -->
+        <div class="top-area text-center">
+          <span class="sub-lead-en" id="journey-sub-lead">REGIONAL MOTIF JOURNEY &bull; BUSAN</span>
+          <h2 class="title-depth-1" id="journey-title">Journey to the Motifs <span class="highlight">(부산 명소 탐방)</span></h2>
+          <p class="page-guide" id="journey-page-guide">그랜드 조선 부산 웰컴기프트에 깃든 영감의 장소, 호텔에서 출발하여 광안대교와 청사포 등 부산의 대표 명소로 향하는 여정을 안내합니다.</p>
+        </div>
+
+        <!-- ==================== BUSAN MOTIF PANEL ==================== -->
+        <div id="journey-panel-busan" class="journey-panel active" role="tabpanel" aria-labelledby="journey-tab-busan">
+          <!-- Origin Info Card -->
+          <div class="journey-origin-card busan-origin">
+            <div class="origin-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="origin-content">
+              <span class="origin-label">DEPARTURE POINT</span>
+              <h3 class="origin-name">그랜드 조선 부산 (Grand Josun Busan)</h3>
+              <p class="origin-address">부산광역시 해운대구 해운대해변로 292 &bull; 오션 프론트 럭셔리 호텔</p>
+            </div>
+          </div>
+
+          <!-- Routes Grid -->
+          <div class="journey-routes-grid">
+            <!-- Route 1: 광안대교 (다이아몬드 브릿지) -->
+            <article class="journey-route-card">
+              <div class="route-card-header">
+                <div class="motif-link-badge">
+                  <span class="badge-icon">✦</span>
+                  <span class="badge-text">광안대교 쿠키 모티브</span>
+                </div>
+                <h4 class="route-title">그랜드 조선 부산 &rarr; 광안대교</h4>
+                <p class="route-desc-summary">다이아몬드 브릿지의 웅장한 케이블 실루엣과 바다 위 찬란한 야경 스카이라인</p>
+              </div>
+
+              <!-- Interactive Media Switcher: Google Map Route vs Cookie Art -->
+              <div class="route-media-container">
+                <div class="route-media-tabs" role="tablist" aria-label="지도 및 비주얼 선택">
+                  <button type="button" class="media-tab-btn active" data-view="map" aria-selected="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                    <span>구글 지도 길안내</span>
+                  </button>
+                  <button type="button" class="media-tab-btn" data-view="cookie" aria-selected="false">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span>모티브 쿠키 아트</span>
+                  </button>
+                </div>
+
+                <!-- Google Maps Live Embed View (Default Active) -->
+                <div class="route-map-view active">
+                  <iframe class="route-map-iframe" 
+                          src="https://maps.google.com/maps?saddr=그랜드조선부산&daddr=광안대교&hl=ko&output=embed" 
+                          title="그랜드 조선 부산에서 광안대교까지 구글 지도 길안내"
+                          loading="lazy" 
+                          allowfullscreen></iframe>
+                  <div class="map-badge-overlay">
+                    <span class="live-dot"></span> LIVE GOOGLE MAPS ROUTE
+                  </div>
+                  <button type="button" class="btn-map-expand open-map-modal-btn" 
+                          data-map-title="그랜드 조선 부산 &rarr; 광안대교 (다이아몬드 브릿지)" 
+                          data-map-src="https://maps.google.com/maps?saddr=그랜드조선부산&daddr=광안대교&hl=ko&output=embed"
+                          data-naver="https://map.naver.com/p/directions/14378328.8,4185640.1,그랜드조선부산/14374079.8,4184034.7,광안대교/-/car"
+                          data-kakao="https://map.kakao.com/link/from/그랜드조선부산,35.159958,129.162725/to/광안대교,35.148167,129.124556"
+                          data-google="https://www.google.com/maps/dir/?api=1&origin=그랜드+조선+부산&destination=광안대교"
+                          title="지도 크게 보기">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                    <span>지도 크게 보기</span>
+                  </button>
+                </div>
+
+                <!-- Cookie Visual View -->
+                <div class="route-cookie-view">
+                  <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안1.png" alt="광안대교 쿠키와 모티브가 된 다이아몬드 브릿지" class="route-img zoomable-img" data-caption="광안대교 쿠키 - 다이아몬드 브릿지의 유려한 케이블 실루엣을 형상화">
+                  <div class="route-distance-chip">
+                    <span class="chip-label">거리</span>
+                    <span class="chip-val">약 7.5km</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="route-body">
+                <!-- Visual Route Flow Schematic -->
+                <div class="route-schematic">
+                  <span class="schematic-title">ROUTE FLOW &bull; 경로 요약</span>
+                  <div class="schematic-nodes">
+                    <div class="schematic-node origin">
+                      <span class="node-icon">🏨</span>
+                      <span class="node-name">그랜드 조선 부산</span>
+                    </div>
+                    <div class="schematic-arrow">
+                      <span class="arrow-info">약 7.5km (15~20분)</span>
+                      <span class="arrow-symbol">&rarr;</span>
+                    </div>
+                    <div class="schematic-node destination">
+                      <span class="node-icon">🌉</span>
+                      <span class="node-name">광안대교</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- One-Click Map App/Web Directions Action Bar -->
+                <div class="map-action-links">
+                  <span class="map-action-label">지도 앱/웹 실시간 길찾기 바로가기:</span>
+                  <div class="map-btn-group">
+                    <a href="https://map.naver.com/p/directions/14378328.8,4185640.1,그랜드조선부산/14374079.8,4184034.7,광안대교/-/car" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-naver-map" title="네이버 지도로 길찾기 (새 창)">
+                      <span class="map-icon naver-icon">N</span> 네이버 지도
+                    </a>
+                    <a href="https://map.kakao.com/link/from/그랜드조선부산,35.159958,129.162725/to/광안대교,35.148167,129.124556" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-kakao-map" title="카카오맵으로 길찾기 (새 창)">
+                      <span class="map-icon kakao-icon">K</span> 카카오맵
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=그랜드+조선+부산&destination=광안대교" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-google-map" title="구글 지도로 길찾기 (새 창)">
+                      <span class="map-icon google-icon">G</span> 구글 지도
+                    </a>
+                  </div>
+                </div>
+
+                <h5 class="route-section-tit">교통편별 이동 방법</h5>
+                <ul class="transport-list">
+                  <li class="transport-item">
+                    <div class="transport-header">
+                      <span class="transport-badge car">🚗 자가용 &bull; 택시</span>
+                      <span class="transport-time">약 15~20분 소요</span>
+                    </div>
+                    <p class="transport-detail">
+                      <strong>이동 경로:</strong> 호텔 출발 &rarr; 해운대해변로 &rarr; 동백삼거리 &rarr; 올림픽교차로 &rarr; 광안대교 상층 램프 진입 (바다 위 드라이브) 또는 광안해변로(광안리 해수욕장 방면)로 진입.<br>
+                      <strong>주차 안내:</strong> 광안리 공영주차장 또는 민락수변공원 공영주차장 이용 편리.
+                    </p>
+                  </li>
+                  <li class="transport-item">
+                    <div class="transport-header">
+                      <span class="transport-badge metro">🚇 도시철도 (지하철)</span>
+                      <span class="transport-time">약 30분 소요</span>
+                    </div>
+                    <p class="transport-detail">
+                      호텔에서 도보 8분 &rarr; <strong>부산 2호선 해운대역</strong> 탑승 &rarr; <strong>광안역</strong> 3번·5번 출구 하차 (6개 역 이동) &rarr; 광안리 해변 방면으로 도보 10분 직진.
+                    </p>
+                  </li>
+                  <li class="transport-item">
+                    <div class="transport-header">
+                      <span class="transport-badge bus">🚌 시내버스</span>
+                      <span class="transport-time">약 35분 소요</span>
+                    </div>
+                    <p class="transport-detail">
+                      호텔 앞 해운대온천사거리 정류장 &rarr; <strong>38번, 139번 또는 1003번(급행)</strong> 버스 탑승 &rarr; 광안리입구 정류장 하차.
+                    </p>
+                  </li>
+                </ul>
+
+                <div class="route-concierge-tip">
+                  <div class="tip-badge">CONCIERGE TIP</div>
+                  <p class="tip-text">
+                    <strong>황홀한 야경 점등 시간:</strong> 일몰 후 광안대교 미디어 파사드 및 조명 연출(매일 저녁 20:00, 21:00, 22:00)에 맞춰 광안리 해변이나 민락더마켓을 방문하시면, 쿠키에 새겨진 반짝이는 다이아몬드 브릿지의 감동을 오롯이 느끼실 수 있습니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Route 2: 청사포 쌍둥이 등대 -->
+            <article class="journey-route-card">
+              <div class="route-card-header">
+                <div class="motif-link-badge">
+                  <span class="badge-icon">✦</span>
+                  <span class="badge-text">해운대 등대 쿠키 모티브</span>
+                </div>
+                <h4 class="route-title">그랜드 조선 부산 &rarr; 청사포 쌍둥이 등대</h4>
+                <p class="route-desc-summary">푸른 동해바다와 대비되는 빨강·하양 쌍둥이 등대, 밤바다를 밝히는 따스한 길잡이</p>
+              </div>
+
+              <!-- Interactive Media Switcher: Google Map Route vs Cookie Art -->
+              <div class="route-media-container">
+                <div class="route-media-tabs" role="tablist" aria-label="지도 및 비주얼 선택">
+                  <button type="button" class="media-tab-btn active" data-view="map" aria-selected="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                    <span>구글 지도 길안내</span>
+                  </button>
+                  <button type="button" class="media-tab-btn" data-view="cookie" aria-selected="false">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span>모티브 쿠키 아트</span>
+                  </button>
+                </div>
+
+                <!-- Google Maps Live Embed View (Default Active) -->
+                <div class="route-map-view active">
+                  <iframe class="route-map-iframe" 
+                          src="https://maps.google.com/maps?saddr=그랜드조선부산&daddr=청사포쌍둥이등대&hl=ko&output=embed" 
+                          title="그랜드 조선 부산에서 청사포 쌍둥이 등대까지 구글 지도 길안내"
+                          loading="lazy" 
+                          allowfullscreen></iframe>
+                  <div class="map-badge-overlay">
+                    <span class="live-dot"></span> LIVE GOOGLE MAPS ROUTE
+                  </div>
+                  <button type="button" class="btn-map-expand open-map-modal-btn" 
+                          data-map-title="그랜드 조선 부산 &rarr; 청사포 쌍둥이 등대" 
+                          data-map-src="https://maps.google.com/maps?saddr=그랜드조선부산&daddr=청사포쌍둥이등대&hl=ko&output=embed"
+                          data-naver="https://map.naver.com/p/directions/14378328.8,4185640.1,그랜드조선부산/14381569.2,4185576.2,청사포쌍둥이등대/-/car"
+                          data-kakao="https://map.kakao.com/link/from/그랜드조선부산,35.159958,129.162725/to/청사포쌍둥이등대,35.159489,129.191834"
+                          data-google="https://www.google.com/maps/dir/?api=1&origin=그랜드+조선+부산&destination=청사포+쌍둥이+등대"
+                          title="지도 크게 보기">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                    <span>지도 크게 보기</span>
+                  </button>
+                </div>
+
+                <!-- Cookie Visual View -->
+                <div class="route-cookie-view">
+                  <img src="./assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안2.png" alt="해운대 등대 쿠키와 청사포 쌍둥이 등대" class="route-img zoomable-img" data-caption="해운대 등대 쿠키 - 밤바다를 따스하게 밝히는 청사포 등대를 형상화">
+                  <div class="route-distance-chip">
+                    <span class="chip-label">거리</span>
+                    <span class="chip-val">약 4.8km</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="route-body">
+                <!-- Visual Route Flow Schematic -->
+                <div class="route-schematic">
+                  <span class="schematic-title">ROUTE FLOW &bull; 경로 요약</span>
+                  <div class="schematic-nodes">
+                    <div class="schematic-node origin">
+                      <span class="node-icon">🏨</span>
+                      <span class="node-name">그랜드 조선 부산</span>
+                    </div>
+                    <div class="schematic-arrow">
+                      <span class="arrow-info">약 4.8km (해변열차 20분 / 차 12분)</span>
+                      <span class="arrow-symbol">&rarr;</span>
+                    </div>
+                    <div class="schematic-node destination">
+                      <span class="node-icon">🏮</span>
+                      <span class="node-name">청사포 쌍둥이 등대</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- One-Click Map App/Web Directions Action Bar -->
+                <div class="map-action-links">
+                  <span class="map-action-label">지도 앱/웹 실시간 길찾기 바로가기:</span>
+                  <div class="map-btn-group">
+                    <a href="https://map.naver.com/p/directions/14378328.8,4185640.1,그랜드조선부산/14381569.2,4185576.2,청사포쌍둥이등대/-/car" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-naver-map" title="네이버 지도로 길찾기 (새 창)">
+                      <span class="map-icon naver-icon">N</span> 네이버 지도
+                    </a>
+                    <a href="https://map.kakao.com/link/from/그랜드조선부산,35.159958,129.162725/to/청사포쌍둥이등대,35.159489,129.191834" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-kakao-map" title="카카오맵으로 길찾기 (새 창)">
+                      <span class="map-icon kakao-icon">K</span> 카카오맵
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=그랜드+조선+부산&destination=청사포+쌍둥이+등대" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-google-map" title="구글 지도로 길찾기 (새 창)">
+                      <span class="map-icon google-icon">G</span> 구글 지도
+                    </a>
+                  </div>
+                </div>
+
+                <h5 class="route-section-tit">교통편별 이동 방법</h5>
+                <ul class="transport-list">
+                  <li class="transport-item highlight-item">
+                    <div class="transport-header">
+                      <span class="transport-badge train">🚃 해변열차 (추천 이색 코스)</span>
+                      <span class="transport-time">약 20분 소요</span>
+                    </div>
+                    <p class="transport-detail">
+                      호텔에서 도보 10분 &rarr; <strong>해운대 블루라인파크 미포정거장</strong> &rarr; 감성적인 <strong>해변열차 탑승 (약 10분)</strong> &rarr; <strong>청사포정거장</strong> 하차 &rarr; 청사포 방파제 쌍둥이 등대까지 도보 5분.<br>
+                      <em>*해안 절경을 파노라마로 바라보며 청사포로 이동하는 호텔 투숙객 추천 1위 코스입니다.</em>
+                    </p>
+                  </li>
+                  <li class="transport-item">
+                    <div class="transport-header">
+                      <span class="transport-badge car">🚗 자가용 &bull; 택시</span>
+                      <span class="transport-time">약 10~15분 소요</span>
+                    </div>
+                    <p class="transport-detail">
+                      <strong>이동 경로:</strong> 호텔 출발 &rarr; 달맞이길 (또는 달맞이언덕 터널) 경유 &rarr; 청사포로 하향 진입.<br>
+                      <strong>주차 안내:</strong> 청사포 공영주차장 또는 방파제 인근 주차 구역 이용.
+                    </p>
+                  </li>
+                  <li class="transport-item">
+                    <div class="transport-header">
+                      <span class="transport-badge bus">🚌 마을버스</span>
+                      <span class="transport-time">약 20분 소요</span>
+                    </div>
+                    <p class="transport-detail">
+                      해운대역 7번 출구 앞 정류장 &rarr; <strong>해운대구 2번 마을버스</strong> 탑승 &rarr; 청사포 종점(수퍼 앞) 하차 후 방파제 도보 3분.
+                    </p>
+                  </li>
+                </ul>
+
+                <div class="route-concierge-tip">
+                  <div class="tip-badge">CONCIERGE TIP</div>
+                  <p class="tip-text">
+                    <strong>감성 포토스팟:</strong> 맑은 날 방파제 끝에 서 있는 빨간 등대와 하얀 등대 사이에서 동해 바다를 배경으로 사진을 남겨보세요. 바로 인근의 청사포 다릿돌전망대 스카이워크를 함께 거닐면 여행의 여운이 더욱 깊어집니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Busan Sub-Motifs Mini Guide -->
+          <div class="journey-sub-motifs">
+            <h5 class="sub-motifs-title">부산 컬렉션 추가 모티브 산책 가이드</h5>
+            <div class="sub-motifs-grid">
+              <div class="sub-motif-card">
+                <span class="motif-tag">VOYAGE • 크루즈선</span>
+                <strong class="motif-place">미포항 &amp; 수영만 요트경기장</strong>
+                <p class="motif-guide-text">호텔 도보 10분(미포) / 차로 10분(수영만). 오션 크루즈선과 선셋 요트 투어로 해운대 앞바다를 만끽하세요.</p>
+                <div class="sub-motif-maps">
+                  <a href="https://map.naver.com/p/search/미포항" target="_blank" rel="noopener noreferrer" class="sub-map-pill naver">네이버 지도</a>
+                  <a href="https://map.kakao.com/link/search/미포항" target="_blank" rel="noopener noreferrer" class="sub-map-pill kakao">카카오맵</a>
+                </div>
+              </div>
+              <div class="sub-motif-card">
+                <span class="motif-tag">FREEDOM • 해운대 갈매기</span>
+                <strong class="motif-place">동백섬 해안 산책로</strong>
+                <p class="motif-guide-text">호텔에서 도보 8분. 동백나무 숲과 누리마루 APEC하우스 너머로 날아오르는 갈매기 떼를 관찰할 수 있습니다.</p>
+                <div class="sub-motif-maps">
+                  <a href="https://map.naver.com/p/search/동백섬" target="_blank" rel="noopener noreferrer" class="sub-map-pill naver">네이버 지도</a>
+                  <a href="https://map.kakao.com/link/search/동백섬" target="_blank" rel="noopener noreferrer" class="sub-map-pill kakao">카카오맵</a>
+                </div>
+              </div>
+              <div class="sub-motif-card">
+                <span class="motif-tag">DYNAMIC WAVE • 해운대 파도 &amp; 조개</span>
+                <strong class="motif-place">해운대 백사장</strong>
+                <p class="motif-guide-text">호텔 정문 바로 앞(도보 1분). 은빛 백사장에 부서지는 흰 파도 포말과 조개껍질을 주우며 낭만을 즐겨보세요.</p>
+                <div class="sub-motif-maps">
+                  <a href="https://map.naver.com/p/search/해운대해수욕장" target="_blank" rel="noopener noreferrer" class="sub-map-pill naver">네이버 지도</a>
+                  <a href="https://map.kakao.com/link/search/해운대해수욕장" target="_blank" rel="noopener noreferrer" class="sub-map-pill kakao">카카오맵</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ==================== JEJU MOTIF PANEL ==================== -->
+        <div id="journey-panel-jeju" class="journey-panel" role="tabpanel" aria-labelledby="journey-tab-jeju" hidden>
+          <!-- Origin Info Card -->
+          <div class="journey-origin-card jeju-origin">
+            <div class="origin-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="origin-content">
+              <span class="origin-label">DEPARTURE POINT</span>
+              <h3 class="origin-name">그랜드 조선 제주 (Grand Josun Jeju)</h3>
+              <p class="origin-address">제주특별자치도 서귀포시 중문관광로 72번길 60 &bull; 중문 청정 숲속 럭셔리 리조트</p>
+            </div>
+          </div>
+
+          <!-- Routes Grid -->
+          <div class="journey-routes-grid">
+            <!-- Route 1: 한라산 국립공원 -->
+            <article class="journey-route-card">
+              <div class="route-card-header">
+                <div class="motif-link-badge">
+                  <span class="badge-icon">✦</span>
+                  <span class="badge-text">한라산 마운틴 쿠키 모티브</span>
+                </div>
+                <h4 class="route-title">그랜드 조선 제주 &rarr; 한라산 (영실 / 성판악)</h4>
+                <p class="route-desc-summary">구름 위로 솟아오른 영험한 백록담과 사계절 웅장하게 펼쳐지는 병풍바위 능선</p>
+              </div>
+
+              <!-- Interactive Media Switcher: Google Map Route vs Cookie Art -->
+              <div class="route-media-container">
+                <div class="route-media-tabs" role="tablist" aria-label="지도 및 비주얼 선택">
+                  <button type="button" class="media-tab-btn active" data-view="map" aria-selected="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                    <span>구글 지도 길안내</span>
+                  </button>
+                  <button type="button" class="media-tab-btn" data-view="cookie" aria-selected="false">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span>모티브 쿠키 아트</span>
+                  </button>
+                </div>
+
+                <!-- Google Maps Live Embed View (Default Active) -->
+                <div class="route-map-view active">
+                  <iframe class="route-map-iframe" 
+                          src="https://maps.google.com/maps?saddr=그랜드조선제주&daddr=한라산영실탐방로&hl=ko&output=embed" 
+                          title="그랜드 조선 제주에서 한라산 영실탐방로까지 구글 지도 길안내"
+                          loading="lazy" 
+                          allowfullscreen></iframe>
+                  <div class="map-badge-overlay">
+                    <span class="live-dot"></span> LIVE GOOGLE MAPS ROUTE
+                  </div>
+                  <button type="button" class="btn-map-expand open-map-modal-btn" 
+                          data-map-title="그랜드 조선 제주 &rarr; 한라산 영실탐방로 (백록담)" 
+                          data-map-src="https://maps.google.com/maps?saddr=그랜드조선제주&daddr=한라산영실탐방로&hl=ko&output=embed"
+                          data-naver="https://map.naver.com/p/directions/14072079.6,3928397.0,그랜드조선제주/14081120.1,3940803.9,한라산영실탐방로/-/car"
+                          data-kakao="https://map.kakao.com/link/from/그랜드조선제주,33.248967,126.411642/to/한라산영실탐방로,33.342125,126.492854"
+                          data-google="https://www.google.com/maps/dir/?api=1&origin=그랜드+조선+제주&destination=한라산국립공원+영실탐방로"
+                          title="지도 크게 보기">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                    <span>지도 크게 보기</span>
+                  </button>
+                </div>
+
+                <!-- Cookie Visual View -->
+                <div class="route-cookie-view">
+                  <img src="./assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안.png" alt="한라산 마운틴 쿠키와 백록담 설경 모티브" class="route-img zoomable-img" data-caption="한라산 마운틴 쿠키 - 백록담의 설경 능선을 형상화">
+                  <div class="route-distance-chip">
+                    <span class="chip-label">거리</span>
+                    <span class="chip-val">약 23~42km</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="route-body">
+                <!-- Visual Route Flow Schematic -->
+                <div class="route-schematic">
+                  <span class="schematic-title">ROUTE FLOW &bull; 경로 요약</span>
+                  <div class="schematic-nodes">
+                    <div class="schematic-node origin">
+                      <span class="node-icon">🏨</span>
+                      <span class="node-name">그랜드 조선 제주</span>
+                    </div>
+                    <div class="schematic-arrow">
+                      <span class="arrow-info">약 23km (자가용 35~40분)</span>
+                      <span class="arrow-symbol">&rarr;</span>
+                    </div>
+                    <div class="schematic-node destination">
+                      <span class="node-icon">⛰️</span>
+                      <span class="node-name">한라산 영실탐방로</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- One-Click Map App/Web Directions Action Bar -->
+                <div class="map-action-links">
+                  <span class="map-action-label">지도 앱/웹 실시간 길찾기 바로가기:</span>
+                  <div class="map-btn-group">
+                    <a href="https://map.naver.com/p/directions/14072079.6,3928397.0,그랜드조선제주/14081120.1,3940803.9,한라산영실탐방로/-/car" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-naver-map" title="네이버 지도로 길찾기 (새 창)">
+                      <span class="map-icon naver-icon">N</span> 네이버 지도
+                    </a>
+                    <a href="https://map.kakao.com/link/from/그랜드조선제주,33.248967,126.411642/to/한라산영실탐방로,33.342125,126.492854" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-kakao-map" title="카카오맵으로 길찾기 (새 창)">
+                      <span class="map-icon kakao-icon">K</span> 카카오맵
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=그랜드+조선+제주&destination=한라산국립공원+영실탐방로" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-google-map" title="구글 지도로 길찾기 (새 창)">
+                      <span class="map-icon google-icon">G</span> 구글 지도
+                    </a>
+                  </div>
+                </div>
+
+                <h5 class="route-section-tit">교통편별 이동 방법</h5>
+                <ul class="transport-list">
+                  <li class="transport-item highlight-item">
+                    <div class="transport-header">
+                      <span class="transport-badge car">🚗 자가용 &bull; 택시 (영실코스 추천)</span>
+                      <span class="transport-time">약 35~40분 소요 (약 23km)</span>
+                    </div>
+                    <p class="transport-detail">
+                      <strong>이동 경로:</strong> 호텔 출발 &rarr; 중문관광단지 &rarr; <strong>1100도로(1139번 지방도)</strong> 진입 &rarr; 영실매표소 및 탐방지원센터 도착.<br>
+                      <strong>특징:</strong> 병풍바위와 윗세오름(해발 1,700m)까지 왕복 약 4시간 소요. 백록담 남벽을 가장 웅장하게 조망할 수 있는 투숙객 추천 1위 트레킹 코스입니다.
+                    </p>
+                  </li>
+                  <li class="transport-item">
+                    <div class="transport-header">
+                      <span class="transport-badge car">🚗 자가용 &bull; 택시 (성판악 백록담 코스)</span>
+                      <span class="transport-time">약 50분 소요 (약 42km)</span>
+                    </div>
+                    <p class="transport-detail">
+                      <strong>이동 경로:</strong> 호텔 출발 &rarr; 산록남로(1115번) &rarr; 516도로(1131번) &rarr; 성판악 탐방안내소.<br>
+                      <em>*백록담 정상 등반 시 '한라산탐방예약시스템' 사전 필수 예약이 필요합니다.</em>
+                    </p>
+                  </li>
+                  <li class="transport-item">
+                    <div class="transport-header">
+                      <span class="transport-badge bus">🚌 대중교통 (240번 직행버스)</span>
+                      <span class="transport-time">약 45~50분 소요</span>
+                    </div>
+                    <p class="transport-detail">
+                      호텔 인근 중문골프장 또는 중문사거리 정류장 &rarr; <strong>240번 간선버스(제주-영실-중문)</strong> 탑승 &rarr; <strong>영실매표소 정류장</strong> 하차 (환승 없이 직행 운행).
+                    </p>
+                  </li>
+                </ul>
+
+                <div class="route-concierge-tip">
+                  <div class="tip-badge">CONCIERGE TIP</div>
+                  <p class="tip-text">
+                    <strong>가벼운 반일 힐링 코스:</strong> 등산이 부담스러우시다면 호텔에서 1100도로를 따라 25분 드라이브 후 <strong>1100고지 습지 탐방로</strong>(나무 데크 산책로, 왕복 20분)를 거닐어 보세요. 쿠키에 묘사된 한라산의 상쾌한 공기와 고산 습지의 신비를 만끽하실 수 있습니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Route 2: 제주 청정 말 목장 -->
+            <article class="journey-route-card">
+              <div class="route-card-header">
+                <div class="motif-link-badge">
+                  <span class="badge-icon">✦</span>
+                  <span class="badge-text">제주 조랑말 쿠키 모티브</span>
+                </div>
+                <h4 class="route-title">그랜드 조선 제주 &rarr; 청정 말 목장 (성이시돌목장)</h4>
+                <p class="route-desc-summary">드넓은 초원을 자유롭게 달리는 제주 조랑말과 이국적인 테쉬폰 건축물의 평화로운 풍경</p>
+              </div>
+
+              <!-- Interactive Media Switcher: Google Map Route vs Cookie Art -->
+              <div class="route-media-container">
+                <div class="route-media-tabs" role="tablist" aria-label="지도 및 비주얼 선택">
+                  <button type="button" class="media-tab-btn active" data-view="map" aria-selected="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+                    <span>구글 지도 길안내</span>
+                  </button>
+                  <button type="button" class="media-tab-btn" data-view="cookie" aria-selected="false">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    <span>모티브 쿠키 아트</span>
+                  </button>
+                </div>
+
+                <!-- Google Maps Live Embed View (Default Active) -->
+                <div class="route-map-view active">
+                  <iframe class="route-map-iframe" 
+                          src="https://maps.google.com/maps?saddr=그랜드조선제주&daddr=성이시돌목장&hl=ko&output=embed" 
+                          title="그랜드 조선 제주에서 성이시돌목장까지 구글 지도 길안내"
+                          loading="lazy" 
+                          allowfullscreen></iframe>
+                  <div class="map-badge-overlay">
+                    <span class="live-dot"></span> LIVE GOOGLE MAPS ROUTE
+                  </div>
+                  <button type="button" class="btn-map-expand open-map-modal-btn" 
+                          data-map-title="그랜드 조선 제주 &rarr; 성이시돌목장 (제주 조랑말)" 
+                          data-map-src="https://maps.google.com/maps?saddr=그랜드조선제주&daddr=성이시돌목장&hl=ko&output=embed"
+                          data-naver="https://map.naver.com/p/directions/14072079.6,3928397.0,그랜드조선제주/14061849.7,3941894.9,성이시돌목장/-/car"
+                          data-kakao="https://map.kakao.com/link/from/그랜드조선제주,33.248967,126.411642/to/성이시돌목장,33.350312,126.319745"
+                          data-google="https://www.google.com/maps/dir/?api=1&origin=그랜드+조선+제주&destination=성이시돌목장"
+                          title="지도 크게 보기">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+                    <span>지도 크게 보기</span>
+                  </button>
+                </div>
+
+                <!-- Cookie Visual View -->
+                <div class="route-cookie-view">
+                  <img src="./assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 3.png" alt="제주 조랑말 쿠키와 성이시돌목장 초원" class="route-img zoomable-img" data-caption="제주 조랑말 쿠키 - 초원을 질주하는 자유로운 조랑말을 형상화">
+                  <div class="route-distance-chip">
+                    <span class="chip-label">거리</span>
+                    <span class="chip-val">약 20km</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="route-body">
+                <!-- Visual Route Flow Schematic -->
+                <div class="route-schematic">
+                  <span class="schematic-title">ROUTE FLOW &bull; 경로 요약</span>
+                  <div class="schematic-nodes">
+                    <div class="schematic-node origin">
+                      <span class="node-icon">🏨</span>
+                      <span class="node-name">그랜드 조선 제주</span>
+                    </div>
+                    <div class="schematic-arrow">
+                      <span class="arrow-info">약 20km (자가용 25~30분)</span>
+                      <span class="arrow-symbol">&rarr;</span>
+                    </div>
+                    <div class="schematic-node destination">
+                      <span class="node-icon">🐎</span>
+                      <span class="node-name">성이시돌목장</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- One-Click Map App/Web Directions Action Bar -->
+                <div class="map-action-links">
+                  <span class="map-action-label">지도 앱/웹 실시간 길찾기 바로가기:</span>
+                  <div class="map-btn-group">
+                    <a href="https://map.naver.com/p/directions/14072079.6,3928397.0,그랜드조선제주/14061849.7,3941894.9,성이시돌목장/-/car" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-naver-map" title="네이버 지도로 길찾기 (새 창)">
+                      <span class="map-icon naver-icon">N</span> 네이버 지도
+                    </a>
+                    <a href="https://map.kakao.com/link/from/그랜드조선제주,33.248967,126.411642/to/성이시돌목장,33.350312,126.319745" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-kakao-map" title="카카오맵으로 길찾기 (새 창)">
+                      <span class="map-icon kakao-icon">K</span> 카카오맵
+                    </a>
+                    <a href="https://www.google.com/maps/dir/?api=1&origin=그랜드+조선+제주&destination=성이시돌목장" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-google-map" title="구글 지도로 길찾기 (새 창)">
+                      <span class="map-icon google-icon">G</span> 구글 지도
+                    </a>
+                  </div>
+                </div>
+
+                <h5 class="route-section-tit">교통편별 이동 방법</h5>
+                <ul class="transport-list">
+                  <li class="transport-item highlight-item">
+                    <div class="transport-header">
+                      <span class="transport-badge car">🚗 자가용 &bull; 택시</span>
+                      <span class="transport-time">약 25~30분 소요</span>
+                    </div>
+                    <p class="transport-detail">
+                      <strong>이동 경로:</strong> 호텔 출발 &rarr; 색달로 &rarr; <strong>평화로(1135번 지방도)</strong> 진입 &rarr; 산록서로 방면 우회전 &rarr; 성이시돌목장 도착.<br>
+                      <strong>주차 안내:</strong> 성이시돌목장 방문객 전용 넓은 무료 주차장 이용 가능.
+                    </p>
+                  </li>
+                  <li class="transport-item">
+                    <div class="transport-header">
+                      <span class="transport-badge bus">🚌 대중교통</span>
+                      <span class="transport-time">약 50~55분 소요</span>
+                    </div>
+                    <p class="transport-detail">
+                      중문환승정류장 &rarr; <strong>간선 282번</strong> 탑승 &rarr; 창천리 정류장 환승 &rarr; <strong>지선 752-1번</strong> 버스 탑승 &rarr; <strong>성이시돌목장 정류장</strong> 하차 (또는 창천리에서 택시 환승 시 15분).
+                    </p>
+                  </li>
+                </ul>
+
+                <div class="route-concierge-tip">
+                  <div class="tip-badge">CONCIERGE TIP</div>
+                  <p class="tip-text">
+                    <strong>초원 위 감성 힐링:</strong> 너른 목초지 울타리 너머로 한가로이 풀을 뜯는 천연기념물 제주마(조랑이)들을 가까이서 만나보세요. 국가등록문화유산인 '테쉬폰(Ctesiphon)' 주택 앞 기념사진과 목장 유기농 우유 카페 '우유부단'의 수제 아이스크림은 놓치지 말아야 할 백미입니다.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Jeju Sub-Motifs Mini Guide -->
+          <div class="journey-sub-motifs">
+            <h5 class="sub-motifs-title">제주 컬렉션 추가 모티브 산책 가이드</h5>
+            <div class="sub-motifs-grid">
+              <div class="sub-motif-card">
+                <span class="motif-tag">CITRUS • 감귤 &amp; 한라봉</span>
+                <strong class="motif-place">서귀포 감귤박물관 &amp; 중문 과수원</strong>
+                <p class="motif-guide-text">호텔에서 차로 약 20~25분. 감귤의 역사와 함께 탐스러운 주황빛 과실을 수확해보는 향긋한 과수원 체험입니다.</p>
+                <div class="sub-motif-maps">
+                  <a href="https://map.naver.com/p/search/서귀포감귤박물관" target="_blank" rel="noopener noreferrer" class="sub-map-pill naver">네이버 지도</a>
+                  <a href="https://map.kakao.com/link/search/서귀포감귤박물관" target="_blank" rel="noopener noreferrer" class="sub-map-pill kakao">카카오맵</a>
+                </div>
+              </div>
+              <div class="sub-motif-card">
+                <span class="motif-tag">TROPICAL • 제주 야자수</span>
+                <strong class="motif-place">호텔 정원 &amp; 여미지식물원</strong>
+                <p class="motif-guide-text">호텔 야외 가든 및 도보 5분 거리의 여미지식물원. 하늘 높이 솟은 이국적인 야자수 정원을 산책할 수 있습니다.</p>
+                <div class="sub-motif-maps">
+                  <a href="https://map.naver.com/p/search/여미지식물원" target="_blank" rel="noopener noreferrer" class="sub-map-pill naver">네이버 지도</a>
+                  <a href="https://map.kakao.com/link/search/여미지식물원" target="_blank" rel="noopener noreferrer" class="sub-map-pill kakao">카카오맵</a>
+                </div>
+              </div>
+              <div class="sub-motif-card">
+                <span class="motif-tag">GUARDIAN STONE • 돌하르방</span>
+                <strong class="motif-place">천제연폭포 &amp; 제주돌문화공원</strong>
+                <p class="motif-guide-text">호텔 인근 천제연폭포(도보 10분) 또는 조천읍 돌문화공원(차로 40분). 제주를 지켜온 따뜻한 현무암 미소를 마주하세요.</p>
+                <div class="sub-motif-maps">
+                  <a href="https://map.naver.com/p/search/천제연폭포" target="_blank" rel="noopener noreferrer" class="sub-map-pill naver">네이버 지도</a>
+                  <a href="https://map.kakao.com/link/search/천제연폭포" target="_blank" rel="noopener noreferrer" class="sub-map-pill kakao">카카오맵</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== 8. FOOTER ==================== -->
+  <footer id="site-footer" class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-heritage">
+        <span class="heritage-label">BRAND PARTNERSHIP</span>
+        <ul class="heritage-list" aria-label="조선호텔앤리조트 패밀리 브랜드">
+          <li>GRAND JOSUN BUSAN</li>
+          <li>GRAND JOSUN JEJU</li>
+          <li>JOSUN PALACE</li>
+          <li>SHINSEGAE FOOD</li>
+        </ul>
+      </div>
+
+      <!-- Essential Academic Prototype Disclaimer -->
+      <div class="footer-disclaimer-box">
+        <h4 class="disclaimer-title">UNIVERSITY INDUSTRIAL CONVERGENCE PROJECT NOTICE</h4>
+        <p class="disclaimer-text">
+          본 웹페이지는 대학 산업 융합 프로젝트(산학협력 연구)의 일환으로 기획·제작된 <strong>서비스 프로토타입 웹사이트</strong>입니다.<br>
+          소개된 '조선 에끌라(JOSUN ÉCLAT)' 웰컴기프트 구성 및 디자인은 기획 및 제안 목적의 결과물이며, 
+          <strong>조선호텔앤리조트(그랜드 조선 부산·제주) 및 신세계푸드에서 실제로 공식 판매·제공하는 상품이 아닙니다.</strong>
+        </p>
+      </div>
+
+      <div class="footer-main-info">
+        <div class="footer-brand">
+          <strong class="footer-logo">JOSUN ÉCLAT</strong>
+          <p class="footer-sub">The Shining Welcome Gift for Grand Josun Guests</p>
+          <p class="footer-address">
+            그랜드 조선 부산: 부산광역시 해운대구 해운대해변로 292<br>
+            그랜드 조선 제주: 제주특별자치도 서귀포시 중문관광로 72번길 60
+          </p>
+        </div>
+
+        <div class="footer-links-group">
+          <div class="footer-col">
+            <span class="col-tit">NAVIGATION</span>
+            <ul>
+              <li><a href="#hero">처음으로</a></li>
+              <li><a href="#story">브랜드 스토리</a></li>
+              <li id="footer-nav-collections"><a href="#collections">컬렉션 소개</a></li>
+              <li id="footer-nav-kids"><a href="#kids">키즈 어드벤처</a></li>
+              <li><a href="#experience">페어링 가이드</a></li>
+              <li><a href="#motif-journey">모티브 탐방 안내</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <span class="col-tit">PROTOTYPE ASSETS</span>
+            <ul>
+              <li><button type="button" class="footer-btn-link open-brochure-modal" data-brochure="current" id="footer-brochure-busan">부산 브로슈어 시안</button></li>
+              <li><button type="button" class="footer-btn-link open-brochure-modal" data-brochure="current" id="footer-brochure-jeju">제주 브로슈어 시안</button></li>
+              <li><button type="button" class="footer-btn-link open-brochure-modal" data-brochure="current" id="footer-brochure-kids">키즈 브로슈어 시안</button></li>
+              <li><a href="./DESIGN_GUIDE.md" target="_blank" rel="noopener">디자인 가이드 문서</a></li>
+              <li><a href="./PRD.md" target="_blank" rel="noopener">서비스 PRD 문서</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">&copy; 2026 JOSUN ÉCLAT Academic Prototype Project. All rights reserved.</p>
+        <button type="button" id="btn-back-to-top" class="btn-back-to-top" aria-label="맨 위로 스크롤">
+          <span>TOP</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== 9. MODALS & UTILITIES ==================== -->
+
+  <!-- High-Res Image Lightbox Modal -->
+  <div id="image-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true" aria-label="고화질 이미지 보기">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="이미지 닫기">&times;</button>
+      <div class="modal-body">
+        <img src="" alt="" id="modal-img" class="modal-img">
+        <p id="modal-caption" class="modal-caption"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Brochure Prototype Viewer Modal -->
+  <div id="brochure-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true" aria-label="브로슈어 시안 뷰어">
+    <div class="modal-dialog brochure-dialog">
+      <div class="brochure-modal-header">
+        <h3 id="brochure-modal-title" class="brochure-modal-title">오프라인 브로슈어 프로토타입 시안</h3>
+        <button type="button" class="modal-close-btn" id="brochure-modal-close" aria-label="브로슈어 뷰어 닫기">&times;</button>
+      </div>
+      <div class="brochure-modal-body">
+        <img src="" alt="브로슈어 프로토타입 고해상도 시안" id="brochure-modal-img" class="brochure-modal-img">
+        <p id="brochure-modal-desc" class="brochure-modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map Directions Fullscreen Viewer Modal -->
+  <div id="map-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true" aria-label="지도 크게 보기">
+    <div class="modal-dialog map-modal-dialog">
+      <div class="map-modal-header">
+        <div class="map-modal-title-group">
+          <span class="map-modal-badge">MAP DIRECTIONS</span>
+          <h3 id="map-modal-title" class="map-modal-title">상세 길안내 지도</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="map-modal-close" aria-label="지도 창 닫기">&times;</button>
+      </div>
+      <div class="map-modal-body">
+        <iframe id="map-modal-iframe" class="map-modal-iframe" src="" title="상세 길안내 구글 지도" allowfullscreen></iframe>
+      </div>
+      <div class="map-modal-footer">
+        <span class="modal-nav-label">실시간 길찾기 바로가기 (지도 앱/웹 연동):</span>
+        <div class="modal-nav-links">
+          <a href="#" id="modal-naver-btn" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-naver-map">
+            <span class="map-icon naver-icon">N</span> 네이버 지도
+          </a>
+          <a href="#" id="modal-kakao-btn" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-kakao-map">
+            <span class="map-icon kakao-icon">K</span> 카카오맵
+          </a>
+          <a href="#" id="modal-google-btn" target="_blank" rel="noopener noreferrer" class="btn-map-nav btn-google-map">
+            <span class="map-icon google-icon">G</span> 구글 지도
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true">
+    <span id="toast-message">링크가 클립보드에 복사되었습니다.</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="./script.js"></script>
+</body>
+</html>
+
