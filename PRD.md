@@ -86,7 +86,7 @@ GitHub Pages 모바일 반응형 웹 접속 (1.5초 이내 로딩, 헤리티지 
 JOSUN ÉCLAT Web Prototype (Root: index.html)
 │
 ├── 0. Header / Navigation Bar (Sticky, Translucent -> Solid)
-│    ├── Brand Logo ("JOSUN ÉCLAT GRAND JOSUN")
+│    ├── Brand Logo (Calligraphic 'L' Monogram Emblem + "JOSUN ÉCLAT GRAND JOSUN")
 │    ├── Navigation Links (Story / Collections / Kids / Experience / Journey)
 │    └── Mobile Hamburger Menu & Drawer
 │
@@ -106,7 +106,7 @@ JOSUN ÉCLAT Web Prototype (Root: index.html)
 │
 ├── 4. Kids Cookie Adventure Section (#kids)
 │    ├── Kids Concept Intro (창의적 놀이와 가족 참여)
-│    ├── Kit Components (기본 실루엣 쿠키 6종, 데코 아이싱 펜, 토핑 3종)
+│    ├── Kit Components (고래 실루엣 쿠키 6개, 데코 아이싱 펜 3색, 웰컴 카드)
 │    └── 3-Step Mission Adventure (데코레이션 -> 기념 촬영 -> 추억 공유)
 │
 ├── 5. Hotel Tasting & Pairing Section (#experience)
@@ -127,15 +127,13 @@ JOSUN ÉCLAT Web Prototype (Root: index.html)
 ## 5. 페이지별·섹션별 상세 콘텐츠 구성
 
 ### 5.1 [섹션 1] Hero Section: The Shining Welcome (환대의 서막)
-- **배경 비주얼**: 은은한 대리석 텍스처 위 웰컴 테이블과 기프트 박스, 자연광이 드리우는 객실 무드 (고해상도 대표 이미지).
-- **영문 메인 카피 (`.titDep1`)**:
+- **배경 비주얼**: 가독성 극대화를 위해 어둡게 명도 조정된 웰컴 비주얼 캔버스 (다크 오버레이 및 밝기 튜닝 적용).
+- **메인 카피**:
   ```
-  The Shining Welcome,
-  Crafted for Your Journey
+  JOSUN ÉCLAT
   ```
-- **한글 서브 카피 (`.pageGuide`)**:
-  `"그랜드 조선과 신세계푸드가 전하는 특별한 웰컴기프트, 조선 에끌라"`
-- **인터랙션**: 마우스 스크롤 유도 인디케이터(버티컬 라인 펄스 애니메이션).
+  *(영문 메인 카피, 한글 서브 카피 및 상단 'GRAND JOSUN × SHINSEGAE FOOD' 배지 삭제 후 브랜드 메인 타이틀 단독 표출)*
+- **액션 및 인터랙션**: '컬렉션 탐색하기' 단독 CTA 버튼 배치 ('브로슈어 시안 보기' 버튼 및 '마우스 스크롤 유도 인디케이터' 삭제).
 
 ---
 
@@ -161,28 +159,28 @@ JOSUN ÉCLAT Web Prototype (Root: index.html)
 - **시그니처 포인트 컬러**: 나이트 오션 네이비 & 샴페인 골드
 - **패키지 외관**: 해운대 달빛 바다와 마린시티 스카이라인이 금박으로 새겨진 딥 네이비 슬리브 박스 & 네이비 새틴 리본.
 - **제품 구성**:
-  * **일반 객실 구성 (3종)** (대표 이미지: `./assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 일반 객실_웰컴쿠키.png`):
-    1. **광안대교 (Gwangan Bridge)**: 부산의 대표 랜드마크를 형상화한 버터 쇼트브레드 & 다크 초콜릿.
-    2. **배 (Cruise Ship)**: 해운대 앞바다를 유영하는 크루즈선을 정교하게 조각한 쿠키.
-    3. **등대 (Lighthouse)**: 안전한 항해와 여행의 길잡이를 상징하는 트윈 등대 쿠키.
-  * **스위트 객실 추가 구성 (+3종, 총 6종)** (대표 이미지: `./assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 스위트 객실_웰컴쿠키.png`):
-    4. **갈매기 (Seagull)**: 오션 위를 날아오르는 자유로운 해운대 갈매기.
-    5. **조개껍질 (Seashell with Pearl)**: 화이트 펄 초콜릿이 얹힌 우아한 바다 조개.
-    6. **파도 (Wave)**: 역동적인 해운대 파도의 포말을 형상화한 마블 초콜릿 쿠키.
+  * **일반 객실 구성 (3종)** (대표 이미지: `./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_일반객실.png`):
+    1. **광안대교 쿠키 (Gwangan Bridge Cookie)**: 부산의 대표 랜드마크를 형상화한 버터 쇼트브레드 & 다크 초콜릿.
+    2. **크루즈선 쿠키 (Cruise Ship Cookie)**: 해운대 앞바다를 유영하는 크루즈선을 정교하게 조각한 쿠키.
+    3. **해운대 등대 쿠키 (Lighthouse Cookie)**: 안전한 항해와 여행의 길잡이를 상징하는 트윈 등대 쿠키.
+  * **스위트 객실 추가 구성 (+3종, 총 6종)** (대표 이미지: `./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_스위트객실.png`):
+    4. **해운대 갈매기 초콜릿 (Seagull Chocolate)**: 오션 위를 날아오르는 자유로운 해운대 갈매기 실루엣의 화이트 & 밀크 초콜릿.
+    5. **진주 조개 초콜릿 (Seashell Chocolate)**: 화이트 펄이 얹힌 우아한 바다 조개 화이트 초콜릿.
+    6. **해운대 파도 초콜릿 (Wave Chocolate)**: 역동적인 해운대 파도의 포말을 형상화한 투톤 마블 초콜릿.
 
 #### 2) 제주 컬렉션 (JOSUN ÉCLAT with JEJU)
 - **지역 테마 키워드**: *Lush Nature, Hallasan Mist, Sunny Citrus*
 - **시그니처 포인트 컬러**: 딥 헤리티지 포레스트 그린 (`#2c4942`) & 올리브 골드 (`#989442`)
 - **패키지 외관**: 한라산 능선과 야자수 실루엣이 금박으로 장식된 에메랄드 그린 슬리브 박스 & 그린 리본.
 - **제품 구성**:
-  * **일반 객실 구성 (3종)** (대표 이미지: `./assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 일반 객실_웰컴쿠키.png`):
-    1. **귤 (Jeju Tangerine)**: 제주의 따사로운 햇살을 머금은 감귤 형상 쿠키.
-    2. **말 (Jeju Horse)**: 푸른 초원을 힘차게 달리는 제주 조랑말 초콜릿 쿠키.
-    3. **야자수 (Palm Tree)**: 남국의 이국적인 휴양 무드를 전하는 야자수 실루엣 쿠키.
-  * **스위트 객실 추가 구성 (+3종, 총 6종)** (대표 이미지: `./assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 스위트 객실_웰컴쿠키.png`):
-    4. **한라봉 (Hallabong / Citrus Slice)**: 상큼한 시트러스 단면과 싱그러운 잎사귀 디테일.
-    5. **돌하르방 (Dolhareubang)**: 여행자를 따뜻한 미소로 반겨주는 수호석 돌하르방 쿠키.
-    6. **섬 / 한라산 (Hallasan Island)**: 눈 덮인 백록담 능선을 마블 초콜릿으로 표현한 마운틴 쿠키.
+  * **일반 객실 구성 (3종)** (대표 이미지: `./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_일반객실.png`):
+    1. **제주 귤 조각 쿠키 (Jeju Citrus Slice Cookie)**: 제주의 따사로운 햇살을 머금은 감귤 형상 버터 쿠키.
+    2. **제주 조랑말 쿠키 (Jeju Horse Cookie)**: 푸른 초원을 힘차게 달리는 제주 조랑말 쿠키.
+    3. **제주 야자수 쿠키 (Palm Tree Cookie)**: 남국의 이국적인 휴양 무드를 전하는 야자수 실루엣 쿠키.
+  * **스위트 객실 추가 구성 (+3종, 총 6종)** (대표 이미지: `./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_스위트객실.png`):
+    4. **한라봉 초콜릿 (Hallabong Chocolate)**: 상큼한 시트러스 과육 단면과 싱그러운 잎사귀 디테일의 프리미엄 초콜릿.
+    5. **제주 돌하르방 초콜릿 (Dolhareubang Chocolate)**: 여행자를 따뜻한 미소로 반겨주는 수호석 현무암 텍스처 초콜릿.
+    6. **한라산 백록담 초콜릿 (Hallasan Peak Chocolate)**: 눈 덮인 백록담 능선을 마블 초콜릿으로 표현한 마운틴 초콜릿.
 
 ---
 
@@ -191,12 +189,11 @@ JOSUN ÉCLAT Web Prototype (Root: index.html)
 - **콘셉트 배경**:
   일방적인 디저트 제공을 넘어, 어린이와 부모가 함께 테이블에 둘러앉아 소통하고 추억을 완성하는 **참여형 DIY 쿠키 데코 키트**.
 - **제품 구성 디테일 (제공된 시안 이미지 기준)**:
-  * **동일한 기본 실루엣 쿠키 (6개)**: 어린이가 자유롭게 그림을 그릴 수 있는 캔버스 형태의 고래/구름 실루엣 플레인 버터 쿠키 6종.
-  * **데코 아이싱 펜 (7컬러)**: 초코, 화이트, 핑크, 스카이블루, 옐로우, 파스텔그린 등 안전하고 짜기 쉬운 튜브형 아이싱.
-  * **스페셜 토핑 키트 (3종 용기)**: 크리스털 화이트 펄, 알록달록 무지개 스프링클, 별 모양 옐로우 슈가 토핑.
+  * **동일한 기본 실루엣 쿠키 (6개)**: 어린이가 자유롭게 그림을 그릴 수 있는 고래 실루엣 플레인 버터 쿠키 6개.
+  * **데코 아이싱 펜 (3색)**: 핑크, 스카이블루, 초코 브라운 등 안전하고 짜기 쉬운 튜브형 아이싱 펜 3색.
   * **웰컴 카드**: *"Welcome to Grand Josun. May your journey be special."*
 - **3-Step 키즈 미션 어드벤처 (Kids Mission Guide)**:
-  * **Step 1. 상상력 가득 데코레이션!**: 아이싱 펜과 별빛 토핑으로 나만의 특별한 여행 쿠키를 완성해요.
+  * **Step 1. 상상력 가득 데코레이션!**: 3색 아이싱 펜으로 고래 쿠키 위에 나만의 특별한 여행 이야기를 완성해요.
   * **Step 2. 찰칵! 자랑스러운 기념사진**: 완성된 알록달록 쿠키를 카메라로 찍어 가족 앨범과 SNS에 남겨요.
   * **Step 3. 우리 가족 여행 추억 나누기**: 달콤한 쿠키를 맛보며 오늘 여행에서 가장 즐거웠던 순간을 이야기해요.
 
@@ -205,8 +202,8 @@ JOSUN ÉCLAT Web Prototype (Root: index.html)
 ### 5.5 [섹션 5] Boutique Tasting Guide (호텔 테이스팅 페어링 가이드)
 - **개편 사항**: 기존 'In-Room Welcome Ritual' 및 'Wine Pairing' 항목을 삭제하고, 조선호텔 하우스 브랜드 **비벤떼(VIVENTE)**와의 2대 시그니처 페어링 가이드로 전면 개편.
 - **Boutique Tasting Guide (비벤떼 미식 페어링 제안)**:
-  * **Tea Pairing (비벤떼 시그니처 티백)**: 조선호텔 100년 헤리티지 생분해 사셰백(PLA) 프리미엄 티. 베르가못과 꽃잎 향이 버터 쇼트브레드 및 시트러스 사블레와 환상적인 조화를 이룸 (`./assets/cookie-kit/vivente-tea.png` 사진 첨부).
-  * **Coffee Pairing (비벤떼 캡슐커피)**: 전 객실 비치 하우스 블렌드 캡슐커피. 풍부한 황금빛 크레마와 다크 카카오·바닐라 바디감이 다크 초콜릿 글레이징 쿠키의 깊은 풍미를 완성 (`./assets/cookie-kit/vivente-coffee.png` 사진 첨부).
+  * **Tea Pairing (비벤떼 시그니처 티백)**: 조선호텔 100년 헤리티지 생분해 사셰백(PLA) 프리미엄 티. 베르가못과 꽃잎 향이 버터 쇼트브레드 및 시트러스 사블레와 환상적인 조화를 이룸 (`vivente-tea_busan.png` / `vivente-tea_jeju.png` 지역 맞춤 사진 첨부).
+  * **Coffee Pairing (비벤떼 캡슐커피)**: 전 객실 비치 하우스 블렌드 캡슐커피. 풍부한 황금빛 크레마와 다크 카카오·바닐라 바디감이 다크 초콜릿의 깊은 풍미를 완성 (`vivente-coffee_busan.png` / `vivente-coffee_jeju.png` 지역 맞춤 사진 첨부).
   * **In-Room Welcome Ritual 및 Wine Pairing 삭제 완료**.
 
 ---
@@ -312,11 +309,10 @@ JOSUN ÉCLAT Web Prototype (Root: index.html)
 }
 ```
 
-### 8.2 타이포그래피 스택 및 위계 규칙
-- **영문 세리프 (대제목/헤드라인)**: `Playfair Display`, `Noto Serif Display`, serif
-- **한글 명조 (스토리텔링/서술문)**: `Noto Serif KR`, `NanumMyeongjo`, serif
-- **영문 산세리프 (GNB/서브헤딩/숫자)**: `Montserrat`, `Gotham`, sans-serif
-- **한글 산세리프 (본문/UI/가이드)**: `Noto Sans KR`, `Spoqa Han Sans Neo`, sans-serif
+### 8.2 타이포그래피 스택 및 위계 규칙 (한글 고딕 유지 & 영문 롤백 적용)
+- **영문 세리프 (Hero 대제목/메인 헤드라인/로고)**: `Playfair Display`, `Georgia`, `Noto Serif Display`, serif
+- **영문 산세리프 (GNB/서브헤딩/배지/버튼/숫자)**: `Montserrat`, `Gotham`, sans-serif
+- **한글 타이포그래피 (스토리텔링/본문/UI/가이드 일체 고딕)**: `Pretendard`, `Noto Sans KR`, `Spoqa Han Sans Neo`, sans-serif (높은 시인성과 모던한 가독성 유지)
 
 ```css
 /* Typography Scale */
@@ -366,7 +362,7 @@ p.body-story    { font-family: var(--font-serif-kr); font-size: 17px; line-heigh
 | **제주 제품 시안** | `assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 2.png` | - 제주 컬렉션 메인 대표 이미지 (일반 3종 + 스위트 3종 틴박스 세트) |
 | **제주 제품 시안** | `assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 3.png` | - 제주 개별 트레이 샷 (귤, 말, 야자수, 한라봉, 돌하르방, 한라산) |
 | **제주 제품 시안** | `assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안.png` | - 제주 6종 초콜릿 쿠키 플레이팅 상세 컷 |
-| **키즈 제품 시안** | `assets/cookie-kit/키즈객실 웰컴기프트_시안.png` | - 키즈 DIY 쿠키 키트 전체 구성품 컷 (쿠키 6개, 튜브 펜, 토핑, 카드) |
+| **키즈 제품 시안** | `assets/cookie-kit/키즈객실 웰컴기프트_시안.png` | - 키즈 DIY 쿠키 키트 전체 구성품 컷 (고래 쿠키 6개, 3색 튜브 펜, 웰컴 카드) |
 
 > **에셋 관리 원칙**: 모든 이미지 파일은 원본 비율을 손상하지 않으며, 파일명에 한글 및 특수문자가 포함된 경우 웹 호환성(URL 인코딩 깨짐 방지)을 고려하여 `src` 참조 시 정확한 경로를 유지합니다.
 

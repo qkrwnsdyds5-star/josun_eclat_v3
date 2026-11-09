@@ -16,11 +16,11 @@
   <meta property="og:image" content="./assets/logo/조선 에끌라 로고.png">
   <meta name="theme-color" content="#173f35">
 
-  <!-- Google Fonts: Playfair Display, Montserrat, Noto Serif KR, Noto Sans KR -->
+  <!-- Google Fonts: Playfair Display, Pinyon Script, Montserrat, Noto Serif KR, Noto Sans KR -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="./style.css">
@@ -35,7 +35,7 @@
     <div class="header-inner">
       <!-- Brand Wordmark Logo -->
       <a href="#hero" class="brand-logo" aria-label="조선 에끌라 홈으로 이동">
-        <span class="logo-emblem">É</span>
+        <span class="logo-emblem" aria-hidden="true">L</span>
         <span class="logo-text">
           <strong class="logo-title">JOSUN ÉCLAT</strong>
           <span class="logo-sub">GRAND JOSUN</span>
@@ -133,41 +133,19 @@
     <!-- ==================== 2. HERO SECTION ==================== -->
     <section id="hero" class="hero-section" aria-label="조선 에끌라 환영 섹션">
       <div class="hero-bg-wrapper">
-        <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 일반 객실_웰컴쿠키.png" alt="조선 에끌라 웰컴기프트 시그니처 패키지와 프리미엄 쿠키"
+        <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_일반객실.png" alt="조선 에끌라 웰컴기프트 시그니처 패키지와 프리미엄 쿠키"
           class="hero-bg-img" id="hero-bg-img" fetchpriority="high">
         <div class="hero-overlay"></div>
       </div>
 
       <div class="hero-content">
-        <div class="hero-brand-badge animate-fade-in">
-          <span class="hotel-name" id="hero-hotel-name">GRAND JOSUN</span>
-          <span class="sep">×</span>
-          <span class="bakery-name">SHINSEGAE FOOD</span>
-        </div>
         <h1 class="hero-title animate-fade-in-up">
-          <span class="title-serif">The Shining Welcome,</span>
-          <span class="title-sub">Crafted for Your Journey</span>
+          <span class="title-main">JOSUN ÉCLAT</span>
         </h1>
-        <p class="hero-lead animate-fade-in-up delay-1" id="hero-lead">
-          조선 에끌라, 그 특별한 여정의 시작
-        </p>
-        <p class="hero-desc animate-fade-in-up delay-2" id="hero-desc">
-          그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">
-          부산 해운대와 제주의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.
-        </p>
-        <div class="hero-actions animate-fade-in-up delay-3">
+        <div class="hero-actions animate-fade-in-up delay-1">
           <a href="#collections" class="btn-luxury btn-luxury-primary" id="hero-btn-explore">컬렉션 탐색하기</a>
-          <button type="button" class="btn-luxury btn-luxury-ghost open-brochure-modal" data-brochure="current"
-            id="hero-btn-brochure">브로슈어 시안 보기</button>
         </div>
       </div>
-
-      <a href="#story" class="scroll-down-indicator" aria-label="브랜드 스토리 섹션으로 스크롤">
-        <span class="indicator-text">SCROLL DOWN</span>
-        <span class="indicator-mouse" aria-hidden="true">
-          <span class="indicator-wheel"></span>
-        </span>
-      </a>
     </section>
 
     <!-- ==================== 3. BRAND STORY SECTION ==================== -->
@@ -338,7 +316,6 @@
               <span class="verified-sep">&bull;</span>
               <span class="verified-room" id="verified-room">STANDARD ROOM (3종)</span>
             </div>
-            <span class="verified-sub" id="verified-sub">브로슈어 QR 인증 객실 맞춤형 안내</span>
           </div>
         </div>
 
@@ -347,7 +324,7 @@
           <!-- Region Overview Banner -->
           <div class="region-overview-card busan-theme">
             <div class="overview-visual">
-              <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 일반 객실_웰컴쿠키.png" alt="그랜드 조선 부산 일반 객실 웰컴기프트 세트"
+              <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_일반객실.png" alt="그랜드 조선 부산 일반 객실 웰컴기프트 세트"
                 class="overview-img zoomable-img" id="busan-overview-img" data-caption="그랜드 조선 부산 일반 객실 웰컴기프트 세트 (3종)">
             </div>
             <div class="overview-info">
@@ -359,7 +336,6 @@
                 낭만적인 티타임을 선사합니다.
               </p>
               <div class="tier-info-box">
-                <span class="tier-indicator" id="busan-tier-indicator">객실 등급: <strong>일반 객실 (Standard)</strong></span>
                 <p class="tier-notice" id="busan-tier-notice">부산의 랜드마크와 바다 감성을 담은 3종의 시그니처 웰컴 쿠키가 제공됩니다.</p>
               </div>
               <div class="overview-actions">
@@ -430,17 +406,17 @@
             <!-- 4. 갈매기 (스위트 전용) -->
             <article class="cookie-card suite-item hidden">
               <div class="card-visual">
-                <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_갈매기쿠키.png" alt="해운대 갈매기 쿠키"
-                  class="cookie-img zoomable-img" data-caption="해운대 갈매기 쿠키 - 자유로운 비상과 오션의 활력">
+                <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_갈매기초콜릿.png" alt="해운대 갈매기 초콜릿"
+                  class="cookie-img zoomable-img" data-caption="해운대 갈매기 초콜릿 - 자유로운 비상과 오션의 활력">
                 <span class="item-badge suite">SUITE ONLY</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">FREEDOM</span>
-                <h4 class="cookie-name">해운대 갈매기 쿠키</h4>
-                <p class="cookie-desc">수평선 위를 활기차게 날아오르는 해운대 갈매기를 날렵한 라인과 화이트 초콜릿 페더링으로 완성했습니다.</p>
+                <h4 class="cookie-name">해운대 갈매기 초콜릿</h4>
+                <p class="cookie-desc">수평선 위를 활기차게 날아오르는 해운대 갈매기를 유려한 라인과 화이트 &amp; 밀크 초콜릿 페더링으로 빚어낸 프리미엄 초콜릿입니다.</p>
                 <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
                 <div class="cookie-meta">
-                  <span>스위트 객실 특화</span> &bull; <span>밀크 초콜릿</span>
+                  <span>스위트 객실 특화</span> &bull; <span>벨기에 밀크 초콜릿</span>
                 </div>
               </div>
             </article>
@@ -448,17 +424,17 @@
             <!-- 5. 조개껍질 (스위트 전용) -->
             <article class="cookie-card suite-item hidden">
               <div class="card-visual">
-                <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_조개쿠키.png" alt="진주를 품은 조개껍질 쿠키"
-                  class="cookie-img zoomable-img" data-caption="조개껍질 쿠키 - 화이트 펄 초콜릿이 얹힌 우아한 조개">
+                <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_조개초콜릿.png" alt="진주 조개 초콜릿"
+                  class="cookie-img zoomable-img" data-caption="진주 조개 초콜릿 - 화이트 펄이 얹힌 우아한 조개 초콜릿">
                 <span class="item-badge suite">SUITE ONLY</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">OCEAN TREASURE</span>
-                <h4 class="cookie-name">진주 조개 쿠키</h4>
-                <p class="cookie-desc">해변의 보석인 가리비 조개 실루엣 위에 식용 화이트 펄 초콜릿을 세팅하여 럭셔리한 시각적 감동을 극대화했습니다.</p>
+                <h4 class="cookie-name">진주 조개 초콜릿</h4>
+                <p class="cookie-desc">해변의 보석인 가리비 조개 실루엣 위에 식용 화이트 펄을 세팅하여 우아한 바다의 반짝임을 담아낸 화이트 초콜릿입니다.</p>
                 <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
                 <div class="cookie-meta">
-                  <span>화이트 펄 크리스피</span> &bull; <span>고메 아몬드</span>
+                  <span>화이트 펄 크리스피</span> &bull; <span>프리미엄 화이트 카카오</span>
                 </div>
               </div>
             </article>
@@ -466,17 +442,17 @@
             <!-- 6. 파도 (스위트 전용) -->
             <article class="cookie-card suite-item hidden">
               <div class="card-visual">
-                <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_파도쿠키.png" alt="해운대 파도 포말 쿠키"
-                  class="cookie-img zoomable-img" data-caption="파도 쿠키 - 역동적인 파도 물결과 흰 포말을 형상화">
+                <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_파도초콜릿.png" alt="해운대 파도 초콜릿"
+                  class="cookie-img zoomable-img" data-caption="해운대 파도 초콜릿 - 역동적인 파도 물결과 흰 포말을 형상화">
                 <span class="item-badge suite">SUITE ONLY</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">DYNAMIC WAVE</span>
-                <h4 class="cookie-name">해운대 파도 쿠키</h4>
-                <p class="cookie-desc">백사장으로 밀려드는 부드러운 해운대의 파도 포말을 화이트와 다크 초콜릿의 투톤 마블링으로 역동적으로 연출했습니다.</p>
+                <h4 class="cookie-name">해운대 파도 초콜릿</h4>
+                <p class="cookie-desc">백사장으로 밀려드는 부드러운 해운대의 파도 포말을 화이트와 다크 초콜릿의 투톤 마블링으로 역동적으로 연출한 시그니처 초콜릿입니다.</p>
                 <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
                 <div class="cookie-meta">
-                  <span>스위트 전용 페어링</span> &bull; <span>바다 소금 카라멜</span>
+                  <span>스위트 전용 페어링</span> &bull; <span>마블 다크 &amp; 화이트</span>
                 </div>
               </div>
             </article>
@@ -488,7 +464,7 @@
           <!-- Region Overview Banner -->
           <div class="region-overview-card jeju-theme">
             <div class="overview-visual">
-              <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 일반 객실_웰컴쿠키.png" alt="그랜드 조선 제주 일반 객실 웰컴기프트 세트"
+              <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_일반객실.png" alt="그랜드 조선 제주 일반 객실 웰컴기프트 세트"
                 class="overview-img zoomable-img" id="jeju-overview-img" data-caption="그랜드 조선 제주 일반 객실 웰컴기프트 세트 (3종)">
             </div>
             <div class="overview-info">
@@ -496,11 +472,10 @@
               <h3 class="overview-title">JOSUN ÉCLAT with JEJU</h3>
               <p class="overview-desc">
                 사계절 푸른 제주의 중문 숲과 따사로운 햇살, 화산섬의 신비를 모티프로 빚어냈습니다.
-                그랜드 조선 헤리티지 딥 그린(`--color-heritage-green`) 슬리브에 한라산과 야자수가 금박으로 수놓여,
+                그랜드 조선 헤리티지 딥 그린 슬리브에 한라산과 야자수가 금박으로 수놓여,
                 제주의 이국적인 휴양 무드를 오롯이 전달합니다.
               </p>
               <div class="tier-info-box">
-                <span class="tier-indicator" id="jeju-tier-indicator">객실 등급: <strong>일반 객실 (Standard)</strong></span>
                 <p class="tier-notice" id="jeju-tier-notice">제주 천혜의 자연과 상징을 담은 3종의 시그니처 웰컴 쿠키가 제공됩니다.</p>
               </div>
               <div class="overview-actions">
@@ -514,20 +489,20 @@
 
           <!-- Product Cookie Grid -->
           <div class="cookie-cards-grid">
-            <!-- 1. 귤 (일반 필수) -->
+            <!-- 1. 귤 조각 쿠키 (일반 필수) -->
             <article class="cookie-card standard-item">
               <div class="card-visual">
-                <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_귤쿠키.png" alt="제주 감귤 쿠키"
-                  class="cookie-img zoomable-img" data-caption="제주 감귤 쿠키 - 남국의 햇살을 머금은 감귤 형상">
+                <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_귤조각쿠키.png" alt="제주 귤 조각 쿠키"
+                  class="cookie-img zoomable-img" data-caption="제주 귤 조각 쿠키 - 남국의 햇살을 머금은 상큼한 귤 조각 형상">
                 <span class="item-badge standard">STANDARD</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">CITRUS SWEET</span>
-                <h4 class="cookie-name">제주 감귤 쿠키</h4>
-                <p class="cookie-desc">풍부한 일조량을 받고 자란 제주 감귤의 동그란 실루엣과 앙증맞은 잎사귀를 버터 쿠키 위에 생동감 있게 표현했습니다.</p>
+                <h4 class="cookie-name">제주 귤 조각 쿠키</h4>
+                <p class="cookie-desc">풍부한 제주 햇살을 머금은 싱그러운 귤 조각의 형태와 상큼한 풍미를 바삭한 버터 쿠키 위에 생동감 있게 표현했습니다.</p>
                 <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
                 <div class="cookie-meta">
-                  <span>제주 유기농 감귤 제스트</span> &bull; <span>발효 버터</span>
+                  <span>제주 감귤 제스트</span> &bull; <span>발효 고메 버터</span>
                 </div>
               </div>
             </article>
@@ -542,7 +517,7 @@
               <div class="card-body">
                 <span class="cookie-motif">SPIRIT OF NATURE</span>
                 <h4 class="cookie-name">제주 조랑말 쿠키</h4>
-                <p class="cookie-desc">푸른 오름과 초원을 자유롭게 달리는 제주 조랑말의 역동적인 근육과 갈기 디테일을 담은 프리미엄 초콜릿 쿠키입니다.</p>
+                <p class="cookie-desc">푸른 오름과 초원을 자유롭게 달리는 제주 조랑말의 역동적인 근육과 갈기 디테일을 담은 프리미엄 쿠키입니다.</p>
                 <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
                 <div class="cookie-meta">
                   <span>카카오닙스 크런치</span> &bull; <span>다크 가나슈</span>
@@ -568,35 +543,35 @@
               </div>
             </article>
 
-            <!-- 4. 한라봉 / 감귤 슬라이스 (스위트 전용) -->
+            <!-- 4. 한라봉 초콜릿 (스위트 전용) -->
             <article class="cookie-card suite-item hidden">
               <div class="card-visual">
-                <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_한라봉쿠키.png" alt="한라봉 시트러스 슬라이스 쿠키"
-                  class="cookie-img zoomable-img" data-caption="한라봉 슬라이스 쿠키 - 상큼한 시트러스 과육 단면">
+                <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_한라봉초콜릿.png" alt="한라봉 초콜릿"
+                  class="cookie-img zoomable-img" data-caption="한라봉 초콜릿 - 상큼한 시트러스 과육 단면과 잎사귀 디테일">
                 <span class="item-badge suite">SUITE ONLY</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">FRESH CITRUS</span>
-                <h4 class="cookie-name">한라봉 슬라이스 쿠키</h4>
-                <p class="cookie-desc">한라봉의 볼록한 꼭지와 과육의 부챗살 단면을 섬세한 화이트 초콜릿 라인으로 조각하여 상큼한 산미를 연출했습니다.</p>
+                <h4 class="cookie-name">한라봉 초콜릿</h4>
+                <p class="cookie-desc">제주 대표 특산물 한라봉의 상큼한 과육 단면과 싱그러운 잎사귀 디테일을 섬세하게 빚어낸 프리미엄 시트러스 초콜릿입니다.</p>
                 <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
                 <div class="cookie-meta">
-                  <span>스위트 객실 한정</span> &bull; <span>천연 오렌지 오일</span>
+                  <span>스위트 객실 한정</span> &bull; <span>천연 한라봉 오일</span>
                 </div>
               </div>
             </article>
 
-            <!-- 5. 돌하르방 (스위트 전용) -->
+            <!-- 5. 제주 돌하르방 초콜릿 (스위트 전용) -->
             <article class="cookie-card suite-item hidden">
               <div class="card-visual">
-                <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_돌하르방쿠키.png" alt="제주 돌하르방 쿠키"
-                  class="cookie-img zoomable-img" data-caption="돌하르방 쿠키 - 인자한 미소로 여행자를 맞이하는 수호석">
+                <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_돌하르방초콜릿.png" alt="제주 돌하르방 초콜릿"
+                  class="cookie-img zoomable-img" data-caption="제주 돌하르방 초콜릿 - 인자한 미소로 여행자를 맞이하는 수호석">
                 <span class="item-badge suite">SUITE ONLY</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">GUARDIAN STONE</span>
-                <h4 class="cookie-name">돌하르방 쿠키</h4>
-                <p class="cookie-desc">인자한 미소로 여행객의 평안을 기원하는 돌하르방의 현무암 질감을 마블 카카오 텍스처로 품격 있게 표현했습니다.</p>
+                <h4 class="cookie-name">제주 돌하르방 초콜릿</h4>
+                <p class="cookie-desc">인자한 미소로 여행객의 평안을 기원하는 돌하르방의 현무암 질감을 마블 카카오 텍스처로 품격 있게 표현한 다크 초콜릿입니다.</p>
                 <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
                 <div class="cookie-meta">
                   <span>스위트 헤리티지</span> &bull; <span>로스팅 헤이즐넛</span>
@@ -604,17 +579,17 @@
               </div>
             </article>
 
-            <!-- 6. 한라산 / 섬 (스위트 전용) -->
+            <!-- 6. 한라산 백록담 초콜릿 (스위트 전용) -->
             <article class="cookie-card suite-item hidden">
               <div class="card-visual">
-                <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_한라산쿠키.png" alt="제주 한라산 백록담 쿠키"
-                  class="cookie-img zoomable-img" data-caption="한라산 마운틴 쿠키 - 백록담의 설경 능선을 표현한 쿠키">
+                <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_한라산초콜릿.png" alt="한라산 백록담 초콜릿"
+                  class="cookie-img zoomable-img" data-caption="한라산 백록담 초콜릿 - 백록담의 설경 능선을 표현한 초콜릿">
                 <span class="item-badge suite">SUITE ONLY</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">MAJESTIC PEAK</span>
-                <h4 class="cookie-name">한라산 마운틴 쿠키</h4>
-                <p class="cookie-desc">구름 위로 솟아오른 한라산 백록담의 눈 덮인 능선과 봉우리를 화이트 글레이즈와 다크 초콜릿의 조화로 빚어냈습니다.</p>
+                <h4 class="cookie-name">한라산 백록담 초콜릿</h4>
+                <p class="cookie-desc">구름 위로 솟아오른 한라산 백록담의 눈 덮인 능선과 봉우리를 화이트 글레이즈와 깊은 다크 카카오의 조화로 빚어낸 마운틴 초콜릿입니다.</p>
                 <button type="button" class="btn-cookie-more" aria-expanded="false">더보기</button>
                 <div class="cookie-meta">
                   <span>스위트 전용 컬렉션</span> &bull; <span>스위스 다크 카카오</span>
@@ -645,7 +620,6 @@
               <span class="verified-sep">&bull;</span>
               <span class="verified-room" id="kids-verified-room">KIDS ROOM (DIY 키트)</span>
             </div>
-            <span class="verified-sub" id="kids-verified-sub">브로슈어 QR 인증 객실 맞춤형 안내</span>
           </div>
         </div>
 
@@ -653,7 +627,7 @@
           <div class="kids-showcase-visual">
             <img src="./assets/cookie-kit/josun_eclat_kids/키즈객실 웰컴기프트_시안.png" alt="그랜드 조선 키즈 웰컴기프트 DIY 쿠키 꾸미기 세트 시안"
               class="kids-kit-img zoomable-img" id="kids-kit-img"
-              data-caption="그랜드 조선 키즈 DIY 웰컴기프트 세트 (동일 기본 형태 쿠키 6개, 7색 아이싱 펜, 토핑 3종)">
+              data-caption="그랜드 조선 키즈 DIY 웰컴기프트 세트 (동일 고래 형태 쿠키 6개, 3색 데코 아이싱 펜, 웰컴 카드)">
           </div>
 
           <div class="kids-showcase-content">
@@ -681,15 +655,11 @@
               <ul class="components-list" id="kids-components-list">
                 <li>
                   <span class="bullet">&bull;</span>
-                  <strong>캔버스 플레인 버터 쿠키 6개:</strong> 그림을 그리기 좋은 부드러운 고래·구름 실루엣의 순수 버터 쿠키 (동일 기본 형태)
+                  <strong>캔버스 플레인 버터 쿠키 6개:</strong> 그림을 그리기 좋은 부드러운 고래 실루엣의 순수 버터 쿠키 (동일 기본 형태 6개)
                 </li>
                 <li>
                   <span class="bullet">&bull;</span>
-                  <strong>데코 아이싱 펜 7컬러:</strong> 어린이의 작은 손으로도 쉽게 짤 수 있는 튜브형 초코·화이트·파스텔 아이싱
-                </li>
-                <li>
-                  <span class="bullet">&bull;</span>
-                  <strong>스페셜 토핑 3종:</strong> 크리스털 펄, 무지개 슈가 스프링클, 노란 별빛 토핑
+                  <strong>데코 아이싱 펜 3색:</strong> 어린이의 작은 손으로도 쉽게 짤 수 있는 튜브형 핑크·스카이블루·초코 브라운 아이싱 펜
                 </li>
                 <li>
                   <span class="bullet">&bull;</span>
@@ -729,7 +699,7 @@
                 </svg>
               </div>
               <h4 class="step-title">상상력 가득 데코레이션!</h4>
-              <p class="step-desc" id="kids-step-1-desc">알록달록 7가지 컬러의 아이싱 펜과 별빛 토핑으로 나만의 특별한 여행 동물과 바다 친구들을 꾸며보세요.</p>
+              <p class="step-desc" id="kids-step-1-desc">핑크, 스카이블루, 초코 3색 아이싱 펜으로 고래 쿠키 위에 나만의 특별한 바다 이야기를 꾸며보세요.</p>
             </div>
 
             <div class="mission-step-card">
@@ -777,8 +747,8 @@
           <!-- Card 01: Vivente Tea Pairing -->
           <article class="pairing-showcase-card">
             <div class="pairing-image-box">
-              <img src="./assets/cookie-kit/vivente-tea.png" alt="조선호텔 시그니처 비벤떼 피라미드 사셰 티백과 버터 쿠키 페어링"
-                class="pairing-card-img zoomable-img"
+              <img src="./assets/cookie-kit/vivente-tea_busan.png" alt="조선호텔 시그니처 비벤떼 피라미드 사셰 티백과 버터 쿠키 페어링"
+                class="pairing-card-img zoomable-img" id="pairing-tea-img"
                 data-caption="조선호텔 시그니처 비벤떼(VIVENTE) 프리미엄 사셰 티백 &amp; 조선 에끌라 페어링 세팅">
               <span class="pairing-badge">TEA PAIRING</span>
             </div>
@@ -798,7 +768,7 @@
               <div class="pairing-meta">
                 <div class="pairing-meta-item">
                   <span class="meta-label">추천 페어링</span>
-                  <span class="meta-value">버터 쇼트브레드 &bull; 동백꽃 라즈베리 사블레 &bull; 감귤 사블레</span>
+                  <span class="meta-value">버터 쇼트브레드 &bull; 광안대교 쿠키 &bull; 귤 조각 쿠키</span>
                 </div>
                 <div class="pairing-meta-item">
                   <span class="meta-label">브루잉 노트</span>
@@ -811,9 +781,9 @@
           <!-- Card 02: Vivente Coffee Pairing -->
           <article class="pairing-showcase-card">
             <div class="pairing-image-box">
-              <img src="./assets/cookie-kit/vivente-coffee.png" alt="조선호텔 비벤떼 캡슐커피 에스프레소와 다크 초콜릿 쿠키 페어링"
-                class="pairing-card-img zoomable-img"
-                data-caption="조선호텔 시그니처 비벤떼(VIVENTE) 네스프레소 호환 캡슐커피 &amp; 다크 초콜릿 쿠키 페어링">
+              <img src="./assets/cookie-kit/vivente-coffee_busan.png" alt="조선호텔 비벤떼 캡슐커피 에스프레소와 프리미엄 초콜릿 페어링"
+                class="pairing-card-img zoomable-img" id="pairing-coffee-img"
+                data-caption="조선호텔 시그니처 비벤떼(VIVENTE) 네스프레소 호환 캡슐커피 &amp; 프리미엄 초콜릿 페어링">
               <span class="pairing-badge">COFFEE PAIRING</span>
             </div>
             <div class="pairing-content-box">
@@ -832,7 +802,7 @@
               <div class="pairing-meta">
                 <div class="pairing-meta-item">
                   <span class="meta-label">추천 페어링</span>
-                  <span class="meta-value">파도 다크 초콜릿 쿠키 &bull; 진주 조개 샌드 &bull; 한라산 백록담 쿠키</span>
+                  <span class="meta-value">해운대 파도 초콜릿 &bull; 진주 조개 초콜릿 &bull; 한라산 백록담 초콜릿</span>
                 </div>
                 <div class="pairing-meta-item">
                   <span class="meta-label">추출 가이드</span>
@@ -851,8 +821,7 @@
         <!-- Top Area -->
         <div class="top-area text-center">
           <span class="sub-lead-en" id="journey-sub-lead">REGIONAL MOTIF JOURNEY &bull; BUSAN</span>
-          <h2 class="title-depth-1" id="journey-title">Journey to the Motifs <span class="highlight">(부산 명소 탐방)</span>
-          </h2>
+          <h2 class="title-depth-1" id="journey-title">Journey to the Motifs</h2>
           <p class="page-guide" id="journey-page-guide">그랜드 조선 부산 웰컴기프트에 깃든 영감의 장소, 호텔에서 출발하여 광안대교와 청사포 등 부산의 대표 명소로 향하는
             여정을 안내합니다.</p>
         </div>
@@ -1311,8 +1280,8 @@
 
                 <!-- Cookie Visual View -->
                 <div class="route-cookie-view">
-                  <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_한라산쿠키.png" alt="한라산 마운틴 쿠키와 백록담 설경 모티브"
-                    class="route-img zoomable-img" data-caption="한라산 마운틴 쿠키 - 백록담의 설경 능선을 형상화">
+                  <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_한라산초콜릿.png" alt="한라산 백록담 초콜릿과 백록담 설경 모티브"
+                    class="route-img zoomable-img" data-caption="한라산 백록담 초콜릿 - 백록담의 설경 능선을 형상화">
                   <div class="route-distance-chip">
                     <span class="chip-label">거리</span>
                     <span class="chip-val">약 23~42km</span>

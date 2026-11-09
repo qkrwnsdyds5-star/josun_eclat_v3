@@ -39,11 +39,13 @@
   --color-border-default: #cccccc;      /* 카드 보더 */
   --color-border-dark: #000000;         /* 럭셔리 아웃라인 버튼 및 배지 */
 
-  /* Typography Stacks */
+  /* Typography Stacks (한글 폰트는 고딕 유지, 영문 폰트는 세리프/산세리프 이전 버전 롤백) */
   --font-serif-en: 'Playfair Display', Georgia, 'Noto Serif Display', serif;
-  --font-serif-kr: 'Noto Serif KR', 'NanumMyeongjo', serif;
+  --font-serif-kr: 'Pretendard', 'Noto Sans KR', 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif-ko: 'Pretendard', 'Noto Sans KR', 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-sans-en: 'Montserrat', 'Gotham', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-sans-kr: 'Noto Sans KR', 'Spoqa Han Sans Neo', sans-serif;
+  --font-sans-kr: 'Pretendard', 'Noto Sans KR', 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Pretendard', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Layout Spacing */
   --container-max-width: 1400px;
@@ -318,12 +320,13 @@ ul, ol {
   color: var(--color-text-primary);
 }
 .logo-emblem {
-  font-family: var(--font-serif-en);
-  font-size: 1.75rem;
-  font-style: italic;
-  font-weight: 700;
-  line-height: 1;
+  font-family: 'Pinyon Script', 'Edwardian Script ITC', 'Snell Roundhand', cursive, var(--font-serif-en);
+  font-size: 2.15rem;
+  font-weight: 400;
+  line-height: 0.9;
   color: var(--color-primary-gold);
+  display: inline-block;
+  transform: translateY(-1px);
 }
 .logo-text {
   display: flex;
@@ -654,6 +657,7 @@ ul, ol {
   object-fit: cover;
   object-position: center;
   transform: scale(1.05);
+  filter: brightness(0.5);
   animation: heroZoom 14s infinite alternate ease-in-out;
 }
 @keyframes heroZoom {
@@ -669,9 +673,9 @@ ul, ol {
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(15, 30, 24, 0.72) 0%,
-    rgba(15, 30, 24, 0.6) 50%,
-    rgba(15, 30, 24, 0.88) 100%
+    rgba(6, 14, 10, 0.8) 0%,
+    rgba(6, 14, 10, 0.68) 50%,
+    rgba(6, 14, 10, 0.9) 100%
   );
   z-index: -1;
 }
@@ -694,7 +698,7 @@ ul, ol {
   font-weight: 600;
   padding: 6px 18px;
   border: 1px solid rgba(255, 255, 255, 0.4);
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
   margin-bottom: 28px;
   text-transform: uppercase;
@@ -704,40 +708,17 @@ ul, ol {
 }
 
 .hero-title {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
-.hero-title .title-serif {
+.hero-title .title-main {
   display: block;
   font-family: var(--font-serif-en);
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
-.hero-title .title-sub {
-  display: block;
-  font-family: var(--font-serif-en);
-  font-style: italic;
-  font-size: clamp(1.75rem, 4.2vw, 3rem);
-  font-weight: 400;
-  color: var(--color-gold-tint);
-  margin-top: 4px;
-}
-
-.hero-lead {
-  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  color: var(--color-gold-tint);
-  margin-bottom: 14px;
-}
-
-.hero-desc {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 680px;
-  margin: 0 auto 36px;
+  font-size: clamp(2.75rem, 7.5vw, 5.25rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.1;
+  color: #ffffff;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.85);
 }
 
 .hero-actions {
@@ -838,7 +819,6 @@ ul, ol {
 }
 .story-callout blockquote {
   font-family: var(--font-serif-kr);
-  font-style: italic;
   font-size: 1.0625rem;
   line-height: 1.7;
   color: var(--color-heritage-green-dark);
@@ -2940,32 +2920,24 @@ section[id] {
     margin-bottom: 14px;
   }
   .hero-title {
-    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
-    margin-bottom: 12px;
-    line-height: 1.25;
+    margin-bottom: 24px;
+    line-height: 1.15;
   }
-  .hero-lead {
-    font-size: 1.0625rem;
-    margin-bottom: 8px;
-  }
-  .hero-desc {
-    font-size: 0.84rem;
-    line-height: 1.5;
-    margin-bottom: 18px;
-    max-width: 95%;
+  .hero-title .title-main {
+    font-size: clamp(2.25rem, 9.5vw, 3.25rem);
+    letter-spacing: 0.08em;
   }
   .hero-actions {
     flex-direction: column;
     width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
     gap: 10px;
   }
   .hero-actions .btn-luxury {
     width: 100%;
     padding: 12px 16px;
     font-size: 0.875rem;
-  }
-  .scroll-down-indicator {
-    bottom: 10px;
   }
 
   /* B. Brand Story Mobile Optimization */

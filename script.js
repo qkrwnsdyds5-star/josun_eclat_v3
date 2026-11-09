@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'STANDARD ROOM',
         countText: '3종',
         hero: {
-          img: './assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 일반 객실_웰컴쿠키.png',
+          img: './assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_일반객실.png',
           lead: '조선 에끌라, 부산 해운대에서의 특별한 환대',
           desc: '그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">부산 해운대 바다와 스카이라인의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.'
         },
-        overviewImg: './assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 일반 객실_웰컴쿠키.png',
+        overviewImg: './assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_일반객실.png',
         guide: '그랜드 조선 부산 일반 객실 고객님을 위해 정성스럽게 준비된 3종 웰컴기프트 라인업',
         notice: '광안대교, 크루즈선, 해운대 등대 등 부산의 대표 랜드마크를 모티프로 정성스럽게 구워낸 3종 시그니처 웰컴 쿠키 세트입니다.',
         overviewCaption: '그랜드 조선 부산 일반 객실 웰컴기프트 세트 (3종)',
@@ -53,13 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'SUITE ROOM',
         countText: '6종 전체',
         hero: {
-          img: './assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 스위트 객실_웰컴쿠키.png',
+          img: './assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_스위트객실.png',
           lead: '조선 에끌라, 부산 해운대에서의 특별한 환대',
           desc: '그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">부산 해운대 바다와 스카이라인의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.'
         },
-        overviewImg: './assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 스위트 객실_웰컴쿠키.png',
+        overviewImg: './assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_스위트객실.png',
         guide: '그랜드 조선 부산 스위트 객실 고객님을 위해 특별히 준비된 6종 프리미엄 웰컴기프트 라인업',
-        notice: '스위트 객실 고객님만을 위해 광안대교, 크루즈선, 등대에 더해 해운대 갈매기, 진주 조개, 파도 쿠키가 모두 포함된 6종 프리미엄 풀 세트로 구성됩니다.',
+        notice: '스위트 객실 고객님만을 위해 광안대교, 크루즈선, 등대 쿠키에 더해 해운대 갈매기, 진주 조개, 파도 프리미엄 초콜릿 3종이 포함된 6종 프리미엄 풀 세트로 구성됩니다.',
         overviewCaption: '그랜드 조선 부산 스위트 객실 웰컴기프트 세트 (6종 전체)',
         experience: {
           img: './assets/Brochure/GRAND JOSUN BUSAN Brochure_prototype.png',
@@ -90,11 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
         guide: '부산 해운대 바다를 바라보며 아이와 함께 완성하는 세상에서 단 하나뿐인 가족 여행의 달콤한 추억',
         intro: {
           title: '동일한 기본 형태의 쿠키 6개,<br><span class="highlight">해운대 바다를 향한 여섯 가지 상상력</span>',
-          desc: '그랜드 조선 부산 키즈 객실에 투숙하는 가족을 위해 기획된 참여형 웰컴기프트입니다. 동일한 캔버스 쿠키 6개 위에 알록달록 7색 아이싱과 별빛 토핑으로 푸른 해운대 바다 친구들과 여행의 이야기를 마음껏 그려보세요.',
+          desc: '그랜드 조선 부산 키즈 객실에 투숙하는 가족을 위해 기획된 참여형 웰컴기프트입니다. 동일한 캔버스 고래 쿠키 6개 위에 핑크, 스카이블루, 초코 3색 아이싱 펜으로 푸른 해운대 바다 친구들과 여행의 이야기를 마음껏 그려보세요.',
           welcomeCard: '“Welcome to Grand Josun Busan. May your ocean adventure be special.”'
         },
         mission: {
-          step1: '알록달록 7가지 컬러의 아이싱 펜과 별빛 토핑으로 해운대 바다 친구들과 나만의 특별한 여행 동물들을 꾸며보세요.',
+          step1: '핑크, 스카이블루, 초코 3색 아이싱 펜으로 고래 쿠키 위에 푸른 해운대 바다 친구들과 나만의 특별한 여행 이야기를 꾸며보세요.',
           step2: '완성된 귀여운 쿠키 작품을 부산 객실 웰컴 카드와 함께 사진으로 남겨 소중한 가족 앨범과 SNS에 기록해 보세요.',
           step3: '직접 만든 달콤한 쿠키를 가족과 함께 나누어 먹으며, 오늘 부산 해운대 여행에서 가장 즐거웠던 순간을 이야기 나누어 보세요.'
         },
@@ -125,13 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'STANDARD ROOM',
         countText: '3종',
         hero: {
-          img: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 일반 객실_웰컴쿠키.png',
+          img: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_일반객실.png',
           lead: '조선 에끌라, 제주의 푸른 자연 속 특별한 환대',
           desc: '그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">사계절 푸른 제주 중문 숲과 자연의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.'
         },
-        overviewImg: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 일반 객실_웰컴쿠키.png',
+        overviewImg: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_일반객실.png',
         guide: '그랜드 조선 제주 일반 객실 고객님을 위해 정성스럽게 준비된 3종 웰컴기프트 라인업',
-        notice: '제주 감귤, 제주 조랑말, 야자수 등 제주의 청정 자연을 모티프로 정성스럽게 구워낸 3종 시그니처 웰컴 쿠키 세트입니다.',
+        notice: '제주 귤 조각, 제주 조랑말, 야자수 등 제주의 청정 자연을 모티프로 정성스럽게 구워낸 3종 시그니처 웰컴 쿠키 세트입니다.',
         overviewCaption: '그랜드 조선 제주 일반 객실 웰컴기프트 세트 (3종)',
         experience: {
           img: './assets/Brochure/GRAND JOSUN JEJU Brochure_prototype.png',
@@ -155,13 +155,13 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'SUITE ROOM',
         countText: '6종 전체',
         hero: {
-          img: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 스위트 객실_웰컴쿠키.png',
+          img: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_스위트객실.png',
           lead: '조선 에끌라, 제주의 푸른 자연 속 특별한 환대',
           desc: '그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">사계절 푸른 제주 중문 숲과 자연의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.'
         },
-        overviewImg: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 스위트 객실_웰컴쿠키.png',
+        overviewImg: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_스위트객실.png',
         guide: '그랜드 조선 제주 스위트 객실 고객님을 위해 특별히 준비된 6종 프리미엄 웰컴기프트 라인업',
-        notice: '스위트 객실 고객님만을 위해 감귤, 조랑말, 야자수에 더해 한라봉 슬라이스, 돌하르방, 한라산 백록담 쿠키가 모두 포함된 6종 프리미엄 풀 세트로 구성됩니다.',
+        notice: '스위트 객실 고객님만을 위해 귤 조각, 조랑말, 야자수 쿠키에 더해 한라봉, 돌하르방, 한라산 백록담 프리미엄 초콜릿 3종이 포함된 6종 프리미엄 풀 세트로 구성됩니다.',
         overviewCaption: '그랜드 조선 제주 스위트 객실 웰컴기프트 세트 (6종 전체)',
         experience: {
           img: './assets/Brochure/GRAND JOSUN JEJU Brochure_prototype.png',
@@ -192,11 +192,11 @@ document.addEventListener('DOMContentLoaded', () => {
         guide: '제주 천혜의 자연 속에서 아이와 함께 완성하는 세상에서 단 하나뿐인 가족 여행의 달콤한 추억',
         intro: {
           title: '동일한 기본 형태의 쿠키 6개,<br><span class="highlight">제주 푸른 숲을 향한 여섯 가지 상상력</span>',
-          desc: '그랜드 조선 제주 키즈 객실에 투숙하는 가족을 위해 기획된 참여형 웰컴기프트입니다. 동일한 캔버스 쿠키 6개 위에 알록달록 7색 아이싱과 별빛 토핑으로 제주 숲속 동물들과 자연의 이야기를 마음껏 그려보세요.',
+          desc: '그랜드 조선 제주 키즈 객실에 투숙하는 가족을 위해 기획된 참여형 웰컴기프트입니다. 동일한 캔버스 고래 쿠키 6개 위에 핑크, 스카이블루, 초코 3색 아이싱 펜으로 제주 바다와 자연의 이야기를 마음껏 그려보세요.',
           welcomeCard: '“Welcome to Grand Josun Jeju. May your nature adventure be special.”'
         },
         mission: {
-          step1: '알록달록 7가지 컬러의 아이싱 펜과 별빛 토핑으로 제주의 조랑말과 숲속 친구들, 나만의 특별한 자연을 꾸며보세요.',
+          step1: '핑크, 스카이블루, 초코 3색 아이싱 펜으로 고래 쿠키 위에 제주의 푸른 바다와 나만의 특별한 여행 이야기를 꾸며보세요.',
           step2: '완성된 귀여운 쿠키 작품을 제주 객실 웰컴 카드와 함께 사진으로 남겨 소중한 가족 앨범과 SNS에 기록해 보세요.',
           step3: '직접 만든 달콤한 쿠키를 가족과 함께 나누어 먹으며, 오늘 제주 자연 여행에서 가장 즐거웠던 순간을 이야기 나누어 보세요.'
         },
@@ -374,8 +374,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. 히어로 섹션
     const heroHotelName = document.getElementById('hero-hotel-name');
     const heroBgImg = document.getElementById('hero-bg-img');
-    const heroLead = document.getElementById('hero-lead');
-    const heroDesc = document.getElementById('hero-desc');
     const heroBtnExplore = document.getElementById('hero-btn-explore');
 
     if (heroHotelName) heroHotelName.textContent = ECLAT_CONTENT[hotel].nameEn;
@@ -383,8 +381,6 @@ document.addEventListener('DOMContentLoaded', () => {
       heroBgImg.src = data.hero.img;
       heroBgImg.alt = `${ECLAT_CONTENT[hotel].nameKr} ${data.roomNameKr} 웰컴기프트 시그니처 패키지`;
     }
-    if (heroLead) heroLead.textContent = data.hero.lead;
-    if (heroDesc) heroDesc.innerHTML = data.hero.desc;
     if (heroBtnExplore) {
       if (isKids) {
         heroBtnExplore.setAttribute('href', '#kids');
@@ -439,7 +435,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const kidsGuide = document.getElementById('kids-guide');
       const kidsVerifiedHotel = document.getElementById('kids-verified-hotel');
       const kidsVerifiedRoom = document.getElementById('kids-verified-room');
-      const kidsVerifiedSub = document.getElementById('kids-verified-sub');
       const kidsKitImg = document.getElementById('kids-kit-img');
       const kidsShowcaseTitle = document.getElementById('kids-showcase-title');
       const kidsShowcaseDesc = document.getElementById('kids-showcase-desc');
@@ -450,11 +445,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (kidsGuide) kidsGuide.textContent = data.guide;
       if (kidsVerifiedHotel) kidsVerifiedHotel.textContent = ECLAT_CONTENT[hotel].nameEn;
       if (kidsVerifiedRoom) kidsVerifiedRoom.textContent = `${data.roomNameEn} (${data.countText})`;
-      if (kidsVerifiedSub) kidsVerifiedSub.textContent = `브로슈어 QR 인증: ${ECLAT_CONTENT[hotel].nameKr} 키즈 객실 전용`;
 
       if (kidsKitImg) {
         kidsKitImg.alt = `${ECLAT_CONTENT[hotel].nameKr} 키즈 DIY 웰컴기프트 세트 시안`;
-        kidsKitImg.setAttribute('data-caption', `${ECLAT_CONTENT[hotel].nameKr} 키즈 DIY 웰컴기프트 세트 (동일 기본 형태 쿠키 6개, 7색 아이싱 펜, 토핑 3종, ${ECLAT_CONTENT[hotel].regionKr} 웰컴 카드)`);
+        kidsKitImg.setAttribute('data-caption', `${ECLAT_CONTENT[hotel].nameKr} 키즈 DIY 웰컴기프트 세트 (동일 고래 형태 쿠키 6개, 3색 데코 아이싱 펜, ${ECLAT_CONTENT[hotel].regionKr} 웰컴 카드)`);
       }
       if (kidsShowcaseTitle) kidsShowcaseTitle.innerHTML = data.intro.title;
       if (kidsShowcaseDesc) kidsShowcaseDesc.textContent = data.intro.desc;
@@ -496,14 +490,12 @@ document.addEventListener('DOMContentLoaded', () => {
       const guide = document.getElementById('collections-guide');
       const verifiedHotel = document.getElementById('verified-hotel');
       const verifiedRoom = document.getElementById('verified-room');
-      const verifiedSub = document.getElementById('verified-sub');
 
       if (subLead) subLead.textContent = data.subLead;
       if (title) title.textContent = `${ECLAT_CONTENT[hotel].regionKr === '부산' ? 'Busan' : 'Jeju'} Gift Collection`;
       if (guide) guide.textContent = data.guide;
       if (verifiedHotel) verifiedHotel.textContent = ECLAT_CONTENT[hotel].nameEn;
       if (verifiedRoom) verifiedRoom.textContent = `${data.roomNameEn} (${data.countText})`;
-      if (verifiedSub) verifiedSub.textContent = `브로슈어 QR 인증: ${ECLAT_CONTENT[hotel].nameKr} ${data.roomNameKr} 전용`;
 
       // 지역 패널 제어
       const panelBusan = document.getElementById('panel-busan');
@@ -571,18 +563,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // 오버뷰 배너 안내 문구 및 이미지 캡션 설정
-      const busanIndicator = document.getElementById('busan-tier-indicator');
       const busanNotice = document.getElementById('busan-tier-notice');
       const busanOverviewImg = document.getElementById('busan-overview-img');
       const busanBrochureBtn = document.getElementById('busan-overview-brochure-btn');
 
-      const jejuIndicator = document.getElementById('jeju-tier-indicator');
       const jejuNotice = document.getElementById('jeju-tier-notice');
       const jejuOverviewImg = document.getElementById('jeju-overview-img');
       const jejuBrochureBtn = document.getElementById('jeju-overview-brochure-btn');
 
       if (isBusan) {
-        if (busanIndicator) busanIndicator.innerHTML = `객실 등급: <strong>${data.roomNameKr} (${isSuite ? 'Suite' : 'Standard'})</strong>`;
         if (busanNotice) busanNotice.textContent = data.notice;
         if (busanOverviewImg) {
           if (data.overviewImg) busanOverviewImg.src = data.overviewImg;
@@ -593,7 +582,6 @@ document.addEventListener('DOMContentLoaded', () => {
           busanBrochureBtn.innerHTML = `부산 ${data.roomNameKr} 브로슈어 시안 상세 보기 &rarr;`;
         }
       } else {
-        if (jejuIndicator) jejuIndicator.innerHTML = `객실 등급: <strong>${data.roomNameKr} (${isSuite ? 'Suite' : 'Standard'})</strong>`;
         if (jejuNotice) jejuNotice.textContent = data.notice;
         if (jejuOverviewImg) {
           if (data.overviewImg) jejuOverviewImg.src = data.overviewImg;
@@ -607,7 +595,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 5. 호텔 테이스팅 페어링 섹션 (Boutique Tasting Guide - Vivente Tea & Capsule Coffee)
-    // 비벤떼 티백과 캡슐커피 페어링은 전 객실 공통 하우스 브랜드로 제공됩니다.
+    const pairingTeaImg = document.getElementById('pairing-tea-img');
+    const pairingCoffeeImg = document.getElementById('pairing-coffee-img');
+    if (pairingTeaImg) {
+      pairingTeaImg.src = isBusan ? './assets/cookie-kit/vivente-tea_busan.png' : './assets/cookie-kit/vivente-tea_jeju.png';
+      pairingTeaImg.alt = `${ECLAT_CONTENT[hotel].nameKr} 비벤떼 시그니처 티백 페어링`;
+      pairingTeaImg.setAttribute('data-caption', `${ECLAT_CONTENT[hotel].nameKr} 비벤떼(VIVENTE) 시그니처 티백 페어링 세팅`);
+    }
+    if (pairingCoffeeImg) {
+      pairingCoffeeImg.src = isBusan ? './assets/cookie-kit/vivente-coffee_busan.png' : './assets/cookie-kit/vivente-coffee_jeju.png';
+      pairingCoffeeImg.alt = `${ECLAT_CONTENT[hotel].nameKr} 비벤떼 캡슐커피 페어링`;
+      pairingCoffeeImg.setAttribute('data-caption', `${ECLAT_CONTENT[hotel].nameKr} 비벤떼(VIVENTE) 캡슐커피 페어링 세팅`);
+    }
 
     // 6. 푸터 브로슈어 링크 필터링 (타 객실/지역 버튼 비표시)
     if (footerBusanBtn && footerJejuBtn && footerKidsBtn) {
@@ -654,7 +653,7 @@ document.addEventListener('DOMContentLoaded', () => {
       panelJeju.style.display = 'none';
 
       if (journeySubLead) journeySubLead.textContent = 'REGIONAL MOTIF JOURNEY • BUSAN';
-      if (journeyTitle) journeyTitle.innerHTML = 'Journey to the Motifs <span class="highlight">(부산 명소 탐방)</span>';
+      if (journeyTitle) journeyTitle.textContent = 'Journey to the Motifs';
       if (journeyPageGuide) {
         journeyPageGuide.textContent = '그랜드 조선 부산 웰컴기프트에 깃든 영감의 장소, 호텔에서 출발하여 광안대교와 청사포 등 부산의 대표 명소로 향하는 여정을 안내합니다.';
       }
@@ -665,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
       panelBusan.style.display = 'none';
 
       if (journeySubLead) journeySubLead.textContent = 'REGIONAL MOTIF JOURNEY • JEJU';
-      if (journeyTitle) journeyTitle.innerHTML = 'Journey to the Motifs <span class="highlight">(제주 명소 탐방)</span>';
+      if (journeyTitle) journeyTitle.textContent = 'Journey to the Motifs';
       if (journeyPageGuide) {
         journeyPageGuide.textContent = '그랜드 조선 제주 웰컴기프트에 깃든 영감의 장소, 호텔에서 출발하여 한라산과 성이시돌 목장 등 제주의 청정 명소로 향하는 여정을 안내합니다.';
       }
