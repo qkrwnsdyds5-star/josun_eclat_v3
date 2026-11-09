@@ -6,6 +6,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
+  // 0. 브라우저 스크롤 복원 비활성화 및 초기 로드 시 최상단 고정 (스크롤 튐 원천 차단)
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+  if (window.location.hash) {
+    history.replaceState(null, document.title, window.location.pathname + window.location.search);
+  }
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+  });
+
 
   // =========================================================================
   // 1. Central Content Store (객실별 및 지역별 체계적 콘텐츠 관리)
@@ -634,13 +648,178 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // =========================================================================
-  // 4-0. Journey to Motifs Controller (호텔별 지역 모티브 탐방 전용 안내)
-  // 부산 선택 시 부산 관광지만, 제주 선택 시 제주 관광지만 안내
+  // 4-0. Josun Hotel Motif Location Carousel & Google Maps Controller
+  // Styled & Structured exactly like https://josunhotel.com/about/location.do
+  // Public Google Maps Embed (No API Key Required) with Zoom, Pan & Route Directions
   // =========================================================================
+  function initJosunLocationCarousel(sliderId) {
+    const slider = document.getElementById(sliderId);
+    if (!slider) return null;
+
+    const track = slider.querySelector('.josun-slider-track');
+    const slides = slider.querySelectorAll('.josun-slider-slide');
+    const tabs = slider.querySelectorAll('.josun-tab-item');
+    const prevBtn = slider.querySelector('.prev-btn');
+    const nextBtn = slider.querySelector('.next-btn');
+    const counterCurrent = slider.querySelector('.josun-slide-counter .current');
+    const totalCount = slides.length;
+    let currentIndex = 0;
+
+    // Load Google Maps iframe when slide is activated to ensure smooth rendering
+    function lazyLoadGoogleMap(slideEl) {
+      if (!slideEl) return;
+      const iframe = slideEl.querySelector('iframe.route-map-iframe');
+      if (iframe && iframe.dataset.src) {
+        if (!iframe.src || iframe.src === '' || iframe.src.includes('about:blank')) {
+          iframe.src = iframe.dataset.src;
+        }
+      }
+    }
+
+    function goToSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= totalCount) index = totalCount - 1;
+      currentIndex = index;
+
+      // Update slide track transform
+      if (track) {
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+      }
+
+      // Update active states
+      slides.forEach((s, idx) => {
+        const isActive = idx === currentIndex;
+        s.classList.toggle('active', isActive);
+        if (isActive) {
+          lazyLoadGoogleMap(s);
+        }
+      });
+
+      // Update tabs
+      tabs.forEach((tab, idx) => {
+        const isActive = idx === currentIndex;
+        tab.classList.toggle('active', isActive);
+        tab.setAttribute('aria-selected', String(isActive));
+        if (isActive) {
+          tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      });
+
+      // Update counter
+      if (counterCurrent) {
+        counterCurrent.textContent = String(currentIndex + 1).padStart(2, '0');
+      }
+
+      // Update buttons
+      if (prevBtn) prevBtn.disabled = (currentIndex === 0);
+      if (nextBtn) nextBtn.disabled = (currentIndex === totalCount - 1);
+    }
+
+    // Tabs Click
+    tabs.forEach((tab, idx) => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToSlide(idx);
+      });
+    });
+
+    // Arrow Buttons
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToSlide(currentIndex - 1);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        goToSlide(currentIndex + 1);
+      });
+    }
+
+    // Touch Swipe Gesture
+    let touchStartX = 0;
+    let touchEndX = 0;
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    slider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0 && currentIndex < totalCount - 1) {
+          goToSlide(currentIndex + 1);
+        } else if (diff < 0 && currentIndex > 0) {
+          goToSlide(currentIndex - 1);
+        }
+      }
+    }, { passive: true });
+
+    // Initialize first slide
+    goToSlide(0);
+
+    return { goToSlide, getCurrentIndex: () => currentIndex };
+  }
+
+  const busanSliderCtrl = initJosunLocationCarousel('busan-motif-slider');
+  const jejuSliderCtrl = initJosunLocationCarousel('jeju-motif-slider');
+
+  // Toggle Accordion List Interaction (with '∨' Button)
+  document.querySelectorAll('.josun-location-inner .toggleList.rsvList > li').forEach(li => {
+    const listTit = li.querySelector('.listTit');
+    const btnToggle = li.querySelector('.btnToggle');
+    const toggleCont = li.querySelector('.toggleCont');
+
+    function toggleAccordion(e) {
+      e.preventDefault();
+      const isOpen = li.classList.toggle('toggleOn');
+      if (toggleCont) {
+        toggleCont.style.display = isOpen ? 'block' : 'none';
+      }
+      if (btnToggle) {
+        btnToggle.setAttribute('aria-label', isOpen ? '상세내용 접기' : '상세내용 펼치기');
+      }
+    }
+
+    if (listTit) listTit.addEventListener('click', toggleAccordion);
+    if (btnToggle) btnToggle.addEventListener('click', toggleAccordion);
+  });
+
+  // Map vs Cookie Art View Switcher (Google Maps Default)
+  document.querySelectorAll('.josun-location-inner .mapArea').forEach(mapArea => {
+    const switcherBtns = mapArea.querySelectorAll('.map-view-switcher .view-btn');
+    const mapViewBox = mapArea.querySelector('.map-view-box');
+    const cookieViewBox = mapArea.querySelector('.cookie-view-box');
+    const iframe = mapArea.querySelector('iframe.route-map-iframe');
+
+    switcherBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = btn.dataset.target;
+        switcherBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        if (target === 'map') {
+          if (mapViewBox) mapViewBox.classList.add('active');
+          if (cookieViewBox) cookieViewBox.classList.remove('active');
+          if (iframe && iframe.dataset.src && (!iframe.src || iframe.src === '' || iframe.src.includes('about:blank'))) {
+            iframe.src = iframe.dataset.src;
+          }
+        } else {
+          if (cookieViewBox) cookieViewBox.classList.add('active');
+          if (mapViewBox) mapViewBox.classList.remove('active');
+        }
+      });
+    });
+  });
+
   function updateJourneySection(region) {
     const panelBusan = document.getElementById('journey-panel-busan');
     const panelJeju = document.getElementById('journey-panel-jeju');
-    const journeySubLead = document.getElementById('journey-sub-lead');
     const journeyTitle = document.getElementById('journey-title');
     const journeyPageGuide = document.getElementById('journey-page-guide');
 
@@ -652,22 +831,22 @@ document.addEventListener('DOMContentLoaded', () => {
       panelJeju.setAttribute('hidden', '');
       panelJeju.style.display = 'none';
 
-      if (journeySubLead) journeySubLead.textContent = 'REGIONAL MOTIF JOURNEY • BUSAN';
       if (journeyTitle) journeyTitle.textContent = 'Journey to the Motifs';
       if (journeyPageGuide) {
-        journeyPageGuide.textContent = '그랜드 조선 부산 웰컴기프트에 깃든 영감의 장소, 호텔에서 출발하여 광안대교와 청사포 등 부산의 대표 명소로 향하는 여정을 안내합니다.';
+        journeyPageGuide.textContent = '그랜드 조선 부산 웰컴기프트에 깃든 영감의 장소, 호텔에서 출발하여 광안대교와 청사포 등 부산의 대표 명소로 향하는 품격 있는 여정을 안내합니다.';
       }
+      if (busanSliderCtrl) busanSliderCtrl.goToSlide(0);
     } else {
       panelJeju.removeAttribute('hidden');
       panelJeju.style.display = 'block';
       panelBusan.setAttribute('hidden', '');
       panelBusan.style.display = 'none';
 
-      if (journeySubLead) journeySubLead.textContent = 'REGIONAL MOTIF JOURNEY • JEJU';
       if (journeyTitle) journeyTitle.textContent = 'Journey to the Motifs';
       if (journeyPageGuide) {
-        journeyPageGuide.textContent = '그랜드 조선 제주 웰컴기프트에 깃든 영감의 장소, 호텔에서 출발하여 한라산과 성이시돌 목장 등 제주의 청정 명소로 향하는 여정을 안내합니다.';
+        journeyPageGuide.textContent = '그랜드 조선 제주 웰컴기프트에 깃든 영감의 장소, 호텔에서 출발하여 한라산과 성이시돌 목장 등 제주의 청정 명소로 향하는 품격 있는 여정을 안내합니다.';
       }
+      if (jejuSliderCtrl) jejuSliderCtrl.goToSlide(0);
     }
   }
 
@@ -675,32 +854,52 @@ document.addEventListener('DOMContentLoaded', () => {
     updateJourneySection(region);
   }
 
-  // E. Route Media Switcher (Google Maps Embed vs Cookie Artwork View)
-  document.querySelectorAll('.route-media-container').forEach(container => {
-    const tabBtns = container.querySelectorAll('.media-tab-btn');
-    const mapView = container.querySelector('.route-map-view');
-    const cookieView = container.querySelector('.route-cookie-view');
+  // =========================================================================
+  // Google Maps Fullscreen Modal Controller
+  // =========================================================================
+  const mapModal = document.getElementById('map-modal');
+  const mapModalTitle = document.getElementById('map-modal-title');
+  const mapModalIframe = document.getElementById('map-modal-iframe');
+  const mapModalClose = document.getElementById('map-modal-close');
+  const modalGoogleBtn = document.getElementById('modal-google-btn');
 
-    tabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const view = btn.getAttribute('data-view');
-        tabBtns.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
+  function openMapModal(title, src, googleUrl) {
+    if (!mapModal) return;
+    if (mapModalTitle) mapModalTitle.textContent = title;
+    if (mapModalIframe) mapModalIframe.src = src;
+    if (modalGoogleBtn) modalGoogleBtn.href = googleUrl;
 
-        if (view === 'map') {
-          if (mapView) mapView.classList.add('active');
-          if (cookieView) cookieView.classList.remove('active');
-        } else {
-          if (cookieView) cookieView.classList.add('active');
-          if (mapView) mapView.classList.remove('active');
-        }
-      });
+    mapModal.classList.add('open');
+    mapModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    if (mapModalClose) mapModalClose.focus();
+  }
+
+  function closeMapModal() {
+    if (!mapModal) return;
+    mapModal.classList.remove('open');
+    mapModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (mapModalIframe) mapModalIframe.src = '';
+  }
+
+  document.querySelectorAll('.open-map-modal-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const title = btn.getAttribute('data-map-title') || '상세 길안내 지도';
+      const src = btn.getAttribute('data-map-src') || '';
+      const google = btn.getAttribute('data-google') || '#';
+      openMapModal(title, src, google);
     });
   });
+
+  if (mapModalClose) mapModalClose.addEventListener('click', closeMapModal);
+  if (mapModal) {
+    mapModal.addEventListener('click', (e) => {
+      if (e.target === mapModal) {
+        closeMapModal();
+      }
+    });
+  }
 
   // 브라우저 뒤로 가기 / 앞으로 가기 (Requirement 9, 12)
   window.addEventListener('popstate', renderPage);
@@ -868,59 +1067,6 @@ document.addEventListener('DOMContentLoaded', () => {
     brochureModal.addEventListener('click', (e) => {
       if (e.target === brochureModal) {
         closeBrochureModal();
-      }
-    });
-  }
-
-  // =========================================================================
-  // 6-1. Map Fullscreen Viewer Modal
-  // =========================================================================
-  const mapModal = document.getElementById('map-modal');
-  const mapModalTitle = document.getElementById('map-modal-title');
-  const mapModalIframe = document.getElementById('map-modal-iframe');
-  const mapModalClose = document.getElementById('map-modal-close');
-  const modalNaverBtn = document.getElementById('modal-naver-btn');
-  const modalKakaoBtn = document.getElementById('modal-kakao-btn');
-  const modalGoogleBtn = document.getElementById('modal-google-btn');
-
-  function openMapModal(title, src, naverUrl, kakaoUrl, googleUrl) {
-    if (!mapModal) return;
-    if (mapModalTitle) mapModalTitle.textContent = title;
-    if (mapModalIframe) mapModalIframe.src = src;
-    if (modalNaverBtn) modalNaverBtn.href = naverUrl;
-    if (modalKakaoBtn) modalKakaoBtn.href = kakaoUrl;
-    if (modalGoogleBtn) modalGoogleBtn.href = googleUrl;
-
-    mapModal.classList.add('open');
-    mapModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    if (mapModalClose) mapModalClose.focus();
-  }
-
-  function closeMapModal() {
-    if (!mapModal) return;
-    mapModal.classList.remove('open');
-    mapModal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    if (mapModalIframe) mapModalIframe.src = '';
-  }
-
-  document.querySelectorAll('.open-map-modal-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const title = btn.getAttribute('data-map-title') || '상세 길안내 지도';
-      const src = btn.getAttribute('data-map-src') || '';
-      const naver = btn.getAttribute('data-naver') || '#';
-      const kakao = btn.getAttribute('data-kakao') || '#';
-      const google = btn.getAttribute('data-google') || '#';
-      openMapModal(title, src, naver, kakao, google);
-    });
-  });
-
-  if (mapModalClose) mapModalClose.addEventListener('click', closeMapModal);
-  if (mapModal) {
-    mapModal.addEventListener('click', (e) => {
-      if (e.target === mapModal) {
-        closeMapModal();
       }
     });
   }
