@@ -23,10 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'STANDARD ROOM',
         countText: '3종',
         hero: {
-          img: './assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안 3.png',
+          img: './assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 일반 객실_웰컴쿠키.png',
           lead: '조선 에끌라, 부산 해운대에서의 특별한 환대',
           desc: '그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">부산 해운대 바다와 스카이라인의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.'
         },
+        overviewImg: './assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 일반 객실_웰컴쿠키.png',
         guide: '그랜드 조선 부산 일반 객실 고객님을 위해 정성스럽게 준비된 3종 웰컴기프트 라인업',
         notice: '광안대교, 크루즈선, 해운대 등대 등 부산의 대표 랜드마크를 모티프로 정성스럽게 구워낸 3종 시그니처 웰컴 쿠키 세트입니다.',
         overviewCaption: '그랜드 조선 부산 일반 객실 웰컴기프트 세트 (3종)',
@@ -52,10 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'SUITE ROOM',
         countText: '6종 전체',
         hero: {
-          img: './assets/cookie-kit/그랜드 조선 부산 웰컴기프트 시안 3.png',
+          img: './assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 스위트 객실_웰컴쿠키.png',
           lead: '조선 에끌라, 부산 해운대에서의 특별한 환대',
           desc: '그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">부산 해운대 바다와 스카이라인의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.'
         },
+        overviewImg: './assets/cookie-kit/josun_eclat_busan/조선 에끌라 부산 스위트 객실_웰컴쿠키.png',
         guide: '그랜드 조선 부산 스위트 객실 고객님을 위해 특별히 준비된 6종 프리미엄 웰컴기프트 라인업',
         notice: '스위트 객실 고객님만을 위해 광안대교, 크루즈선, 등대에 더해 해운대 갈매기, 진주 조개, 파도 쿠키가 모두 포함된 6종 프리미엄 풀 세트로 구성됩니다.',
         overviewCaption: '그랜드 조선 부산 스위트 객실 웰컴기프트 세트 (6종 전체)',
@@ -81,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'KIDS ROOM',
         countText: 'DIY 키트',
         hero: {
-          img: './assets/cookie-kit/키즈객실 웰컴기프트_시안.png',
+          img: './assets/cookie-kit/josun_eclat_kids/키즈객실 웰컴기프트_시안.png',
           lead: '조선 에끌라, 부산 해운대에서 만나는 특별한 키즈 어드벤처',
           desc: '그랜드 조선 부산 키즈 객실을 찾은 어린이와 가족을 위해,<br class="hide-mobile">푸른 해운대 바다의 설렘과 함께 직접 완성하는 참여형 DIY 쿠키 키트 웰컴기프트를 선사합니다.'
         },
@@ -123,10 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'STANDARD ROOM',
         countText: '3종',
         hero: {
-          img: './assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 2.png',
+          img: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 일반 객실_웰컴쿠키.png',
           lead: '조선 에끌라, 제주의 푸른 자연 속 특별한 환대',
           desc: '그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">사계절 푸른 제주 중문 숲과 자연의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.'
         },
+        overviewImg: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 일반 객실_웰컴쿠키.png',
         guide: '그랜드 조선 제주 일반 객실 고객님을 위해 정성스럽게 준비된 3종 웰컴기프트 라인업',
         notice: '제주 감귤, 제주 조랑말, 야자수 등 제주의 청정 자연을 모티프로 정성스럽게 구워낸 3종 시그니처 웰컴 쿠키 세트입니다.',
         overviewCaption: '그랜드 조선 제주 일반 객실 웰컴기프트 세트 (3종)',
@@ -152,10 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'SUITE ROOM',
         countText: '6종 전체',
         hero: {
-          img: './assets/cookie-kit/그랜드 조선 제주 웰컴 기프트 시안 2.png',
+          img: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 스위트 객실_웰컴쿠키.png',
           lead: '조선 에끌라, 제주의 푸른 자연 속 특별한 환대',
           desc: '그랜드 조선의 5성급 호스피탈리티와 신세계푸드의 파티세리 장인정신이 결합하여,<br class="hide-mobile">사계절 푸른 제주 중문 숲과 자연의 감성을 담은 단 하나의 호텔 웰컴기프트를 선사합니다.'
         },
+        overviewImg: './assets/cookie-kit/josun_eclat_jeju/조선 에끌라 제주 스위트 객실_웰컴쿠키.png',
         guide: '그랜드 조선 제주 스위트 객실 고객님을 위해 특별히 준비된 6종 프리미엄 웰컴기프트 라인업',
         notice: '스위트 객실 고객님만을 위해 감귤, 조랑말, 야자수에 더해 한라봉 슬라이스, 돌하르방, 한라산 백록담 쿠키가 모두 포함된 6종 프리미엄 풀 세트로 구성됩니다.',
         overviewCaption: '그랜드 조선 제주 스위트 객실 웰컴기프트 세트 (6종 전체)',
@@ -181,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         roomNameEn: 'KIDS ROOM',
         countText: 'DIY 키트',
         hero: {
-          img: './assets/cookie-kit/키즈객실 웰컴기프트_시안.png',
+          img: './assets/cookie-kit/josun_eclat_kids/키즈객실 웰컴기프트_시안.png',
           lead: '조선 에끌라, 제주의 푸른 숲에서 만나는 특별한 키즈 어드벤처',
           desc: '그랜드 조선 제주 키즈 객실을 찾은 어린이와 가족을 위해,<br class="hide-mobile">신비로운 제주의 사계절 자연을 상상하며 직접 완성하는 참여형 DIY 쿠키 키트 웰컴기프트를 선사합니다.'
         },
@@ -581,7 +585,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (busanIndicator) busanIndicator.innerHTML = `객실 등급: <strong>${data.roomNameKr} (${isSuite ? 'Suite' : 'Standard'})</strong>`;
         if (busanNotice) busanNotice.textContent = data.notice;
         if (busanOverviewImg) {
-          busanOverviewImg.alt = `${ECLAT_CONTENT.busan.nameKr} ${data.roomNameKr} 웰컴기프트 패키지 시안`;
+          if (data.overviewImg) busanOverviewImg.src = data.overviewImg;
+          busanOverviewImg.alt = `${ECLAT_CONTENT.busan.nameKr} ${data.roomNameKr} 웰컴기프트 세트`;
           busanOverviewImg.setAttribute('data-caption', data.overviewCaption);
         }
         if (busanBrochureBtn) {
@@ -591,7 +596,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (jejuIndicator) jejuIndicator.innerHTML = `객실 등급: <strong>${data.roomNameKr} (${isSuite ? 'Suite' : 'Standard'})</strong>`;
         if (jejuNotice) jejuNotice.textContent = data.notice;
         if (jejuOverviewImg) {
-          jejuOverviewImg.alt = `${ECLAT_CONTENT.jeju.nameKr} ${data.roomNameKr} 웰컴기프트 패키지 시안`;
+          if (data.overviewImg) jejuOverviewImg.src = data.overviewImg;
+          jejuOverviewImg.alt = `${ECLAT_CONTENT.jeju.nameKr} ${data.roomNameKr} 웰컴기프트 세트`;
           jejuOverviewImg.setAttribute('data-caption', data.overviewCaption);
         }
         if (jejuBrochureBtn) {
