@@ -190,6 +190,25 @@ document.addEventListener('DOMContentLoaded', () => {
     return { mode: null, hotel: null, room: null, valid: false };
   }
 
+  function updateHeroBgVideo(videoPath) {
+    const video = document.getElementById('hero-bg-video');
+    if (!video) return;
+    const source = video.querySelector('source');
+    const currentSrc = source ? source.getAttribute('src') : video.getAttribute('src');
+
+    if (currentSrc !== videoPath) {
+      if (source) {
+        source.setAttribute('src', videoPath);
+      }
+      video.src = videoPath;
+      video.load();
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+    }
+  }
+
   function renderPage() {
     const { mode, valid } = getMode();
 
@@ -276,6 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // CASE A: 키즈룸 (Kids Room - Unified & De-regionalized)
     // =======================================================================
     if (mode === 'kids') {
+      updateHeroBgVideo('./assets/josun_eclat_kids_webpage_background_video.mp4');
       const data = ECLAT_CONTENT.kids;
       document.title = data.title;
       if (welcomeTag) welcomeTag.textContent = data.tag;
@@ -335,6 +355,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (kidsStep2Desc) kidsStep2Desc.textContent = data.mission.step2;
       if (kidsStep3Desc) kidsStep3Desc.textContent = data.mission.step3;
 
+      // 페어링 이미지 (키즈룸 전용 Vivente 페어링 이미지)
+      const pairingTeaImg = document.getElementById('pairing-tea-img');
+      const pairingCoffeeImg = document.getElementById('pairing-coffee-img');
+      if (pairingTeaImg) {
+        pairingTeaImg.src = './assets/cookie-kit/vivente-tea_kids.png';
+      }
+      if (pairingCoffeeImg) {
+        pairingCoffeeImg.src = './assets/cookie-kit/vivente-coffee_kids.png';
+      }
+
       // 푸터 브로슈어 버튼
       if (footerBusanBtn) footerBusanBtn.style.display = 'none';
       if (footerJejuBtn) footerJejuBtn.style.display = 'none';
@@ -352,6 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // CASE B: 부산 스위트룸 (Busan Suite)
     // =======================================================================
     if (mode === 'busan') {
+      updateHeroBgVideo('./assets/josun_eclat_webpage_background_video.mp4');
       const data = ECLAT_CONTENT.busan.suite;
       document.title = data.title;
       if (welcomeTag) welcomeTag.textContent = data.tag;
@@ -459,6 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // CASE C: 제주 스위트룸 (Jeju Suite)
     // =======================================================================
     if (mode === 'jeju') {
+      updateHeroBgVideo('./assets/josun_eclat_webpage_background_video.mp4');
       const data = ECLAT_CONTENT.jeju.suite;
       document.title = data.title;
       if (welcomeTag) welcomeTag.textContent = data.tag;
@@ -849,19 +881,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Set initial active state (default to first active or 'underthesea')
-    const initialActiveBtn = document.querySelector('.kids-theme-tab-btn.active') || tabBtns[0];
+    // Set initial active state (default to 'forest')
+    const initialActiveBtn = document.querySelector('.kids-theme-tab-btn[data-theme-target="forest"]') || tabBtns[0];
     if (initialActiveBtn) {
-      const initialTarget = initialActiveBtn.getAttribute('data-theme-target');
+      tabBtns.forEach(b => {
+        const isForest = b === initialActiveBtn;
+        b.classList.toggle('active', isForest);
+        b.setAttribute('aria-selected', String(isForest));
+      });
       themeGroups.forEach(group => {
-        const groupId = group.getAttribute('id');
-        if (groupId === `kids-theme-${initialTarget}`) {
-          group.classList.add('active');
-          group.style.display = 'block';
-        } else {
-          group.classList.remove('active');
-          group.style.display = 'none';
-        }
+        const isForest = group.getAttribute('id') === 'kids-theme-forest';
+        group.classList.toggle('active', isForest);
+        group.style.display = isForest ? 'block' : 'none';
       });
     }
   }
