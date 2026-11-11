@@ -672,12 +672,8 @@ ul, ol {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(6, 14, 10, 0.8) 0%,
-    rgba(6, 14, 10, 0.68) 50%,
-    rgba(6, 14, 10, 0.9) 100%
-  );
+  background: transparent; /* 별도 명도 조정 없는 원본 영상 투과 */
+  pointer-events: none;
   z-index: -1;
 }
 
@@ -1351,6 +1347,15 @@ section[id] {
 }
 .kids-kit-img:hover {
   transform: scale(1.03);
+}
+.kids-allergy-notice {
+  font-family: var(--font-sans-kr);
+  font-size: 0.78rem;
+  color: #888888;
+  line-height: 1.6;
+  margin-top: 14px;
+  word-break: keep-all;
+  letter-spacing: -0.01em;
 }
 
 .kids-title {
@@ -3383,3 +3388,386 @@ section[id] {
 
 
 
+
+
+/* ==========================================================================
+   Hero Background Video
+   ========================================================================== */
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: none !important; /* 별도 명도 조정 없는 원본 영상 노출 */
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* ==========================================================================
+   Section 4: Kids Kit Components Vertical 1-Column Stack (Static Info Panel, No Button Hover)
+   ========================================================================== */
+.btn-kids-toggle {
+  display: none !important; /* 불필요한 토글 버튼 삭제 */
+}
+
+.components-list.vertical-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.components-list.vertical-stack .component-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  background-color: var(--color-bg-white); /* 키트 구성품 박스 배경색과 일치 */
+  border: 1px solid var(--color-border-subtle);
+  border-left: 3px solid var(--color-primary-green);
+  border-radius: 4px;
+  padding: 14px 18px;
+  box-shadow: none !important;
+  cursor: default !important;
+  transition: none !important;
+}
+.components-list.vertical-stack .component-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  border-color: var(--color-border-subtle) !important;
+  border-left-color: var(--color-primary-green) !important;
+  background-color: var(--color-bg-white) !important;
+  cursor: default !important;
+}
+.components-list.vertical-stack .component-name {
+  font-family: var(--font-sans-kr);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary-green);
+  line-height: 1.4;
+  margin: 0;
+  display: block;
+  cursor: default !important;
+}
+.components-list.vertical-stack .component-desc {
+  font-family: var(--font-sans-kr);
+  font-size: 0.85rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+  word-break: keep-all;
+  cursor: default !important;
+}
+
+/* ==========================================================================
+   Section 6: Motif Journey & Kids Character Friends - Luxury Editorial Design
+   Concept: Luxury Editorial / Minimal Elegance / Premium Hospitality
+   Color Tokens:
+     Main Bg: #FAF8F4 | Main Text: #242824 | Muted: #74766F | Accent: #24463D | Border: #E5E1D9
+   ========================================================================== */
+
+/* Section 6 Top Area Editorial Typography */
+#motif-journey.josun-location-wrap {
+  background-color: #FAF8F4;
+}
+#motif-journey .topArea {
+  padding: 20px 0 36px;
+}
+#motif-journey .titDep1 {
+  font-family: var(--font-serif-en), "Playfair Display", Georgia, serif !important;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-weight: 500;
+  color: #242824;
+  letter-spacing: -0.01em;
+  margin-bottom: 18px;
+}
+#motif-journey .pageGuide .txt {
+  font-family: var(--font-sans-kr), "Noto Sans KR", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #242824;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  word-break: keep-all;
+}
+#motif-journey .pageGuide .txt-sub {
+  font-family: var(--font-sans-kr), "Noto Sans KR", sans-serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: #74766F;
+  line-height: 1.6;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* Kids Character Panel Container */
+.kids-character-panel {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Minimal Editorial Text Tabs (No Round Capsule, No Background, No Shadow) */
+.kids-theme-tabs-wrapper {
+  margin: 10px 0 44px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #E5E1D9;
+}
+.kids-theme-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.kids-theme-tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  padding: 12px 4px 16px;
+  border-radius: 0;
+  box-shadow: none;
+  font-family: var(--font-sans-en), "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: #74766F;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  white-space: nowrap;
+  margin-bottom: -1px;
+}
+.kids-theme-tab-btn:hover {
+  color: #24463D;
+}
+.kids-theme-tab-btn.active {
+  background: transparent;
+  color: #24463D;
+  font-weight: 600;
+  border-bottom: 2px solid #24463D;
+  box-shadow: none;
+}
+.kids-theme-tab-btn .tab-theme-name {
+  display: inline-block;
+}
+
+/* Kids Theme Content Groups */
+.kids-theme-group {
+  display: none;
+}
+.kids-theme-group.active {
+  display: block;
+  animation: fadeInEditorial 0.4s ease-out;
+}
+@keyframes fadeInEditorial {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Theme Intro Card (Editorial Magazine Frame) */
+.theme-intro-card {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 44px;
+  background: #FAF8F4;
+  border: 1px solid #E5E1D9;
+  border-radius: 0;
+  padding: 36px 40px;
+  margin-bottom: 40px;
+  box-shadow: none;
+  align-items: center;
+}
+.theme-intro-visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  background: #ffffff;
+  border: 1px solid #E5E1D9;
+  padding: 8px;
+}
+.theme-all-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+  transition: transform 0.4s ease;
+}
+.theme-all-img:hover {
+  transform: scale(1.02);
+}
+.theme-intro-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.theme-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-sans-en), "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #24463D;
+  background: transparent;
+  padding: 0 0 4px 0;
+  border-radius: 0;
+  border-bottom: 1px solid #24463D;
+  text-transform: uppercase;
+}
+.theme-title {
+  font-family: var(--font-sans-kr), "Noto Sans KR", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #242824;
+  line-height: 1.6;
+  margin: 0;
+  word-break: keep-all;
+}
+.theme-tip {
+  font-family: var(--font-sans-kr), "Noto Sans KR", sans-serif;
+  font-size: 0.88rem;
+  color: #74766F;
+  line-height: 1.7;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* Characters Grid (Editorial Gallery / Archive Grid) */
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 24px;
+  margin-bottom: 30px;
+}
+.character-card {
+  background: #ffffff;
+  border: 1px solid #E5E1D9;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s ease;
+  box-shadow: none !important;
+}
+.character-card:hover {
+  transform: none !important;
+  border-color: #24463D;
+  box-shadow: none !important;
+}
+.character-visual {
+  background: #FAF8F4;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.char-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+.character-card:hover .char-img {
+  transform: scale(1.03);
+}
+.character-info {
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #ffffff;
+  border-top: 1px solid #E5E1D9;
+}
+.char-name {
+  font-family: var(--font-sans-kr), "Noto Sans KR", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #242824;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.char-desc {
+  font-family: var(--font-sans-kr), "Noto Sans KR", sans-serif;
+  font-size: 0.8rem;
+  color: #74766F;
+  line-height: 1.55;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* Mobile Responsive Adjustments (Luxury Editorial) */
+@media (max-width: 768px) {
+  #motif-journey .titDep1 {
+    font-size: 1.85rem;
+  }
+  #motif-journey .pageGuide .txt {
+    font-size: 1rem;
+  }
+  #motif-journey .pageGuide .txt-sub {
+    font-size: 0.82rem;
+  }
+  .kids-theme-tabs-wrapper {
+    margin: 8px 0 32px;
+  }
+  .kids-theme-tabs {
+    width: 100%;
+    overflow-x: auto;
+    gap: 24px;
+    padding: 0 10px;
+    justify-content: flex-start;
+  }
+  .kids-theme-tab-btn {
+    padding: 10px 2px 14px;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+  .theme-intro-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 22px 18px;
+    margin-bottom: 28px;
+  }
+  .theme-all-img {
+    height: 180px;
+  }
+  .theme-title {
+    font-size: 1.05rem;
+    line-height: 1.5;
+  }
+  .theme-tip {
+    font-size: 0.82rem;
+  }
+  .characters-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .character-visual {
+    height: 140px;
+    padding: 12px;
+  }
+  .character-info {
+    padding: 12px 10px;
+  }
+  .char-name {
+    font-size: 0.88rem;
+  }
+  .char-desc {
+    font-size: 0.74rem;
+    line-height: 1.45;
+  }
+}
