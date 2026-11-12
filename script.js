@@ -1345,6 +1345,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // =========================================================================
   // Mobile Single-Section View Controller (App-Style Routing)
   // [요구사항: 모바일로 웹페이지 접속 시 [섹션 1]만 보이고 우측 상단 메뉴 클릭 후 개별 섹션 클릭 시 해당 섹션 페이지로 이동]
+  // [스크롤 최하단 튐 버그 방지: 모바일 브라우저 주소창/툴바 토글로 인한 resize 시 스크롤 리셋 원천 차단]
   // =========================================================================
   const MOBILE_SECTIONS = ['hero', 'story', 'collections', 'kids', 'experience', 'motif-journey'];
 
@@ -1353,7 +1354,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function setMobileActiveSection(targetSectionId, options = {}) {
-    const { updateUrl = true, smoothScroll = false } = options;
+    const {
+      updateUrl = true,
+      smoothScroll = false,
+      resetScroll = true,
+      forceScrollTop = false
+    } = options;
+
     const isMobile = isMobileViewport();
 
     if (!isMobile) {
@@ -1378,6 +1385,11 @@ document.addEventListener('DOMContentLoaded', () => {
       resolvedId = 'hero';
     }
 
+    // 현재 활성화된 섹션 검사 (섹션 변경 여부 확인)
+    const currentActiveSec = document.querySelector('section.mobile-active-section');
+    const currentActiveId = currentActiveSec ? currentActiveSec.id : null;
+    const isSectionChanging = currentActiveId !== resolvedId;
+
     document.body.classList.add('mobile-section-mode');
     if (resolvedId === 'hero') {
       document.body.classList.add('mobile-hero-active');
@@ -1390,15 +1402,20 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!sec) return;
       if (id === resolvedId) {
         sec.classList.add('mobile-active-section');
+        sec.removeAttribute('hidden');
       } else {
         sec.classList.remove('mobile-active-section');
       }
     });
 
-    window.scrollTo({
-      top: 0,
-      behavior: smoothScroll ? 'smooth' : 'instant'
-    });
+    // 섹션이 '실제로 변경'되었거나 명시적으로 forceScrollTop이 요청된 경우에만 최상단으로 스크롤!
+    // 동일 섹션 내에서의 툴바 토글/리사이즈/최하단 도달 시에는 현재 스크롤 위치를 절대 건드리지 않음!
+    if ((isSectionChanging && resetScroll) || forceScrollTop) {
+      window.scrollTo({
+        top: 0,
+        behavior: smoothScroll ? 'smooth' : 'instant'
+      });
+    }
 
     if (updateUrl) {
       const newHash = resolvedId === 'hero' ? '' : '#' + resolvedId;
@@ -1414,9 +1431,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isMobileViewport()) {
       const hash = window.location.hash ? window.location.hash.replace(/^#/, '') : '';
       if (hash && MOBILE_SECTIONS.includes(hash)) {
-        setMobileActiveSection(hash, { updateUrl: false });
+        setMobileActiveSection(hash, { updateUrl: false, resetScroll: true });
       } else {
-        setMobileActiveSection('hero', { updateUrl: false });
+        setMobileActiveSection('hero', { updateUrl: false, resetScroll: true });
       }
     }
 
@@ -1432,7 +1449,7 @@ document.addEventListener('DOMContentLoaded', () => {
           e.preventDefault();
           const targetId = href.substring(1);
           setTimeout(() => {
-            setMobileActiveSection(targetId, { updateUrl: true });
+            setMobileActiveSection(targetId, { updateUrl: true, resetScroll: true, forceScrollTop: true });
           }, 120);
         }
       });
@@ -1448,7 +1465,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentMode = typeof getMode === 'function' ? getMode() : { mode: 'busan' };
         const targetId = currentMode.mode === 'kids' ? 'kids' : 'collections';
         setTimeout(() => {
-          setMobileActiveSection(targetId, { updateUrl: true });
+          setMobileActiveSection(targetId, { updateUrl: true, resetScroll: true, forceScrollTop: true });
         }, 120);
       });
     }
@@ -1460,7 +1477,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isMobileViewport()) return;
         e.preventDefault();
         closeDrawer();
-        setMobileActiveSection('hero', { updateUrl: true });
+        setMobileActiveSection('hero', { updateUrl: true, resetScroll: true, forceScrollTop: true });
       });
     });
 
@@ -1472,7 +1489,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const currentMode = typeof getMode === 'function' ? getMode() : { mode: 'busan' };
         const targetId = currentMode.mode === 'kids' ? 'kids' : 'collections';
-        setMobileActiveSection(targetId, { updateUrl: true });
+        setMobileActiveSection(targetId, { updateUrl: true, resetScroll: true, forceScrollTop: true });
       });
     }
 
@@ -1484,7 +1501,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (href && href.startsWith('#')) {
           e.preventDefault();
           const targetId = href.substring(1);
-          setMobileActiveSection(targetId, { updateUrl: true });
+          setMobileActiveSection(targetId, { updateUrl: true, resetScroll: true, forceScrollTop: true });
         }
       });
     });
@@ -1493,24 +1510,34 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('popstate', () => {
       if (!isMobileViewport()) return;
       const hash = window.location.hash ? window.location.hash.replace(/^#/, '') : 'hero';
-      setMobileActiveSection(hash, { updateUrl: false });
+      setMobileActiveSection(hash, { updateUrl: false, resetScroll: true });
     });
 
     // 8. 뷰포트 크기 변경(resize) 시 모드 자동 보정
+    // [중요] 모바일 브라우저 스크롤 시 상하단 주소창/하단바 토글로 인한 순수 높이 변화는 100% 무시하여 스크롤 튐 방지
+    let lastViewportWidth = window.innerWidth;
     let resizeTimer = null;
     window.addEventListener('resize', () => {
+      // 너비(width) 변화가 없다면 스크롤 도중 주소창 변화이므로 아무 작업도 하지 않음!
+      if (window.innerWidth === lastViewportWidth) {
+        return;
+      }
+      lastViewportWidth = window.innerWidth;
+
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
         if (!isMobileViewport()) {
+          // 데스크톱 화면으로 전환
           document.body.classList.remove('mobile-section-mode', 'mobile-hero-active');
           MOBILE_SECTIONS.forEach(id => {
             const sec = document.getElementById(id);
             if (sec) sec.classList.remove('mobile-active-section');
           });
         } else {
+          // 모바일 화면 내에서 화면 회전 등 가로 너비 변경 시 (스크롤 위치 보존: resetScroll: false)
           const activeSec = document.querySelector('section.mobile-active-section');
           const curId = activeSec ? activeSec.id : (window.location.hash ? window.location.hash.replace(/^#/, '') : 'hero');
-          setMobileActiveSection(curId, { updateUrl: false });
+          setMobileActiveSection(curId, { updateUrl: false, resetScroll: false });
         }
       }, 150);
     });
@@ -1518,5 +1545,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Mobile Section Router
   initMobileSectionRouter();
-
 });
