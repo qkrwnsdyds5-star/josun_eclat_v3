@@ -133,9 +133,36 @@
     <!-- ==================== 2. HERO SECTION ==================== -->
     <section id="hero" class="hero-section" aria-label="조선 에끌라 환영 섹션">
       <div class="hero-bg-wrapper">
-        <video class="hero-bg-video" id="hero-bg-video" autoplay loop muted playsinline preload="auto">
+        <video class="hero-bg-video" id="hero-bg-video" autoplay loop muted defaultMuted playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback>
           <source src="./assets/josun_eclat_webpage_background_video.mp4" type="video/mp4">
         </video>
+        <script>
+          (function() {
+            var v = document.getElementById('hero-bg-video');
+            if (!v) return;
+            v.muted = true;
+            v.defaultMuted = true;
+            v.playsInline = true;
+            try {
+              var p = new URLSearchParams(window.location.search);
+              var room = p.get('room');
+              var hotel = p.get('hotel');
+              var targetSrc = './assets/josun_eclat_webpage_background_video.mp4';
+              if (room === 'kids') {
+                targetSrc = './assets/josun_eclat_kids_webpage_background_video.mp4';
+              } else if (hotel === 'jeju') {
+                targetSrc = './assets/josun_eclat_webpage_background_jeju.mp4';
+              }
+              var s = v.querySelector('source');
+              if (s && s.getAttribute('src') !== targetSrc) {
+                s.setAttribute('src', targetSrc);
+                v.src = targetSrc;
+              }
+            } catch (e) {}
+            var playPromise = v.play();
+            if (playPromise !== undefined) playPromise.catch(function(){});
+          })();
+        </script>
         <div class="hero-overlay"></div>
       </div>
 
@@ -199,8 +226,20 @@
           </div>
         </div>
 
-        <!-- 3 Core Pillars -->
-        <div class="core-pillars">
+        <!-- 3 Core Pillars (Mobile Collapsible with '∨' Button) -->
+        <div class="pillars-accordion-wrapper" id="pillars-accordion-wrapper">
+          <button type="button" class="btn-pillars-toggle" id="btn-pillars-toggle" aria-expanded="false"
+            aria-controls="core-pillars" aria-label="3대 핵심 가치 카드 펼치기">
+            <span class="pillars-toggle-label">
+              <span class="pillars-toggle-title">조선 에끌라 3대 핵심 가치</span>
+              <span class="pillars-toggle-sub">3 CORE PILLARS OF ÉCLAT</span>
+            </span>
+            <span class="pillars-toggle-btn" aria-hidden="true">
+              <span class="pillars-toggle-arrow">∨</span>
+            </span>
+          </button>
+
+          <div class="core-pillars" id="core-pillars">
           <div class="pillar-card">
             <div class="pillar-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
@@ -243,6 +282,7 @@
             <p class="pillar-desc">신세계푸드의 프리미엄 쇼트브레드와 딥 초콜릿 글레이징으로 여행의 시작부터 끝까지 깊은 여운을 선물합니다.</p>
           </div>
         </div>
+      </div>
       </div>
     </section>
 
@@ -311,8 +351,8 @@
             <div class="verified-pill">
               <span class="verified-icon" aria-hidden="true">✦</span>
               <span class="verified-hotel" id="verified-hotel">GRAND JOSUN BUSAN</span>
-              <span class="verified-sep">&bull;</span>
-              <span class="verified-room" id="verified-room">STANDARD ROOM (3종)</span>
+              <span class="verified-sep" style="display: none;">&bull;</span>
+              <span class="verified-room" id="verified-room" style="display: none;"></span>
             </div>
           </div>
         </div>
@@ -346,7 +386,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_광안대교쿠키.png" alt="광안대교 버터 초콜릿 쿠키"
                   class="cookie-img zoomable-img" data-caption="광안대교 쿠키 - 부산의 웅장한 랜드마크를 형상화">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">LANDMARK</span>
@@ -361,7 +400,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_크루즈쿠키.png" alt="크루즈선 형상의 쿠키"
                   class="cookie-img zoomable-img" data-caption="크루즈선 쿠키 - 해운대 바다를 유영하는 낭만의 상징">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">VOYAGE</span>
@@ -376,7 +414,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_등대쿠키.png" alt="청사포 등대 쿠키"
                   class="cookie-img zoomable-img" data-caption="청사포 등대 쿠키 - 안전한 여행과 따뜻한 길잡이의 상징">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">GUIDE &amp; WARMTH</span>
@@ -391,7 +428,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_갈매기초콜릿.png" alt="해운대 갈매기 초콜릿"
                   class="cookie-img zoomable-img" data-caption="해운대 갈매기 초콜릿 - 자유로운 비상과 오션의 활력">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">FREEDOM</span>
@@ -406,7 +442,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_조개초콜릿.png" alt="진주 조개 초콜릿"
                   class="cookie-img zoomable-img" data-caption="진주 조개 초콜릿 - 화이트 펄이 얹힌 우아한 조개 초콜릿">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">OCEAN TREASURE</span>
@@ -421,7 +456,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_busan/조선 에끌라_부산_파도초콜릿.png" alt="해운대 파도 초콜릿"
                   class="cookie-img zoomable-img" data-caption="해운대 파도 초콜릿 - 역동적인 파도 물결과 흰 포말을 형상화">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">DYNAMIC WAVE</span>
@@ -462,7 +496,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_귤조각쿠키.png" alt="제주 귤 조각 쿠키"
                   class="cookie-img zoomable-img" data-caption="제주 귤 조각 쿠키 - 남국의 햇살을 머금은 상큼한 귤 조각 형상">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">CITRUS SWEET</span>
@@ -477,7 +510,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_말쿠키.png" alt="제주 조랑말 쿠키"
                   class="cookie-img zoomable-img" data-caption="제주 조랑말 쿠키 - 초원을 질주하는 자유로운 말">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">SPIRIT OF NATURE</span>
@@ -492,7 +524,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_야자수쿠키.png" alt="제주 야자수 쿠키"
                   class="cookie-img zoomable-img" data-caption="야자수 쿠키 - 이국적인 남국 리조트의 상징">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">TROPICAL VACATION</span>
@@ -507,7 +538,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_한라봉초콜릿.png" alt="한라봉 초콜릿"
                   class="cookie-img zoomable-img" data-caption="한라봉 초콜릿 - 상큼한 시트러스 과육 단면과 잎사귀 디테일">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">FRESH CITRUS</span>
@@ -522,7 +552,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_돌하르방초콜릿.png" alt="제주 돌하르방 초콜릿"
                   class="cookie-img zoomable-img" data-caption="제주 돌하르방 초콜릿 - 인자한 미소로 여행자를 맞이하는 수호석">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">GUARDIAN STONE</span>
@@ -537,7 +566,6 @@
               <div class="card-visual">
                 <img src="./assets/cookie-kit/josun_eclat_jeju/조선 에끌라_제주_한라산초콜릿.png" alt="한라산 백록담 초콜릿"
                   class="cookie-img zoomable-img" data-caption="한라산 백록담 초콜릿 - 백록담의 설경 능선을 표현한 초콜릿">
-                <span class="item-badge suite">SUITE</span>
               </div>
               <div class="card-body">
                 <span class="cookie-motif">MAJESTIC PEAK</span>
@@ -566,9 +594,9 @@
           <div class="collection-verified-banner" id="kids-verified-banner">
             <div class="verified-pill">
               <span class="verified-icon" aria-hidden="true">✦</span>
-              <span class="verified-hotel" id="kids-verified-hotel">GRAND JOSUN BUSAN</span>
-              <span class="verified-sep">&bull;</span>
-              <span class="verified-room" id="kids-verified-room">KIDS ROOM (DIY 키트)</span>
+              <span class="verified-hotel" id="kids-verified-hotel">GRAND JOSUN</span>
+              <span class="verified-sep" style="display: none;">&bull;</span>
+              <span class="verified-room" id="kids-verified-room" style="display: none;"></span>
             </div>
           </div>
         </div>
@@ -760,18 +788,6 @@
         
         <!-- ==================== BUSAN MOTIF PANEL ==================== -->
         <div id="journey-panel-busan" class="journey-panel active" role="tabpanel" aria-labelledby="journey-tab-busan" >
-          <!-- Hotel Departure Header (josunhotel.com location header) -->
-          <div class="josun-hotel-origin-banner">
-            <div class="origin-hotel-brand">
-              <span class="hotel-type-badge">HOTEL LOCATION & MOTIF JOURNEY</span>
-              <h3 class="hotel-title">그랜드 조선 부산</h3>
-              <p class="hotel-info-line">
-                <span class="info-addr">주소: 부산광역시 해운대구 해운대해변로 292</span>
-                <span class="vBar"><span class="info-tel">대표전화: 051-922-5000</span></span>
-              </p>
-            </div>
-          </div>
-
           <!-- Slider Container -->
           <div class="josun-motif-slider" id="busan-motif-slider">
             <!-- Slider Navigation: Tabs & Arrows & Counter -->
@@ -971,7 +987,7 @@
                 <!-- Top Area (josunhotel.com style) -->
                 <div class="topArea">
                   <div class="topInner">
-                    <h3 class="titDep1">Cheongsapo Port & Lighthouse</h3>
+                    <h3 class="titDep1">Cheongsapo Port <span class="amp-char">&amp;</span> Lighthouse</h3>
                     <div class="pageGuide">
                       <p class="txt">
                         <span class="motif-badge-inline">청사포 등대 쿠키 모티브</span>
@@ -1379,7 +1395,7 @@
                 <!-- Top Area (josunhotel.com style) -->
                 <div class="topArea">
                   <div class="topInner">
-                    <h3 class="titDep1">Haeundae Beach & Songnim Park</h3>
+                    <h3 class="titDep1">Haeundae Beach <span class="amp-char">&amp;</span> Songnim Park</h3>
                     <div class="pageGuide">
                       <p class="txt">
                         <span class="motif-badge-inline">해운대 갈매기 & 조개 모티브</span>
@@ -1507,22 +1523,22 @@
               </div>
             </div>
           </div>
+
+          <!-- Hotel Departure Info (Positioned under Concierge Tip) -->
+          <div class="josun-hotel-origin-banner">
+            <div class="origin-hotel-brand">
+              <span class="hotel-type-badge">HOTEL LOCATION & MOTIF JOURNEY</span>
+              <h3 class="hotel-title">그랜드 조선 부산</h3>
+              <p class="hotel-info-line">
+                <span class="info-addr">주소: 부산광역시 해운대구 해운대해변로 292</span>
+                <span class="vBar"><span class="info-tel">대표전화: 051-922-5000</span></span>
+              </p>
+            </div>
+          </div>
         </div>
         
         <!-- ==================== JEJU MOTIF PANEL ==================== -->
         <div id="journey-panel-jeju" class="journey-panel " role="tabpanel" aria-labelledby="journey-tab-jeju" hidden>
-          <!-- Hotel Departure Header (josunhotel.com location header) -->
-          <div class="josun-hotel-origin-banner">
-            <div class="origin-hotel-brand">
-              <span class="hotel-type-badge">HOTEL LOCATION & MOTIF JOURNEY</span>
-              <h3 class="hotel-title">그랜드 조선 제주</h3>
-              <p class="hotel-info-line">
-                <span class="info-addr">주소: 제주특별자치도 서귀포시 중문관광로 72번길 60</span>
-                <span class="vBar"><span class="info-tel">대표전화: 064-738-6600</span></span>
-              </p>
-            </div>
-          </div>
-
           <!-- Slider Container -->
           <div class="josun-motif-slider" id="jeju-motif-slider">
             <!-- Slider Navigation: Tabs & Arrows & Counter -->
@@ -1853,7 +1869,7 @@
                 <!-- Top Area (josunhotel.com style) -->
                 <div class="topArea">
                   <div class="topInner">
-                    <h3 class="titDep1">Citrus Museum & Hyodon Village</h3>
+                    <h3 class="titDep1">Citrus Museum <span class="amp-char">&amp;</span> Hyodon Village</h3>
                     <div class="pageGuide">
                       <p class="txt">
                         <span class="motif-badge-inline">제주 감귤 쿠키 모티브</span>

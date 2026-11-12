@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       suite: {
         title: 'JOSUN ÉCLAT | 그랜드 조선 부산 스위트룸 웰컴기프트',
         tag: 'BUSAN SUITE',
-        subLead: 'GRAND JOSUN BUSAN • SUITE ROOM',
+        subLead: 'GRAND JOSUN BUSAN',
         roomNameKr: '스위트룸',
         roomNameEn: 'SUITE ROOM',
         countText: '6종 전체',
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       suite: {
         title: 'JOSUN ÉCLAT | 그랜드 조선 제주 스위트룸 웰컴기프트',
         tag: 'JEJU SUITE',
-        subLead: 'GRAND JOSUN JEJU • SUITE ROOM',
+        subLead: 'GRAND JOSUN JEJU',
         roomNameKr: '스위트룸',
         roomNameEn: 'SUITE ROOM',
         countText: '6종 전체',
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
       regionKr: '키즈',
       title: 'JOSUN ÉCLAT | 그랜드 조선 키즈룸 웰컴기프트',
       tag: 'KIDS ADVENTURE',
-      subLead: 'GRAND JOSUN • KIDS ROOM',
+      subLead: 'GRAND JOSUN',
       roomNameKr: '키즈룸',
       roomNameEn: 'KIDS ROOM',
       countText: 'DIY 키트',
@@ -158,11 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
   if (backdrop) backdrop.addEventListener('click', closeDrawer);
 
-  drawerLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      closeDrawer();
-    });
-  });
+  // Drawer links handled by Mobile Section Router below
 
   // =========================================================================
   // 4. URL Query Parameter Controller (3 Room Tiers: Busan Suite, Jeju Suite, Kids)
@@ -190,23 +186,119 @@ document.addEventListener('DOMContentLoaded', () => {
     return { mode: null, hotel: null, room: null, valid: false };
   }
 
+  // =========================================================================
+  // iPhone / iOS WebKit Video Autoplay & Smooth Loop Engine
+  // =========================================================================
   function updateHeroBgVideo(videoPath) {
     const video = document.getElementById('hero-bg-video');
     if (!video) return;
-    const source = video.querySelector('source');
-    const currentSrc = source ? source.getAttribute('src') : video.getAttribute('src');
 
-    if (currentSrc !== videoPath) {
+    // 1. Force iOS WebKit autoplay prerequisites on DOM properties & attributes
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+
+    const source = video.querySelector('source');
+    const currentSrc = source ? source.getAttribute('src') : (video.getAttribute('src') || '');
+    
+    // Normalize path comparison (e.g. relative vs absolute)
+    const isDifferent = currentSrc !== videoPath && !currentSrc.endsWith(videoPath.replace(/^\.\//, ''));
+
+    const attemptPlay = () => {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      if (video.paused) {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Autoplay deferred (e.g. iOS Low Power Mode); watchdog will play on first interaction
+          });
+        }
+      }
+    };
+
+    if (isDifferent) {
       if (source) {
         source.setAttribute('src', videoPath);
       }
       video.src = videoPath;
       video.load();
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {});
-      }
+
+      // In iOS Safari, wait for loadeddata / canplay before calling play()
+      video.addEventListener('loadeddata', attemptPlay, { once: true });
+      video.addEventListener('canplay', attemptPlay, { once: true });
     }
+
+    // Always attempt play immediately
+    attemptPlay();
+
+    if (video.readyState >= 2) {
+      attemptPlay();
+    }
+  }
+
+  // iOS / Mobile Video Autoplay & Low Power Mode Fallback Watchdog
+  function initVideoAutoplayWatchdog() {
+    const video = document.getElementById('hero-bg-video');
+    if (!video) return;
+
+    const playVideo = () => {
+      if (video.paused) {
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        const p = video.play();
+        if (p !== undefined) {
+          p.catch(() => {});
+        }
+      }
+    };
+
+    // 1. Initial attempt
+    playVideo();
+
+    // 2. User interaction fallback (covers iOS Low Power Mode and strict WebKit autoplay policies)
+    const interactionEvents = ['touchstart', 'touchend', 'click', 'scroll', 'pointerdown'];
+    const onUserInteraction = () => {
+      playVideo();
+      if (!video.paused) {
+        interactionEvents.forEach(evt => {
+          window.removeEventListener(evt, onUserInteraction);
+          document.removeEventListener(evt, onUserInteraction);
+        });
+      }
+    };
+
+    interactionEvents.forEach(evt => {
+      window.addEventListener(evt, onUserInteraction, { passive: true });
+      document.addEventListener(evt, onUserInteraction, { passive: true });
+    });
+
+    // 3. Tab visibility & BFCache page restoration handlers
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && video.paused) {
+        playVideo();
+      }
+    });
+    window.addEventListener('pageshow', () => {
+      if (video.paused) {
+        playVideo();
+      }
+    });
+
+    // 4. Background pause recovery
+    video.addEventListener('pause', () => {
+      if (!document.hidden) {
+        setTimeout(playVideo, 150);
+      }
+    });
   }
 
   function renderPage() {
@@ -347,7 +439,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (kidsSubLead) kidsSubLead.textContent = data.subLead;
       if (kidsGuide) kidsGuide.textContent = data.guide;
       if (kidsVerifiedHotel) kidsVerifiedHotel.textContent = data.nameEn;
-      if (kidsVerifiedRoom) kidsVerifiedRoom.textContent = `${data.roomNameEn} (${data.countText})`;
+      const kidsVerifiedSep = document.querySelector('#kids-verified-banner .verified-sep');
+      if (kidsVerifiedSep) kidsVerifiedSep.style.display = 'none';
+      if (kidsVerifiedRoom) {
+        kidsVerifiedRoom.textContent = '';
+        kidsVerifiedRoom.style.display = 'none';
+      }
       if (kidsShowcaseTitle) kidsShowcaseTitle.innerHTML = data.intro.title;
       if (kidsShowcaseDesc) kidsShowcaseDesc.textContent = data.intro.desc;
       if (kidsWelcomeCardText) kidsWelcomeCardText.textContent = data.intro.welcomeCard;
@@ -430,7 +527,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (title) title.textContent = 'Busan Gift Collection';
       if (guide) guide.textContent = data.guide;
       if (verifiedHotel) verifiedHotel.textContent = ECLAT_CONTENT.busan.nameEn;
-      if (verifiedRoom) verifiedRoom.textContent = `${data.roomNameEn} (${data.countText})`;
+      const verifiedSep = document.querySelector('#collection-verified-banner .verified-sep');
+      if (verifiedSep) verifiedSep.style.display = 'none';
+      if (verifiedRoom) {
+        verifiedRoom.textContent = '';
+        verifiedRoom.style.display = 'none';
+      }
 
       // 패널 제어: 부산 표시, 제주 숨김
       const panelBusan = document.getElementById('panel-busan');
@@ -490,7 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // CASE C: 제주 스위트룸 (Jeju Suite)
     // =======================================================================
     if (mode === 'jeju') {
-      updateHeroBgVideo('./assets/josun_eclat_webpage_background_video.mp4');
+      updateHeroBgVideo('./assets/josun_eclat_webpage_background_jeju.mp4');
       const data = ECLAT_CONTENT.jeju.suite;
       document.title = data.title;
       if (welcomeTag) welcomeTag.textContent = data.tag;
@@ -538,7 +640,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (title) title.textContent = 'Jeju Gift Collection';
       if (guide) guide.textContent = data.guide;
       if (verifiedHotel) verifiedHotel.textContent = ECLAT_CONTENT.jeju.nameEn;
-      if (verifiedRoom) verifiedRoom.textContent = `${data.roomNameEn} (${data.countText})`;
+      const jejuVerifiedSep = document.querySelector('#collection-verified-banner .verified-sep');
+      if (jejuVerifiedSep) jejuVerifiedSep.style.display = 'none';
+      if (verifiedRoom) {
+        verifiedRoom.textContent = '';
+        verifiedRoom.style.display = 'none';
+      }
 
       // 패널 제어: 제주 표시, 부산 숨김
       const panelBusan = document.getElementById('panel-busan');
@@ -951,6 +1058,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 초기 렌더링 실행
   renderPage();
+  initVideoAutoplayWatchdog();
 
   // =========================================================================
   // Mobile Interactive UX Controllers (Story, Cookie More, Kids Toggle, Quick Pill)
@@ -970,6 +1078,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // B. Brand Story Mobile Collapse Toggle
+  // 3 Core Pillars Mobile Accordion Toggle ('∨' Button)
+  const btnPillarsToggle = document.getElementById('btn-pillars-toggle');
+  const corePillars = document.getElementById('core-pillars');
+  if (btnPillarsToggle && corePillars) {
+    btnPillarsToggle.addEventListener('click', () => {
+      const isExpanded = corePillars.classList.toggle('expanded');
+      btnPillarsToggle.setAttribute('aria-expanded', String(isExpanded));
+      btnPillarsToggle.setAttribute('aria-label', isExpanded ? '3대 핵심 가치 카드 접기' : '3대 핵심 가치 카드 펼치기');
+    });
+  }
+
   const btnStoryToggle = document.getElementById('btn-story-toggle');
   const storyCollapse = document.getElementById('story-collapse');
   if (btnStoryToggle && storyCollapse) {
@@ -1222,4 +1341,182 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', updateScrollSpy, { passive: true });
+
+  // =========================================================================
+  // Mobile Single-Section View Controller (App-Style Routing)
+  // [요구사항: 모바일로 웹페이지 접속 시 [섹션 1]만 보이고 우측 상단 메뉴 클릭 후 개별 섹션 클릭 시 해당 섹션 페이지로 이동]
+  // =========================================================================
+  const MOBILE_SECTIONS = ['hero', 'story', 'collections', 'kids', 'experience', 'motif-journey'];
+
+  function isMobileViewport() {
+    return window.innerWidth <= 768;
+  }
+
+  function setMobileActiveSection(targetSectionId, options = {}) {
+    const { updateUrl = true, smoothScroll = false } = options;
+    const isMobile = isMobileViewport();
+
+    if (!isMobile) {
+      document.body.classList.remove('mobile-section-mode', 'mobile-hero-active');
+      MOBILE_SECTIONS.forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) sec.classList.remove('mobile-active-section');
+      });
+      return;
+    }
+
+    const currentMode = typeof getMode === 'function' ? getMode() : { mode: 'busan' };
+    let resolvedId = targetSectionId ? String(targetSectionId).replace(/^#/, '') : 'hero';
+
+    if (currentMode.mode === 'kids' && resolvedId === 'collections') {
+      resolvedId = 'kids';
+    } else if (currentMode.mode !== 'kids' && resolvedId === 'kids') {
+      resolvedId = 'collections';
+    }
+
+    if (!MOBILE_SECTIONS.includes(resolvedId)) {
+      resolvedId = 'hero';
+    }
+
+    document.body.classList.add('mobile-section-mode');
+    if (resolvedId === 'hero') {
+      document.body.classList.add('mobile-hero-active');
+    } else {
+      document.body.classList.remove('mobile-hero-active');
+    }
+
+    MOBILE_SECTIONS.forEach(id => {
+      const sec = document.getElementById(id);
+      if (!sec) return;
+      if (id === resolvedId) {
+        sec.classList.add('mobile-active-section');
+      } else {
+        sec.classList.remove('mobile-active-section');
+      }
+    });
+
+    window.scrollTo({
+      top: 0,
+      behavior: smoothScroll ? 'smooth' : 'instant'
+    });
+
+    if (updateUrl) {
+      const newHash = resolvedId === 'hero' ? '' : '#' + resolvedId;
+      const newUrl = window.location.pathname + window.location.search + newHash;
+      try {
+        history.replaceState(null, document.title, newUrl);
+      } catch (err) {}
+    }
+  }
+
+  function initMobileSectionRouter() {
+    // 1. Initial State: 모바일 접속 시 무조건 [섹션 1] (Hero)만 표시
+    if (isMobileViewport()) {
+      const hash = window.location.hash ? window.location.hash.replace(/^#/, '') : '';
+      if (hash && MOBILE_SECTIONS.includes(hash)) {
+        setMobileActiveSection(hash, { updateUrl: false });
+      } else {
+        setMobileActiveSection('hero', { updateUrl: false });
+      }
+    }
+
+    // 2. 드로어 메뉴 링크 클릭 시 개별 섹션 페이지로 이동
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        closeDrawer();
+        if (!isMobileViewport()) return;
+
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          setTimeout(() => {
+            setMobileActiveSection(targetId, { updateUrl: true });
+          }, 120);
+        }
+      });
+    });
+
+    // 3. 드로어 상단의 MY ROOM GIFT 카드 클릭 시 이동
+    const drawerQuickBtn = document.getElementById('drawer-quick-btn');
+    if (drawerQuickBtn) {
+      drawerQuickBtn.addEventListener('click', (e) => {
+        closeDrawer();
+        if (!isMobileViewport()) return;
+        e.preventDefault();
+        const currentMode = typeof getMode === 'function' ? getMode() : { mode: 'busan' };
+        const targetId = currentMode.mode === 'kids' ? 'kids' : 'collections';
+        setTimeout(() => {
+          setMobileActiveSection(targetId, { updateUrl: true });
+        }, 120);
+      });
+    }
+
+    // 4. 로고 클릭 시 Hero([섹션 1])로 이동
+    const brandLogos = document.querySelectorAll('.brand-logo, .header-brand a');
+    brandLogos.forEach(logo => {
+      logo.addEventListener('click', (e) => {
+        if (!isMobileViewport()) return;
+        e.preventDefault();
+        closeDrawer();
+        setMobileActiveSection('hero', { updateUrl: true });
+      });
+    });
+
+    // 5. Hero CTA 버튼 클릭 시 컬렉션 섹션으로 이동
+    const heroBtnExplore = document.getElementById('hero-btn-explore');
+    if (heroBtnExplore) {
+      heroBtnExplore.addEventListener('click', (e) => {
+        if (!isMobileViewport()) return;
+        e.preventDefault();
+        const currentMode = typeof getMode === 'function' ? getMode() : { mode: 'busan' };
+        const targetId = currentMode.mode === 'kids' ? 'kids' : 'collections';
+        setMobileActiveSection(targetId, { updateUrl: true });
+      });
+    }
+
+    // 6. 사이트 푸터의 내부 앵커 링크 클릭 시 이동
+    document.querySelectorAll('.site-footer a[href^="#"]').forEach(flink => {
+      flink.addEventListener('click', (e) => {
+        if (!isMobileViewport()) return;
+        const href = flink.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetId = href.substring(1);
+          setMobileActiveSection(targetId, { updateUrl: true });
+        }
+      });
+    });
+
+    // 7. 브라우저 뒤로 가기 / 앞으로 가기 (popstate)
+    window.addEventListener('popstate', () => {
+      if (!isMobileViewport()) return;
+      const hash = window.location.hash ? window.location.hash.replace(/^#/, '') : 'hero';
+      setMobileActiveSection(hash, { updateUrl: false });
+    });
+
+    // 8. 뷰포트 크기 변경(resize) 시 모드 자동 보정
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (!isMobileViewport()) {
+          document.body.classList.remove('mobile-section-mode', 'mobile-hero-active');
+          MOBILE_SECTIONS.forEach(id => {
+            const sec = document.getElementById(id);
+            if (sec) sec.classList.remove('mobile-active-section');
+          });
+        } else {
+          const activeSec = document.querySelector('section.mobile-active-section');
+          const curId = activeSec ? activeSec.id : (window.location.hash ? window.location.hash.replace(/^#/, '') : 'hero');
+          setMobileActiveSection(curId, { updateUrl: false });
+        }
+      }, 150);
+    });
+  }
+
+  // Initialize Mobile Section Router
+  initMobileSectionRouter();
+
 });
